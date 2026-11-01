@@ -1,0 +1,676 @@
+<!-- AZiL HANOK 4.0 / Fareye duyarlı yıldızlı başlık + 3D kitap maketi / TAM KAYNAK. --> <style type="text/css">
+#az-hanok{--bg:#111216;--panel:#1b1e24;--panel2:#242226;--line:#353941;--text:#f4f4ef;--muted:#b9bec8;--accent:#ffca82;box-sizing:border-box;width:100%;max-width:1320px;margin:0 auto;padding:28px clamp(18px,4vw,48px);background:var(--bg);color:var(--text);font:16px/1.65 Arial,Helvetica,sans-serif;text-align:left;overflow-wrap:break-word;color-scheme:dark;container-type:inline-size}
+#az-hanok *,#az-hanok *:before,#az-hanok *:after{box-sizing:border-box}
+#az-hanok a{color:inherit;text-decoration:none}#az-hanok a:focus-visible,#az-hanok summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+#az-hanok .hn-hero{padding:44px 0 32px}#az-hanok .hn-kicker{margin:0 0 10px;color:#ffca82;font-size:12px;font-weight:700;letter-spacing:1.7px}
+#az-hanok h1,#az-hanok h2,#az-hanok h3{color:var(--text);line-height:1.2;padding:0}#az-hanok h1{margin:0 0 16px;font-size:clamp(38px,6vw,70px);letter-spacing:-2px}#az-hanok h1 span{color:#ffca82}
+#az-hanok .hn-intro{max-width:760px;margin:0;color:var(--muted);font-size:18px}
+#az-hanok .hn-section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:34px 0 18px}#az-hanok .hn-section-head h2{margin:0;font-size:28px}#az-hanok .hn-section-head span{color:var(--muted);font-size:12px;letter-spacing:1.2px}
+#az-hanok .hn-feature{display:grid;grid-template-columns:190px minmax(0,1fr);gap:30px;align-items:center;padding:28px;background:var(--panel2);border:1px solid #554939;border-top:3px solid #ffca82}
+#az-hanok .hn-cover{display:block;width:100%;max-width:190px;margin:0 auto}#az-hanok .hn-cover img{display:block;width:100%;height:auto;border:1px solid #4a4540;box-shadow:0 14px 34px rgba(0,0,0,.28)}
+#az-hanok .hn-label{display:inline-block;margin-bottom:8px;color:#ffca82;font-size:11px;font-weight:700;letter-spacing:1.5px}#az-hanok .hn-feature h2{margin:4px 0 8px;font-size:clamp(30px,4vw,46px);letter-spacing:-1px}
+#az-hanok .hn-meta{margin:0 0 16px;color:#d8d2c9;font-size:14px}#az-hanok .hn-desc{max-width:760px;margin:0 0 20px;color:var(--muted)}
+#az-hanok .hn-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}#az-hanok .hn-tag{display:inline-block;padding:5px 9px;border:1px solid #555158;border-radius:3px;color:#ddd9d4;font-size:12px}
+#az-hanok .hn-actions{display:flex;gap:10px;flex-wrap:wrap}#az-hanok a.hn-btn{display:inline-block;padding:11px 16px;border:1px solid #ffca82;border-radius:4px;background:#ffca82;color:#18140e;font-size:14px;font-weight:700}#az-hanok a.hn-btn:hover{filter:brightness(1.07)}#az-hanok a.hn-secondary{background:transparent;color:#ffca82}
+#az-hanok .hn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+#az-hanok .hn-card{display:flex;flex-direction:column;min-width:0;padding:25px;background:var(--panel);border:1px solid var(--line);border-top:3px solid #c7b4ff}#az-hanok .hn-card:nth-child(2n){border-top-color:#96c9ff}#az-hanok .hn-card .hn-label{color:#c7b4ff}#az-hanok .hn-card:nth-child(2n) .hn-label{color:#96c9ff}#az-hanok .hn-card h3{margin:8px 0 10px;font-size:26px;letter-spacing:-.5px}#az-hanok .hn-card p{margin:0 0 16px;color:var(--muted)}
+#az-hanok .hn-status{display:inline-block;margin:2px 0 18px;padding:5px 9px;align-self:flex-start;border:1px solid #53565f;border-radius:999px;color:#d9d9dc;font-size:12px}#az-hanok .hn-card-footer{margin-top:auto;padding-top:17px;border-top:1px solid var(--line);color:#cfd2d8;font-size:13px}
+#az-hanok .hn-panel{padding:26px;border:1px solid var(--line);background:#17191e;margin-top:18px}#az-hanok .hn-panel h3{font-size:23px;margin:0 0 14px}#az-hanok .hn-panel p{margin:0 0 16px;color:var(--muted)}#az-hanok .hn-panel p:last-child{margin-bottom:0}
+#az-hanok .hn-jump{display:flex;gap:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:20px 0;font-size:14px}#az-hanok .hn-jump a{color:#ffca82;text-decoration:underline;text-underline-offset:4px}
+#az-hanok .hn-excerpt{border-left:3px solid #ffca82;background:#201f21;padding:26px;margin:18px 0;font:18px/1.85 Georgia,'Times New Roman',serif}#az-hanok .hn-excerpt p{color:#eee7dc;margin:0 0 18px}#az-hanok .hn-excerpt p:last-child{margin:0}
+#az-hanok .hn-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:18px;margin:0}#az-hanok .hn-facts div{min-width:0;border-top:1px solid var(--line);padding-top:12px}#az-hanok dt{color:var(--muted);font-size:12px}#az-hanok dd{margin:4px 0 0;color:var(--text);font-size:15px}
+#az-hanok .hn-small{font-size:13px;color:var(--muted)}#az-hanok [id]{scroll-margin-top:90px}
+@media(max-width:680px){#az-hanok{padding:20px 16px}#az-hanok .hn-feature{grid-template-columns:1fr;padding:22px}#az-hanok .hn-cover{width:130px;margin:0}#az-hanok .hn-hero{padding:34px 0 26px}#az-hanok h1{font-size:42px}#az-hanok .hn-panel,#az-hanok .hn-excerpt{padding:20px}}
+@container(max-width:620px){#az-hanok .hn-feature{grid-template-columns:1fr}#az-hanok .hn-cover{max-width:130px;margin:0}}
+
+/* Keep the site theme's decorative quote glyphs out of the reader. */
+#az-hanok .hn-excerpt,#az-hanok .hn-excerpt p{quotes:none!important;text-indent:0!important;float:none!important;position:static;max-width:100%;width:auto;white-space:normal;overflow-wrap:anywhere;text-align:left}
+#az-hanok .hn-excerpt:before,#az-hanok .hn-excerpt:after,#az-hanok .hn-excerpt p:before,#az-hanok .hn-excerpt p:after{content:none!important;display:none!important}
+#az-hanok .hn-feature>*,#az-hanok .hn-panel{min-width:0}
+#az-hanok .hn-chapters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px 32px;padding-left:24px;margin:20px 0;color:#e6dfd4}#az-hanok .hn-chapters li{padding:7px 0;border-bottom:1px solid #353941;break-inside:avoid}#az-hanok .hn-faq details{padding:15px 0;border-bottom:1px solid #353941}#az-hanok .hn-faq details:last-child{border-bottom:0}#az-hanok .hn-faq summary{cursor:pointer;font-weight:700;color:#ffca82}#az-hanok .hn-faq details p{margin-top:12px}
+/* HANOK / OKUMA ATMOSFERI */
+#az-hanok .hn-music{
+  position:relative;
+  overflow:hidden;
+  margin:22px 0 8px;
+  padding:26px;
+  border:1px solid #4a443c;
+  border-top:3px solid #ffca82;
+  background:
+    radial-gradient(circle at 86% 20%,rgba(255,202,130,.10),transparent 30%),
+    linear-gradient(135deg,#17191e 0%,#1b1b20 58%,#17191e 100%);
+}
+#az-hanok .hn-music:after{
+  content:"";
+  position:absolute;
+  right:-70px;
+  bottom:-90px;
+  width:220px;
+  height:220px;
+  border:1px solid rgba(255,202,130,.08);
+  border-radius:50%;
+  pointer-events:none;
+}
+#az-hanok .hn-music-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,520px);
+  gap:28px;
+  align-items:center;
+}
+#az-hanok .hn-music-copy{min-width:0}
+#az-hanok .hn-music-title{
+  margin:5px 0 10px;
+  font-size:clamp(25px,3vw,36px);
+  letter-spacing:-.5px;
+}
+#az-hanok .hn-music-copy p{
+  margin:0 0 13px;
+  color:var(--muted);
+}
+#az-hanok .hn-music-quote{
+  margin:17px 0 0;
+  padding:13px 15px;
+  border-left:2px solid #ffca82;
+  background:rgba(255,255,255,.025);
+  color:#e9e2d8;
+  font:italic 15px/1.65 Georgia,'Times New Roman',serif;
+}
+#az-hanok .hn-music-player{
+  min-width:0;
+  padding:10px;
+  border:1px solid #353941;
+  background:#111216;
+  box-shadow:0 14px 34px rgba(0,0,0,.24);
+}
+#az-hanok .hn-music-player iframe{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  min-height:230px;
+  border:0;
+}
+#az-hanok .hn-music-meta{
+  display:flex;
+  gap:8px 14px;
+  flex-wrap:wrap;
+  margin-top:12px;
+  color:#aaaeb6;
+  font-size:11px;
+}
+#az-hanok .hn-music-meta span{white-space:normal}
+#az-hanok .hn-music-note{
+  margin-top:12px!important;
+  color:#8f939b!important;
+  font-size:11px;
+  line-height:1.55;
+}
+@media(max-width:850px){
+  #az-hanok .hn-music-grid{grid-template-columns:1fr}
+  #az-hanok .hn-music-player{max-width:620px;width:100%}
+}
+@media(max-width:480px){
+  #az-hanok .hn-music{padding:20px}
+  #az-hanok .hn-music-player iframe{min-height:190px}
+}
+
+/* AZiL 3.0 / HANOK - ortak tema uyumu.
+   Tema siniflari ortak ust menu tarafindan body/html uzerine uygulanir. */
+body.az-theme-light #az-hanok,
+html.az-theme-light #az-hanok{
+ --bg:#f5f6f3;--panel:#ffffff;--panel2:#fff8f0;
+ --line:#d9dcd7;--text:#17211d;--muted:#47564e;--accent:#a66014;
+ color-scheme:light;
+}
+body.az-theme-light #az-hanok .hn-kicker,
+html.az-theme-light #az-hanok .hn-kicker,
+body.az-theme-light #az-hanok h1 span,
+html.az-theme-light #az-hanok h1 span,
+body.az-theme-light #az-hanok .hn-label,
+html.az-theme-light #az-hanok .hn-label,
+body.az-theme-light #az-hanok .hn-jump a,
+html.az-theme-light #az-hanok .hn-jump a,
+body.az-theme-light #az-hanok .hn-faq summary,
+html.az-theme-light #az-hanok .hn-faq summary{color:#98540d}
+body.az-theme-light #az-hanok .hn-feature,
+html.az-theme-light #az-hanok .hn-feature{border-color:#dec8ad;border-top-color:#b7762a}
+body.az-theme-light #az-hanok .hn-meta,
+html.az-theme-light #az-hanok .hn-meta,
+body.az-theme-light #az-hanok .hn-tag,
+html.az-theme-light #az-hanok .hn-tag,
+body.az-theme-light #az-hanok .hn-status,
+html.az-theme-light #az-hanok .hn-status,
+body.az-theme-light #az-hanok .hn-card-footer,
+html.az-theme-light #az-hanok .hn-card-footer,
+body.az-theme-light #az-hanok .hn-chapters,
+html.az-theme-light #az-hanok .hn-chapters{color:#435149}
+body.az-theme-light #az-hanok .hn-tag,
+html.az-theme-light #az-hanok .hn-tag,
+body.az-theme-light #az-hanok .hn-status,
+html.az-theme-light #az-hanok .hn-status{border-color:#c7cdc5}
+body.az-theme-light #az-hanok .hn-panel,
+html.az-theme-light #az-hanok .hn-panel{background:#ffffff}
+body.az-theme-light #az-hanok .hn-excerpt,
+html.az-theme-light #az-hanok .hn-excerpt{background:#fff9ee;border-left-color:#af742e}
+body.az-theme-light #az-hanok .hn-excerpt p,
+html.az-theme-light #az-hanok .hn-excerpt p{color:#29231b}
+body.az-theme-light #az-hanok .hn-chapters li,
+html.az-theme-light #az-hanok .hn-chapters li,
+body.az-theme-light #az-hanok .hn-faq details,
+html.az-theme-light #az-hanok .hn-faq details{border-color:#d9dcd7}
+body.az-theme-light #az-hanok a.hn-btn,
+html.az-theme-light #az-hanok a.hn-btn{background:#b9762d;border-color:#b9762d;color:#fff}
+body.az-theme-light #az-hanok a.hn-secondary,
+html.az-theme-light #az-hanok a.hn-secondary{background:transparent;color:#884a09}
+body.az-theme-light #az-hanok .hn-card .hn-label,
+html.az-theme-light #az-hanok .hn-card .hn-label{color:#6042a1}
+body.az-theme-light #az-hanok .hn-card:nth-child(2n) .hn-label,
+html.az-theme-light #az-hanok .hn-card:nth-child(2n) .hn-label{color:#25649e}
+body.az-theme-light #az-hanok .hn-music,
+html.az-theme-light #az-hanok .hn-music{
+ background:radial-gradient(circle at 86% 20%,rgba(180,115,43,.10),transparent 30%),linear-gradient(135deg,#fffaf3,#f1eee9);
+ border-color:#d9c6ac;border-top-color:#b9762d;
+}
+body.az-theme-light #az-hanok .hn-music-quote,
+html.az-theme-light #az-hanok .hn-music-quote{background:rgba(148,95,35,.06);color:#483a28;border-left-color:#b9762d}
+body.az-theme-light #az-hanok .hn-music-meta,
+html.az-theme-light #az-hanok .hn-music-meta{color:#516158}
+body.az-theme-light #az-hanok .hn-music-note,
+html.az-theme-light #az-hanok .hn-music-note{color:#637068!important}
+body.az-theme-light #az-hanok .hn-music-player,
+html.az-theme-light #az-hanok .hn-music-player{background:#fff;border-color:#dbd0c2;box-shadow:0 12px 24px rgba(40,29,18,.08)}
+/* Mobilde yazilar, kartlar ve gomulu YouTube oynaticisi tasmaz. */
+#az-hanok .hn-music-grid>*{min-width:0}
+#az-hanok .hn-music-player iframe{max-width:100%}
+#az-hanok .hn-actions a{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:480px){
+ #az-hanok{padding:20px 16px}
+ #az-hanok .hn-hero{padding:24px 0}
+ #az-hanok h1{font-size:clamp(34px,9.5vw,42px);letter-spacing:-1px}
+ #az-hanok .hn-music{padding:16px}
+ #az-hanok .hn-music-player iframe{min-height:0;aspect-ratio:16/9}
+ #az-hanok .hn-panel{padding:18px}
+ #az-hanok .hn-excerpt{padding:18px}
+}
+
+/* HANOK: okura birakilan arsiv notu */
+#az-hanok .hn-archive-note{margin:32px 0 0;padding:20px 0 4px;border-top:1px dashed var(--line);color:var(--muted);font-size:14px}
+#az-hanok .hn-archive-note strong{color:var(--text)}
+#az-hanok .hn-archive-note p{margin:0 0 8px}
+#az-hanok .hn-archive-note a{display:inline-block;padding:8px 0;color:var(--accent);text-decoration:underline;text-underline-offset:4px;font-weight:700}
+
+/* AZiL 3.9 / HANOK 3D tanitim maketi - yalnızca gorsel alanini genisletir. */
+#az-hanok .hn-feature{
+  grid-template-columns:minmax(250px,370px) minmax(0,1fr);
+  gap:clamp(20px,3vw,36px);
+  background:radial-gradient(circle at 12% 20%,rgba(24,113,132,.12),transparent 42%),var(--panel2);
+}
+#az-hanok .hn-cover-wrap{min-width:0;max-width:370px;width:100%;margin:0 auto;}
+#az-hanok .hn-cover{width:100%;max-width:none;}
+#az-hanok .hn-cover img{width:100%;height:auto;border:0;border-radius:6px;box-shadow:0 12px 34px rgba(0,0,0,.18);}
+#az-hanok .hn-mockup-note{margin:9px 0 0;text-align:center;line-height:1.5;font-size:11px;color:var(--muted);}
+@media(max-width:850px){#az-hanok .hn-feature{grid-template-columns:minmax(190px,280px) minmax(0,1fr)}}
+@media(max-width:680px){#az-hanok .hn-feature{grid-template-columns:1fr}#az-hanok .hn-cover-wrap{max-width:350px}#az-hanok .hn-cover{max-width:none;width:100%;}}
+@container(max-width:620px){#az-hanok .hn-feature{grid-template-columns:1fr}#az-hanok .hn-cover-wrap{max-width:350px}#az-hanok .hn-cover{width:100%;max-width:none;margin:0 auto}}
+@media(prefers-reduced-motion:no-preference){#az-hanok .hn-cover img{transition:transform .24s ease}#az-hanok .hn-cover:hover img{transform:scale(1.015)}}
+
+/* AZiL / HANOK 4.0 — fareyle etkileşimli yıldız başlığı; diğer bölümler değişmez. */
+#az-hanok .hn-hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:340px;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(30px,5vw,68px) clamp(22px,5vw,60px);
+  margin:0 0 22px;border:1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 82% 48%,rgba(29,119,141,.24),transparent 48%),
+    radial-gradient(ellipse at 60% 7%,rgba(194,125,49,.13),transparent 48%),
+    linear-gradient(120deg,#0b151b,#111a22 57%,#0d1118);
+}
+#az-hanok .hn-hero::after{
+  content:"";position:absolute;z-index:0;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,13,19,.84) 0%,rgba(7,13,19,.53) 45%,transparent 85%);
+}
+#az-hanok .hn-star-canvas{position:absolute;z-index:0;inset:0;display:block;width:100%;height:100%;pointer-events:none;}
+#az-hanok .hn-hero > :not(canvas){position:relative;z-index:1;max-width:810px}
+#az-hanok .hn-hero h1{font-size:clamp(39px,5.7vw,76px);line-height:1.09;text-shadow:0 3px 24px rgba(0,0,0,.55)}
+#az-hanok .hn-hero .hn-kicker{color:#ffd69a;text-shadow:0 1px 8px #000}
+#az-hanok .hn-hero h1 span{color:#ffca82}
+#az-hanok .hn-hero .hn-intro{color:#e1e7e9;max-width:680px;text-shadow:0 2px 8px #000}
+#az-hanok .hn-hero .hn-small{color:#bed2dd;text-shadow:0 2px 8px #000}
+body.az-theme-light #az-hanok .hn-hero,
+html.az-theme-light #az-hanok .hn-hero{
+ background:radial-gradient(ellipse at 80% 43%,rgba(119,182,193,.18),transparent 47%),
+ radial-gradient(ellipse at 58% 15%,rgba(172,104,24,.12),transparent 49%),
+ linear-gradient(110deg,#f8f5ef,#f2f4f2 65%,#e9f0f0);
+ border-color:#dfd8cd;
+}
+body.az-theme-light #az-hanok .hn-hero::after,
+html.az-theme-light #az-hanok .hn-hero::after{background:linear-gradient(90deg,rgba(252,250,245,.9),rgba(252,250,245,.51) 49%,transparent 90%)}
+body.az-theme-light #az-hanok .hn-hero h1,
+html.az-theme-light #az-hanok .hn-hero h1{color:#16221f;text-shadow:none}
+body.az-theme-light #az-hanok .hn-hero h1 span,
+html.az-theme-light #az-hanok .hn-hero h1 span{color:#a65e0e}
+body.az-theme-light #az-hanok .hn-hero .hn-kicker,
+html.az-theme-light #az-hanok .hn-hero .hn-kicker{color:#94580d;text-shadow:none}
+body.az-theme-light #az-hanok .hn-hero .hn-intro,
+html.az-theme-light #az-hanok .hn-hero .hn-intro{color:#425751;text-shadow:none}
+body.az-theme-light #az-hanok .hn-hero .hn-small,
+html.az-theme-light #az-hanok .hn-hero .hn-small{color:#50635c;text-shadow:none}
+@media(max-width:680px){
+ #az-hanok .hn-hero{min-height:295px;padding:33px 20px;margin-bottom:18px}
+ #az-hanok .hn-hero h1{font-size:clamp(34px,8.2vw,49px);letter-spacing:-1.1px}
+ #az-hanok .hn-hero::after{background:linear-gradient(90deg,rgba(7,13,19,.85),rgba(7,13,19,.36))}
+}
+@media(prefers-reduced-motion:reduce){#az-hanok .hn-star-canvas{opacity:.8}}
+
+</style> <section id="az-hanok" lang="tr" aria-labelledby="hn-title">
+<div class="hn-hero">
+<canvas class="hn-star-canvas" aria-hidden="true"></canvas>
+<p class="hn-kicker">AZiL / ROMAN</p>
+<h1 id="hn-title">HANOK<br />
+<span>AZİL DOSYALARI</span></h1>
+<p class="hn-intro">Kalp İzleri &Uuml;zerine Bir Roman</p>
+<p class="hn-small">Şaban &Ccedil;if&ccedil;i (Azil)</p>
+</div>
+<article class="hn-feature" aria-labelledby="hanok-title">
+<div class="hn-cover-wrap"><a class="hn-cover" href="https://www.google.com.tr/books/edition/HANOK_AZ%C4%B0L_DOSYALARI/sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer" aria-label="HANOK kitabını Google Kitaplar&rsquo;da g&ouml;r&uuml;nt&uuml;le"><img src="https://scazil.github.io/azil-assets/assets/hanok/Hanok.png" width="1448" height="1086" decoding="async" fetchpriority="high" alt="HANOK - AZİL DOSYALARI romanının &uuml;&ccedil; boyutlu tanıtım kitap maketi" /></a>
+<p class="hn-mockup-note">3D tanıtım g&ouml;rseli &middot; Kitap EPUB bi&ccedil;iminde yayımlanmıştır</p>
+</div>
+<div><span class="hn-label">YAYIMLANDI</span>
+<h2 id="hanok-title">Bir iz, iki kardeş,<br />
+cevabı bekleyen bir bağ.</h2>
+<p class="hn-meta">Şaban &Ccedil;if&ccedil;i (Azil) &middot; Bilimkurgu<br />
+Kalp İzleri &Uuml;zerine Bir Roman</p>
+<p class="hn-desc">Hanok ve Beyaz, babaları Azil'in geride bıraktığı izlerin peşine d&uuml;şerken ge&ccedil;miş, hafıza ve insanın ardında bıraktığı duygusal izler i&ccedil; i&ccedil;e ge&ccedil;er. Roman, &ldquo;Kalp İzleri Teorisi&rdquo; etrafında gelişen bilimkurgu d&uuml;nyasını takip eder.</p>
+<div class="hn-tags" aria-label="HANOK &ouml;zellikleri"><span class="hn-tag">Bilimkurgu</span><span class="hn-tag">Roman</span><span class="hn-tag">Kalp İzleri Teorisi</span><span class="hn-tag">Dijital kitap</span></div>
+<div class="hn-actions"><a class="hn-btn" href="https://www.google.com.tr/books/edition/HANOK_AZ%C4%B0L_DOSYALARI/sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Google Kitaplar&rsquo;da g&ouml;r&uuml;nt&uuml;le &rarr;</a><a class="hn-btn hn-secondary" href="#hn-ornek">Kısa bir b&ouml;l&uuml;m oku &darr;</a></div>
+</div>
+</article> <nav class="hn-jump" aria-label="HANOK b&ouml;l&uuml;m bağlantıları"><a href="#hn-muzik">Okuma atmosferi</a><a href="#hn-hakkinda">Roman hakkında</a><a href="#hn-kalp">Kalp İzleri</a><a href="#hn-yapi">Anlatının yapısı</a><a href="#hn-okur">Okur rehberi</a><a href="#hn-evren">Evren</a><a href="#hn-dil">&Uuml;slup</a><a href="#hn-basliklar">B&ouml;l&uuml;mler</a><a href="#hn-arka-plan">Arka plan</a><a href="#hn-sorular">Sorular</a><a href="#hn-ornek">Okuma &ouml;rneği</a><a href="#hn-kunye">Kitap bilgileri</a></nav>
+<div class="hn-section-head" id="hn-muzik">
+<h2>HANOK'u okurken dinle</h2>
+<span>OKUMA ATMOSFERİ</span></div>
+<section class="hn-music" aria-labelledby="hn-music-title">
+<div class="hn-music-grid">
+<div class="hn-music-copy"><span class="hn-label">SE&Ccedil;İLMİŞ ATMOSFER PAR&Ccedil;ASI</span>
+<h3 class="hn-music-title" id="hn-music-title">Ballad of the Mer</h3>
+<p>Denizin derinliğinden gelen, tanıdık ama tam olarak a&ccedil;ıklanamayan bir &ccedil;ağrı hissi taşıyan bu par&ccedil;a; HANOK'un hafıza, &ouml;zlem, bilinmeyen ve bir bağın insanı d&ouml;n&uuml;şt&uuml;rebilmesi temalarına eşlik etmesi i&ccedil;in se&ccedil;ildi.</p>
+<p>M&uuml;ziği başlatıp sayfayı okumaya devam edebilirsin. Oynatma ziyaret&ccedil;inin kontrol&uuml;ndedir; sayfa a&ccedil;ıldığında ses otomatik başlamaz.</p>
+<div class="hn-music-quote">Bir iz bazen g&ouml;r&uuml;lmez. Yalnızca duyulur.</div>
+<div class="hn-music-meta"><span>Sea of Thieves</span> <span>&middot;</span> <span>Ballad of the Mer</span> <span>&middot;</span> <span>Besteci: Chloe Kwok</span> <span>&middot;</span> <span>S&ouml;z: Chris Allcock</span></div>
+<p class="hn-music-note">Bu par&ccedil;a HANOK'un resm&icirc; m&uuml;ziği değildir. Okuma atmosferine eşlik etmesi i&ccedil;in resm&icirc; YouTube kaynağı &uuml;zerinden sunulmaktadır. Eser hakları ilgili hak sahiplerine aittir.</p>
+</div>
+<div class="hn-music-player"><iframe
+src="https://www.youtube-nocookie.com/embed/lJTzN3P4mMQ?rel=0"
+title="Sea of Thieves - Ballad of the Mer"
+loading="lazy"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen>
+</iframe></div>
+</div>
+</section>
+<div class="hn-section-head" id="hn-hakkinda">
+<h2>Bir babanın izinde, iki kardeş</h2>
+<span>ROMAN HAKKINDA</span></div>
+<div class="hn-panel">
+<p>Hanok ve Beyaz i&ccedil;in yolculuk, kaybolan babaları Azil&rsquo;in izlerini takip etmekle başlar. Hanok&rsquo;un sezgileriyle Beyaz&rsquo;ın &ccedil;&ouml;z&uuml;m arayan aklı, aynı bilinmeze farklı kapılardan yaklaşır.</p>
+<p>Roman; aile bağları, &ouml;zlem ve hafızayı, zamanın ve ger&ccedil;ekliğin sınırlarının zorlandığı bir bilimkurgu anlatısında buluşturur. Birini bulmak kadar, onun yokluğunun geride bıraktıklarını anlamak da bu yolculuğun par&ccedil;asıdır.</p>
+</div>
+<div class="hn-grid" style="margin-top:18px">
+<div class="hn-card"><span class="hn-label">ANLATININ MERKEZİNDE</span>
+<h3>Bağ ve hafıza</h3>
+<p>İnsanların birbirinde bıraktığı izler, ge&ccedil;mişle kurdukları ilişki ve uzaklığın i&ccedil;inden taşınan sevgi.</p>
+</div>
+<div class="hn-card" id="hn-kalp"><span class="hn-label">ROMANIN KURGUSAL FİKRİ</span>
+<h3>Kalp İzleri Teorisi</h3>
+<p>Romanın evreninde duygusal bağlar yalnızca i&ccedil; d&uuml;nyada kalmaz; fiziksel ger&ccedil;eklikte de iz bırakabilir. Bu fikir, anlatının bilimkurgu temelidir.</p>
+</div>
+</div>
+<div class="hn-section-head" id="hn-yapi">
+<h2>On d&ouml;rt b&ouml;l&uuml;m, birbirine bağlanan vakalar</h2>
+<span>ANLATININ YAPISI</span></div>
+<div class="hn-panel">
+<h3>Her olayın arkasında bir insan var</h3>
+<p>HANOK, on d&ouml;rt b&ouml;l&uuml;m boyunca farklı Kalp İzi vakalarını izler. Ses, zaman, hafıza, ışık veya madde &uuml;zerindeki bir bozulma, kardeşleri yeni bir soruya g&ouml;t&uuml;r&uuml;r. Bu olaylar yalnızca teknik bir arızanın &ccedil;&ouml;z&uuml;m&uuml; olarak ele alınmaz; her vakanın merkezinde bir insanın sevgisi, kaybı ya da &ouml;zlemi bulunur.</p>
+<p>B&ouml;l&uuml;mler, birbirinden kopuk &ouml;yk&uuml;ler gibi değil, aynı arayışın par&ccedil;aları olarak okunur. Hanok ve Beyaz&rsquo;ın babalarına ulaşma isteği, karşılaştıkları insanların taşıdığı bağlarla yan yana ilerler.</p>
+</div>
+<div class="hn-grid" style="margin-top:18px">
+<div class="hn-card"><span class="hn-label">KAYITLAR</span>
+<h3>Vaka dosyaları</h3>
+<p>Konum, ilk belirti, bağlantılı iz ve risk gibi kayıtlar, bir olayın ilk bakışta nasıl g&ouml;r&uuml;nd&uuml;ğ&uuml;n&uuml; sunar. Okur daha sonra bu teknik &ccedil;er&ccedil;evenin i&ccedil;inde insanlara ait ayrıntılarla karşılaşır.</p>
+</div>
+<div class="hn-card"><span class="hn-label">ARA DURAKLAR</span>
+<h3>Vadiler</h3>
+<p>B&ouml;l&uuml;mler arasındaki vadiler, karakterlerin yaşadıklarını sindirdiği nefes alanlarıdır. &Ccedil;ocukluk anıları, k&uuml;&ccedil;&uuml;k nesneler ve teknik ayrıntılar, b&uuml;y&uuml;k olayların kişisel karşılığını g&ouml;r&uuml;n&uuml;r kılar.</p>
+</div>
+<div class="hn-card"><span class="hn-label">İZLER</span>
+<h3>Fiziksel hafıza</h3>
+<p>Kayıtlar ve cihazların yanında elde tutulabilen nesneler de &ouml;nem taşır. Romanın d&uuml;nyasında bir iz, yalnızca ekranda g&ouml;r&uuml;len veri değil; dokusu, ağırlığı ve ge&ccedil;mişi olan bir şey olabilir.</p>
+</div>
+</div>
+<div class="hn-panel">
+<h3>İlk dosya: Hi&ccedil;liği Yazdıran Makine</h3>
+<p>Yolculuğun a&ccedil;ılışında eski bir at&ouml;lye vardır: bilgisayar kasaları, devre kartları, kablolar ve 3D yazıcılar. Hanok daha kapıdayken mek&acirc;nda alışılmadık bir şey hisseder. Beyaz ise aynı ortamı g&ouml;zlemler, inceler ve a&ccedil;ıklamaya &ccedil;alışır.</p>
+<p>Bu başlangı&ccedil;, romanın yaklaşımını da g&ouml;sterir: tanıdık, somut bir ortamın i&ccedil;ine a&ccedil;ıklaması kolay olmayan bir ayrıntı yerleşir. Kardeşlerin arasındaki mizah ve d&uuml;ş&uuml;nme farkı, belirsizliğin i&ccedil;indeki insan sesini korur.</p>
+</div>
+<div class="hn-section-head" id="hn-okur">
+<h2>Okumaya başlamadan</h2>
+<span>SONU&Ccedil;LARI A&Ccedil;IĞA &Ccedil;IKARMADAN</span></div>
+<div class="hn-panel">
+<h3>Kalp İzleri bir s&uuml;per g&uuml;&ccedil; m&uuml;?</h3>
+<p>Kitabın girişindeki protokol, Kalp İzi&rsquo;ni b&uuml;y&uuml; veya s&uuml;per g&uuml;&ccedil; olarak tanımlamaz. Romanın kurgusal d&uuml;nyasında yoğun duygusal bağlar, fiziksel ger&ccedil;eklik &uuml;zerinde &ouml;l&ccedil;&uuml;lebilen ama tam a&ccedil;ıklanamayan izler bırakır. Bir cihazın bir belirtiyi kaydetmesi, onun b&uuml;t&uuml;n anlamını &ccedil;&ouml;zd&uuml;ğ&uuml; anlamına gelmez.</p>
+<h3>Teknik bilgi gerekiyor mu?</h3>
+<p>Bir m&uuml;hendislik &ouml;n bilgisiyle başlaman gerekmez. İlk b&ouml;l&uuml;mdeki at&ouml;lye, cihazlar ve kayıtlar; karakterlerin neye baktığını, neyi &ouml;l&ccedil;meye &ccedil;alıştığını ve nerede a&ccedil;ıklamasız kaldığını takip etmek i&ccedil;in okunabilir. Her terimin tanımını baştan ezberlemek yerine olay i&ccedil;indeki işlevine dikkat etmek yeterli bir başlangı&ccedil;tır.</p>
+<h3>Hangi sırayla okumalı?</h3>
+<p>Giriş ve &ouml;ns&ouml;z&uuml;n ardından b&ouml;l&uuml;mleri sırasıyla okumak, izlerin birikmesini takip etmeyi kolaylaştırır. Vadiler de bu akışın par&ccedil;asıdır. Kitabın kapanışındaki s&ouml;zl&uuml;k, metindeki okur notuna g&ouml;re roman tamamlandıktan sonra okunmak &uuml;zere hazırlanmıştır; sonuca ilişkin a&ccedil;ıklamalar i&ccedil;erdiği i&ccedil;in burada tamamı paylaşılmıyor.</p>
+</div>
+<div class="hn-panel">
+<h3>Romanın a&ccedil;tığı sorular</h3>
+<p>Bir acıyı ortadan kaldırmak, o acının bağlı olduğu hatırayı da değiştirebilir mi? Bir kayıt sevdiğimiz kişinin sesini taşıdığında, ses ile kişinin kendisi arasındaki sınırı nerede &ccedil;izeriz? Birine yaklaşma isteğiyle onu koruma sorumluluğu &ccedil;atışırsa neye g&ouml;re karar veririz?</p>
+<p>HANOK bu soruları aile bağları, kayıp ve ger&ccedil;eklikle kurulan ilişki &uuml;zerinden ele alır. Bilimkurgu, duyguların sonu&ccedil;larını g&ouml;r&uuml;n&uuml;r kılan anlatı alanıdır.</p>
+</div>
+<div class="hn-section-head" id="hn-evren">
+<h2>Kalp İzleri evrenine daha yakından</h2>
+<span>BAĞIN FİZİKSEL İZLERİ</span></div>
+<div class="hn-panel">
+<h3>Bir duygu ne zaman bir belirtiye d&ouml;n&uuml;ş&uuml;r?</h3>
+<p>Kitabın girişindeki a&ccedil;ıklamaya g&ouml;re sevgi, hasret, yas veya korunma i&ccedil;g&uuml;d&uuml;s&uuml; belirli bir eşiği aştığında d&uuml;nyada &ouml;l&ccedil;&uuml;lebilir bir iz bırakabilir. Bu eşik, anlatının hem bilimkurgu fikrini hem de insani gerilimini kurar: yaşanan olay dışarıdan bir arıza gibi g&ouml;r&uuml;nse de onu anlamak i&ccedil;in insanların taşıdığı bağa yaklaşmak gerekir.</p>
+<p>İzin varlığı her zaman yıkım demek değildir. Bir kayıttaki cızırtı, fotoğraf y&uuml;zeyindeki eksiklik veya unutulmaya direnen k&uuml;&ccedil;&uuml;k bir nesne de aynı d&uuml;nyanın par&ccedil;asıdır. Girişteki protokol&uuml;n ayırdığı şey, bağın kendisi ile onun taşıdığı yoğunluktur.</p>
+</div>
+<div class="hn-grid" style="margin-top:18px"><article class="hn-card"><span class="hn-label">SES VE ANLAM</span>
+<h3>Duyulan ile anlaşılan</h3>
+<p>Bir sesin kaydedilmesi, &ccedil;ağrının b&uuml;t&uuml;n&uuml;yle anlaşılması anlamına gelmez. Romandaki frekanslar ve kayıtlar, teknik bir sinyalle kişisel bir hatıra arasındaki sınırı d&uuml;ş&uuml;nmeye a&ccedil;ar.</p>
+</article><article class="hn-card"><span class="hn-label">ZAMAN VE HAFIZA</span>
+<h3>Hatırlamanın ağırlığı</h3>
+<p>Durmuş bir saniye ile silinen bir hatıra, aynı kayıp duygusuna farklı y&ouml;nlerden yaklaşabilir. Zaman yalnızca olayları sıralayan bir &ouml;l&ccedil;&uuml; olmaktan &ccedil;ıkar; insanların ge&ccedil;mişle kurduğu ilişkinin par&ccedil;ası h&acirc;line gelir.</p>
+</article><article class="hn-card"><span class="hn-label">MADDE VE İZ</span>
+<h3>Elde kalan şeyler</h3>
+<p>Ses veya g&ouml;r&uuml;nt&uuml; bozulduğunda, fiziksel nesneler başka t&uuml;rden bir tanıklık sunar. Metalin, k&acirc;ğıdın ve camın taşıdığı izler, romanın teknik d&uuml;nyasına dokunulabilir bir hafıza kazandırır.</p>
+</article></div>
+<div class="hn-panel">
+<h3>Hekzagon: bir arşivden fazlası</h3>
+<p>Hekzagon, Azil&rsquo;in geride bıraktığı yerel, kapalı devre analiz sistemidir. Kayıtları ve belirtileri inceleyen bu yapı, kimi zaman arşiv, kimi zaman uyarı mekanizması olarak anlatıya katılır.</p>
+<p>Hanok&rsquo;un sezgisi ve Beyaz&rsquo;ın &ouml;l&ccedil;&uuml;mleri yanında sistemin &uuml;rettiği bilgi &uuml;&ccedil;&uuml;nc&uuml; bir bakış oluşturur. B&ouml;ylece okur yalnızca &ldquo;Ne oldu?&rdquo; sorusunu değil, &ldquo;Bunu hangi kaynaktan biliyoruz?&rdquo; sorusunu da takip edebilir. Hekzagon&rsquo;un yolculuk i&ccedil;indeki d&ouml;n&uuml;ş&uuml;m&uuml; burada a&ccedil;ıklanmıyor.</p>
+</div>
+<div class="hn-section-head" id="hn-dil">
+<h2>At&ouml;lye diliyle duygusal anlatının buluşması</h2>
+<span>&Uuml;SLUP VE ATMOSFER</span></div>
+<div class="hn-panel">
+<h3>Teknoloji dekor olarak kalmıyor</h3>
+<p>A&ccedil;ılıştaki 3D yazıcılar, eski bilgisayar kasaları ve devre kartları; karakterlerin bildiği, dokunduğu ve &uuml;zerinde &ccedil;alıştığı bir ortam kurar. Beyaz&rsquo;ın d&uuml;ş&uuml;nme bi&ccedil;imi de bu ortamla ilişkilidir: g&ouml;zlemek, &ouml;l&ccedil;mek, olası bir a&ccedil;ıklamayı sınamak.</p>
+<p>Hanok&rsquo;un aynı at&ouml;lyeye tepkisi farklıdır. Mek&acirc;nın &ldquo;beklediğini&rdquo; hissetmesi, okuru ilk andan itibaren teknik a&ccedil;ıklamanın hen&uuml;z yetişemediği bir alana taşır. İki kardeşin konuşmaları bu gerilimi canlı tutar; mizahları, merak ve tedirginliğin yanında yer bulur.</p>
+<h3>Neden dosyalar ve terminal kayıtları?</h3>
+<p>Vaka başlıkları ve sistem satırları, anlatıya bir inceleme kaydı g&ouml;r&uuml;n&uuml;m&uuml; verir. D&uuml;zenli etiketlerle anlatılmaya &ccedil;alışılan olayların duygusal ağırlığı arasındaki fark, sayfanın bi&ccedil;iminde de hissedilir. Bir risk kaydı ile kardeşlerin konuşması aynı şeyi farklı dillerde anlatabilir.</p>
+<p>Bu nedenle kitabı okurken yalnızca olayların sonucuna değil, olayın nasıl kayda ge&ccedil;irildiğine de bakmak anlamlıdır. Resm&icirc; g&ouml;r&uuml;nen bir kayıt, anlatının b&uuml;t&uuml;n&uuml;n&uuml; tek başına temsil etmez.</p>
+</div>
+<div class="hn-section-head" id="hn-basliklar">
+<h2>Dosyaların başlıkları</h2>
+<span>İ&Ccedil;İNDEKİLERDEN</span></div>
+<div class="hn-panel">
+<p>&Ouml;ns&ouml;z ve sınırlı protokol a&ccedil;ıklamasını on d&ouml;rt b&ouml;l&uuml;m izler. Aşağıdaki liste yalnızca b&ouml;l&uuml;m adlarını i&ccedil;erir; olayların &ccedil;&ouml;z&uuml;mlerini ve kitabın sonunu a&ccedil;ıklamaz.</p>
+<ol class="hn-chapters">
+    <li>Hi&ccedil;liği Yazdıran Makine</li>
+    <li>Sessiz Frekans</li>
+    <li>Kendini İzleyen Kare</li>
+    <li>Sıkışmış Saniye</li>
+    <li>Silinen Hafızalar</li>
+    <li>Tersine Akan Sanat</li>
+    <li>Başlangı&ccedil; Kodu</li>
+    <li>Sahte Cennet</li>
+    <li>Sentetik Yas</li>
+    <li>Kusursuz Şehir</li>
+    <li>Karantina Kodları</li>
+    <li>Yarım Kalan Harita</li>
+    <li>Uyuyan Tohum</li>
+    <li>Bir Milimetre Sonra</li>
+</ol>
+<p class="hn-small">Kitapta ayrıca ithaf, teşekk&uuml;r, terimler s&ouml;zl&uuml;ğ&uuml; ve yazar hakkında b&ouml;l&uuml;mleri bulunur. Bu başlıklar tam b&ouml;l&uuml;m metinlerine bağlantı değildir.</p>
+</div>
+<div class="hn-section-head" id="hn-arka-plan">
+<h2>Romanın kişisel arka planı</h2>
+<span>İTHAF VE &Uuml;RETİM</span></div>
+<div class="hn-panel">
+<h3>&Ccedil;ocuklarına uzanan bir anlatı</h3>
+<p>Kitabın ithafı yazarın oğulları Beyazıt Bestami ve İdris&rsquo;e y&ouml;nelir. Teşekk&uuml;r b&ouml;l&uuml;m&uuml;nde Şaban &Ccedil;if&ccedil;i, romanın doğuşunu bir babanın zaman ve mesafe karşısındaki i&ccedil; yolculuğuyla ilişkilendirir. Bu kişisel &ccedil;ıkış noktası, kurgu d&uuml;nyasındaki baba ve &ccedil;ocuklar arasındaki bağın arkasında durur.</p>
+<p>Yazarın hayatından gelen duygusal izler, romandaki olayları bir yaşam &ouml;yk&uuml;s&uuml; h&acirc;line getirmez. Kitabın girişinde karakterlerin, olayların ve kurumların kurgu olduğu belirtilir. Kişisel olan, anlatının hangi duygu ve sorulara y&ouml;neldiğidir.</p>
+<h3>Sahadan, haritalardan ve &uuml;retmekten gelen ayrıntılar</h3>
+<p>Teşekk&uuml;r metninde teknoloji, bilim, oyunlar, saha, haritalar, at&ouml;lyeler ve &ccedil;ocukluk hatıraları birlikte anılır. Yazarın m&uuml;hendislik ve &uuml;retim ilgisi; kablo, devre, cihaz ve malzeme ayrıntılarının neden anlatıda yer bulduğunu anlamak i&ccedil;in bir arka plan sunar.</p>
+<p>Bu yakınlık, romanda a&ccedil;ıklanamaz olanla karşılaşıldığında da kaybolmaz: karakterler anlamaya &ccedil;alışmayı s&uuml;rd&uuml;r&uuml;r. &Ouml;l&ccedil;&uuml;m yapmakla bir insanın acısını anlamak arasındaki mesafe, kitabın &uuml;zerinde durduğu alanlardan biridir.</p>
+</div>
+<div class="hn-section-head" id="hn-sorular">
+<h2>Kitabı tanımak i&ccedil;in birka&ccedil; soru</h2>
+<span>OKUR İ&Ccedil;İN</span></div>
+<div class="hn-panel hn-faq"><details><summary>Kalp İzleri Teorisi ger&ccedil;ek bir bilimsel teori mi?</summary>
+<p>Buradaki Kalp İzleri Teorisi romanın kurgusal a&ccedil;ıklama &ccedil;er&ccedil;evesidir. Bilimsel bir iddia olarak değil, duygusal bağların fiziksel sonu&ccedil;lar doğurabildiği bir evren kurmak i&ccedil;in kullanılır.</p>
+</details><details><summary>Bu bir gizem romanı mı, aile hik&acirc;yesi mi?</summary>
+<p>Tanıtım a&ccedil;ısından iki y&ouml;n&uuml; birlikte d&uuml;ş&uuml;nmek m&uuml;mk&uuml;n: kardeşler a&ccedil;ıklanamayan belirtilerin izini s&uuml;rerken onları harekete ge&ccedil;iren şey babalarıyla bağlarıdır. Vaka merakı ile aile hik&acirc;yesi aynı yolculukta birleşir; kitabın t&uuml;r&uuml; bilimkurgudur.</p>
+</details><details><summary>Kitabın adıyla sitedeki AZiL adı aynı kişiyi mi anlatıyor?</summary>
+<p>Şaban &Ccedil;if&ccedil;i, yazar adı olarak Azil&rsquo;i kullanıyor. Romandaki Azil ise Hanok ve Beyaz&rsquo;ın babası olan kurgu karakteridir. Yazar adı ile karakter adı arasındaki bağ, bu iki kimliğin birebir aynı olduğu anlamına gelmez.</p>
+</details><details><summary>Bu sayfada ne kadarını okuyabilirim?</summary>
+<p>İlk b&ouml;l&uuml;m&uuml;n kısa a&ccedil;ılış par&ccedil;ası ile &ouml;ns&ouml;zden kısa bir alıntı yer alıyor. Diğer metinler kitabı tanıtmak i&ccedil;in hazırlanmış a&ccedil;ıklamalardır. B&ouml;l&uuml;mlerin tamamı veya kapanış s&ouml;zl&uuml;ğ&uuml; bu sayfaya y&uuml;klenmedi.</p>
+</details><details><summary>Kimler kendine yakın bulabilir?</summary>
+<p>Aile bağlarını ve hafızayı konu alan bilimkurguya, teknik ayrıntılar i&ccedil;eren gizemli ortamlara ve karakterlerin birlikte anlam aramasına ilgi duyan okurlar i&ccedil;in bir başlangı&ccedil; olabilir. Tonunu değerlendirmek i&ccedil;in aşağıdaki a&ccedil;ılış par&ccedil;asına bakabilirsin.</p>
+</details></div>
+<div class="hn-section-head" id="hn-ornek">
+<h2>İlk sayfalardan</h2>
+<span>KISA OKUMA &Ouml;RNEĞİ</span></div>
+<div class="hn-panel"><span class="hn-label">B&Ouml;L&Uuml;M 1&rsquo;İN A&Ccedil;ILIŞINDAN</span>
+<h3>Hi&ccedil;liği Yazdıran Makine</h3>
+<div class="hn-excerpt" role="region" aria-label="Kitaptan kısa okuma &ouml;rneği">
+<p>G&uuml;neşin son ışıkları, eski at&ouml;lyenin &ccedil;atlak camlarından i&ccedil;eri s&uuml;z&uuml;l&uuml;yor; havada asılı duran toz zerrelerini turuncu birer kıvılcıma d&ouml;n&uuml;şt&uuml;r&uuml;yordu.</p>
+<p>At&ouml;lye yıllardır terk edilmiş gibi g&ouml;r&uuml;n&uuml;yordu ama Hanok kapının eşiğinde durduğu anda bunun ger&ccedil;ek olmadığını hissetti.</p>
+<p>Burası terk edilmemişti.</p>
+<p>Burası bekliyordu.</p>
+<p>Rutubetli duvarlardan gres yağı, sıcak PLA plastik ve eski elektroniklerin o metalik kokusu y&uuml;kseliyordu. Bir k&ouml;şede yarım s&ouml;k&uuml;lm&uuml;ş bilgisayar kasaları, diğer k&ouml;şede &uuml;zeri &ouml;rt&uuml;lm&uuml;ş 3D yazıcılar, duvar boyunca da kablo makaraları ve eski devre kartları duruyordu.</p>
+<p>Hanok bir adım attı.</p>
+<p>Ayakkabısının altında ezilen k&uuml;&ccedil;&uuml;k bir lehim par&ccedil;ası &ccedil;ıtırdadı.</p>
+<p>&ldquo;Burası normal bir at&ouml;lye değil,&rdquo; dedi.</p>
+<p>Sesi boş odada yankılandı ama yankı bile sanki temkinliydi. Duvarlara &ccedil;arpıp geri d&ouml;nmek istemiyor gibiydi.</p>
+<p>Beyaz, onun arkasından i&ccedil;eri girdi. Omzundaki &ccedil;antayı yere bıraktı, g&ouml;zl&uuml;ğ&uuml;n&uuml; d&uuml;zeltti ve odayı bir su&ccedil; mahalli gibi taramaya başladı.</p>
+<p>&ldquo;Normal olmadığı kesin,&rdquo; dedi. &ldquo;Ama bunun sebebi senin hissettiğin şey olmak zorunda değil. Bazen kablo yığınları, rutubet ve k&ouml;t&uuml; elektrik tesisatı da insana metafizik bir deneyim yaşatabilir.&rdquo;</p>
+<p>Hanok başını &ccedil;evirmeden g&uuml;l&uuml;msedi.</p>
+<p>&ldquo;Şaka yapıyorsun. Demek ki sen de korktun.&rdquo;</p>
+<p>&ldquo;Korkmadım,&rdquo; dedi Beyaz hemen. &ldquo;Sadece buradaki yangın g&uuml;venliği standardının insanlık tarihine hakaret ettiğini d&uuml;ş&uuml;n&uuml;yorum.&rdquo;</p>
+<p>Hanok, at&ouml;lyenin tam ortasında duran b&uuml;y&uuml;k masaya yaklaştı.</p>
+</div>
+<p class="hn-small">HANOK &ndash; AZİL DOSYALARI &middot; Şaban &Ccedil;if&ccedil;i (Azil)<br />
+Bu sayfada yalnızca kısa bir a&ccedil;ılış par&ccedil;ası yer alır.</p>
+<div class="hn-actions"><a class="hn-btn" href="https://www.google.com.tr/books/edition/HANOK_AZ%C4%B0L_DOSYALARI/sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Kitabın Google Kitaplar sayfasına git &rarr;</a><a class="hn-btn hn-secondary" href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Google Play Kitaplar&rsquo;da a&ccedil;</a></div>
+</div>
+<div class="hn-section-head" id="hn-kunye">
+<h2>Kitap bilgileri</h2>
+<span>HANOK / AZİL DOSYALARI</span></div>
+<div class="hn-panel">
+<dl class="hn-facts">
+    <div>
+    <dt>Yazar</dt>
+    <dd>Şaban &Ccedil;if&ccedil;i (Azil)</dd>
+    </div>
+    <div>
+    <dt>T&uuml;r</dt>
+    <dd>Bilimkurgu roman</dd>
+    </div>
+    <div>
+    <dt>Alt başlık</dt>
+    <dd>Kalp İzleri &Uuml;zerine Bir Roman</dd>
+    </div>
+    <div>
+    <dt>Dil</dt>
+    <dd>T&uuml;rk&ccedil;e</dd>
+    </div>
+    <div>
+    <dt>Bi&ccedil;im</dt>
+    <dd>Elektronik kitap / EPUB</dd>
+    </div>
+    <div>
+    <dt>ISBN</dt>
+    <dd>978-625-00-4119-2</dd>
+    </div>
+</dl>
+</div>
+<div class="hn-section-head">
+<h2>Aynı izlere &uuml;&ccedil; farklı yakınlık</h2>
+<span>KARAKTERLER</span></div>
+<div class="hn-grid"><article class="hn-card"><span class="hn-label">SEZGİ</span>
+<h3>Hanok</h3>
+<p>Hanok&rsquo;un ilk tepkisi hissetmektir. Bir mek&acirc;nın sessizliği, bir sesin tanıdıklığı veya k&uuml;&ccedil;&uuml;k bir ayrıntı onun dikkatini &ccedil;ekebilir. Okur, a&ccedil;ıklama gelmeden &ouml;nce belirsizliğin duygusal tarafıyla onun &uuml;zerinden karşılaşır.</p>
+</article><article class="hn-card"><span class="hn-label">AKIL</span>
+<h3>Beyaz</h3>
+<p>Hanok&rsquo;un abisi Beyaz, aynı belirsizliği &ouml;l&ccedil;meye ve sınamaya y&ouml;nelir. Teknik bakışı ve mizahı, kardeşinin sezgileriyle farklı bir ritim oluşturur. Aralarındaki fark, yalnızca akıl ve duygu karşıtlığı değil; birlikte bir yol bulma bi&ccedil;imidir.</p>
+</article><article class="hn-card"><span class="hn-label">BAĞ</span>
+<h3>Azil</h3>
+<p>Azil&rsquo;in yokluğu, kardeşlerin d&uuml;nyasında etkin bir varlık gibi hissedilir. Arayışın merkezindeki baba, kayıtları ve geride bıraktıkları &uuml;zerinden tanınır. Kim olduğu sorusu, &ccedil;ocuklarının onunla kurduğu bağdan ayrı d&uuml;ş&uuml;n&uuml;lemez.</p>
+</article></div>
+<div class="hn-panel">
+<h3>&Ouml;ns&ouml;zden</h3>
+<div class="hn-excerpt">
+<p>Bazı mesafeler kilometreyle &ouml;l&ccedil;&uuml;lmez. Bir baba ile evladı arasındaki uzaklık, bazen şehirler, &uuml;lkeler ya da yıllar kadar basit değildir. Bazen iki insan arasına b&uuml;t&uuml;n bir evren girer.</p>
+</div>
+</div>
+<div class="hn-panel">
+<h3>Yazar hakkında</h3>
+<p>Şaban &Ccedil;if&ccedil;i (Azil), Hatay&rsquo;ın Kırıkhan il&ccedil;esinde doğdu. Biyosistem m&uuml;hendisliği alanında lisans ve y&uuml;ksek lisans eğitimi aldı; Devlet Su İşleri b&uuml;nyesinde m&uuml;hendis olarak &ccedil;alışıyor.</p>
+<p>Teknolojiye, haritalara, tasarıma ve &uuml;retmeye duyduğu ilgiyi kurguya taşıyor. HANOK&rsquo;ta teknik ayrıntılar, aile bağları ve &ouml;zlemle birlikte anlatının par&ccedil;ası oluyor.</p>
+</div>
+<div class="hn-panel">
+<h3>Yolculuğa devam et</h3>
+<p>Burada romanı tanımak i&ccedil;in se&ccedil;ilmiş kısa par&ccedil;alar yer alıyor. Kitabın sayfasına aşağıdaki bağlantılardan ulaşabilirsin.</p>
+<div class="hn-actions"><a class="hn-btn" href="https://www.google.com.tr/books/edition/HANOK_AZ%C4%B0L_DOSYALARI/sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Google Kitaplar&rsquo;da g&ouml;r&uuml;nt&uuml;le &rarr;</a><a class="hn-btn hn-secondary" href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Google Play Kitaplar&rsquo;da a&ccedil;</a></div>
+</div>
+<aside class="hn-archive-note" aria-label="HANOK vaka arşivine bir iz">
+<p><strong>Her şey romanda anlatılmadı.</strong><br />
+Kayıtlara ge&ccedil;en izlerin peşinden git.</p>
+<a href="https://sbncifci.tr.gg/Vaka-Arsivi.htm">Vaka dosyalarını a&ccedil; &rarr;</a> </aside> </section><!-- HANOK OZEL SAYFA BITIS -->
+
+<!-- HANOK 4.0 / YILDIZLI BAŞLIK: Canvas yalnızca .hn-hero içinde çalışır -->
+<script>
+(function(){
+  'use strict';
+  var page=document.getElementById('az-hanok');
+  var hero=page && page.querySelector('.hn-hero');
+  var canvas=hero && hero.querySelector('.hn-star-canvas');
+  if(!canvas || !canvas.getContext) return;
+  var ctx=canvas.getContext('2d',{alpha:true});
+  if(!ctx) return;
+  var motion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced=!!(motion&&motion.matches);
+  var pointer={x:0,y:0,active:false}, stars=[], sparks=[], rings=[];
+  var width=0,height=0,scale=1,ready=false,inView=true,running=false,raf=0,last=0;
+  var oldT=0, themeLight=false;
+  function clamp(x,a,b){return Math.max(a,Math.min(b,x));}
+  function lightMode(){return document.body.classList.contains('az-theme-light')||document.documentElement.classList.contains('az-theme-light');}
+  function random(seed){var x=Math.sin(seed*104.73+19.17)*43758.5453;return x-Math.floor(x);}
+  function resize(){
+    var box=hero.getBoundingClientRect();
+    if(box.width<1||box.height<1) return;
+    width=box.width;height=box.height;scale=Math.min(window.devicePixelRatio||1,2);
+    canvas.width=Math.round(width*scale);canvas.height=Math.round(height*scale);
+    ctx.setTransform(scale,0,0,scale,0,0);
+    var count=width<540?36:width<900?60:88;
+    stars=[];
+    for(var i=0;i<count;i++){
+      var xx=random(i+1)*width, yy=random(i+417)*height;
+      stars.push({x:xx,y:yy,px:xx,py:yy,depth:.45+random(i+204)*.9,
+        radius:.6+random(i+921)*1.45,phase:random(i+903)*6.283,
+        gold:random(i+118)<.30,glow:random(i+120)<.19});
+    }
+    ready=true;themeLight=lightMode();
+    draw(performance.now());
+  }
+  function pointerPosition(e){
+    var r=hero.getBoundingClientRect();
+    pointer.x=e.clientX-r.left;pointer.y=e.clientY-r.top;
+  }
+  hero.addEventListener('pointermove',function(e){
+    if(reduced||e.pointerType==='touch')return;
+    pointerPosition(e);pointer.active=true;
+    if(sparks.length<32 && Math.random()<.58){
+      sparks.push({x:pointer.x+(Math.random()-.5)*14,y:pointer.y+(Math.random()-.5)*14,
+        vx:(Math.random()-.5)*.65,vy:(Math.random()-.5)*.65,life:1,r:.6+Math.random()*1.35});
+    }
+  },{passive:true});
+  hero.addEventListener('pointerleave',function(){pointer.active=false;},{passive:true});
+  hero.addEventListener('pointerdown',function(e){
+    if(reduced)return;
+    pointerPosition(e);rings.push({x:pointer.x,y:pointer.y,r:6,life:1});
+    if(rings.length>3)rings.shift();
+  },{passive:true});
+  function rgba(gold,alpha){return gold?(themeLight?'rgba(154,94,18,'+alpha+')':'rgba(255,205,127,'+alpha+')'):(themeLight?'rgba(38,120,137,'+alpha+')':'rgba(193,242,255,'+alpha+')');}
+  function draw(time){
+    if(!ready)return;
+    ctx.clearRect(0,0,width,height);
+    themeLight=lightMode();
+    var x,y,r,dist,dx,dy,force;
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i];
+      var speed=reduced?0:time*.00012*s.depth;
+      x=s.x+(reduced?0:Math.sin(speed+s.phase)*9*s.depth);
+      y=s.y+(reduced?0:Math.cos(speed+s.phase)*7*s.depth);
+      if(pointer.active&&!reduced){
+        dx=x-pointer.x;dy=y-pointer.y;dist=Math.hypot(dx,dy)||1;
+        if(dist<145){force=Math.pow(1-dist/145,2)*34;
+          x+=dx/dist*force;y+=dy/dist*force;
+        }
+      }
+      s.px+=(x-s.px)*(reduced?1:.15);
+      s.py+=(y-s.py)*(reduced?1:.15);
+    }
+    for(var j=0;j<stars.length;j++){
+      var a=stars[j];
+      if(pointer.active&&!reduced && j%3===0){
+        dist=Math.hypot(pointer.x-a.px,pointer.y-a.py);
+        if(dist<117){ctx.beginPath();ctx.moveTo(pointer.x,pointer.y);ctx.lineTo(a.px,a.py);
+          ctx.strokeStyle=rgba(a.gold,clamp((1-dist/117)*.48,0,.48));ctx.lineWidth=.7;ctx.stroke();}
+      }
+      var twinkle=reduced?0.8:.64+.24*Math.sin(time*.0015+a.phase*4.1);
+      r=a.radius*(1+(a.glow?.16:0));
+      if(a.glow){
+        var halo=ctx.createRadialGradient(a.px,a.py,0,a.px,a.py,r*6);
+        halo.addColorStop(0,rgba(a.gold,.34*twinkle));halo.addColorStop(1,rgba(a.gold,0));
+        ctx.fillStyle=halo;ctx.fillRect(a.px-r*6,a.py-r*6,r*12,r*12);
+      }
+      ctx.beginPath();ctx.arc(a.px,a.py,r,0,Math.PI*2);
+      ctx.fillStyle=rgba(a.gold,.48*twinkle);ctx.fill();
+      if(a.glow){ctx.beginPath();ctx.moveTo(a.px-5,a.py);ctx.lineTo(a.px+5,a.py);ctx.moveTo(a.px,a.py-5);ctx.lineTo(a.px,a.py+5);
+        ctx.strokeStyle=rgba(a.gold,.13*twinkle);ctx.lineWidth=.7;ctx.stroke();}
+    }
+    for(var k=sparks.length-1;k>=0;k--){var p=sparks[k];
+      p.x+=p.vx;p.y+=p.vy;p.life-=.045;
+      if(p.life<=0){sparks.splice(k,1);continue;}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=rgba(true,p.life*.7);ctx.fill();
+    }
+    for(var z=rings.length-1;z>=0;z--){var q=rings[z];q.r+=3.3;q.life-=.026;
+      if(q.life<=0){rings.splice(z,1);continue;}
+      ctx.beginPath();ctx.arc(q.x,q.y,q.r,0,Math.PI*2);ctx.strokeStyle=rgba(true,q.life*.6);ctx.lineWidth=1.2;ctx.stroke();
+    }
+    if(pointer.active&&!reduced){
+      var aura=ctx.createRadialGradient(pointer.x,pointer.y,0,pointer.x,pointer.y,78);
+      aura.addColorStop(0,rgba(true,.19));aura.addColorStop(1,rgba(true,0));
+      ctx.fillStyle=aura;ctx.fillRect(pointer.x-78,pointer.y-78,156,156);
+    }
+  }
+  function tick(t){
+    if(!running)return;
+    if(t-last>24){draw(t);last=t;}
+    raf=requestAnimationFrame(tick);
+  }
+  function sync(){var shouldRun=!reduced&&inView&&!document.hidden;
+    if(shouldRun&&!running){running=true;raf=requestAnimationFrame(tick);}
+    else if(!shouldRun&&running){running=false;cancelAnimationFrame(raf);draw(performance.now());}
+  }
+  resize();sync();
+  if(window.ResizeObserver){new ResizeObserver(resize).observe(hero);}else{window.addEventListener('resize',resize,{passive:true});}
+  if(window.IntersectionObserver){new IntersectionObserver(function(es){inView=es[0].isIntersecting;sync();},{threshold:0}).observe(hero);}
+  document.addEventListener('visibilitychange',sync);
+  if(motion){
+    var onMotion=function(e){reduced=e.matches;sync();draw(performance.now());};
+    if(motion.addEventListener)motion.addEventListener('change',onMotion);
+    else if(motion.addListener)motion.addListener(onMotion);
+  }
+  if(window.MutationObserver){
+    var obs=new MutationObserver(function(){if(reduced)draw(performance.now());});
+    obs.observe(document.body,{attributes:true,attributeFilter:['class']});
+    obs.observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+  }
+})();
+</script>
