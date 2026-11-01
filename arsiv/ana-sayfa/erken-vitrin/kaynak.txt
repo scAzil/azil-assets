@@ -1,0 +1,177 @@
+<!-- AZIL ANA SAYFA BASLANGIC: Bu dosyanin tamamini HTML/Kaynak moduna yapistir. -->
+<style type="text/css">
+#azil-home{--az-bg:#111216;--az-panel:#1b1d23;--az-text:#f4f4ef;--az-muted:#b5b6bd;--az-line:#34363f;--az-lime:#d5f778;box-sizing:border-box;background:var(--az-bg);color:var(--az-text);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.65;text-align:left;margin:0 auto;padding:0 34px;max-width:1320px;isolation:isolate;color-scheme:dark}
+#azil-home *{box-sizing:border-box}
+#azil-home a{color:inherit;text-decoration:none}
+#azil-home a:focus-visible{outline:3px solid var(--az-lime);outline-offset:6px}
+#azil-home .az-wrap{max-width:1120px;margin:0 auto}
+#azil-home .az-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0;border-bottom:1px solid var(--az-line)}
+#azil-home .az-logo{font-size:31px;line-height:1;letter-spacing:-2px;font-weight:900;display:inline-flex;align-items:baseline;gap:12px}
+#azil-home .az-logo b{color:var(--az-lime);font-weight:900}
+#azil-home .az-logo small{font-size:12px;letter-spacing:2px;font-weight:400;color:var(--az-muted)}
+#azil-home .az-nav{display:flex;gap:26px;font-size:14px}
+#azil-home .az-nav a:hover{color:var(--az-lime)}
+#azil-home .az-hero{padding:58px 0 44px;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end}
+#azil-home .az-eyebrow{font-size:12px;letter-spacing:2px;color:var(--az-lime);margin:0 0 18px;font-weight:700}
+#azil-home h1{font-size:clamp(40px,6vw,76px);line-height:1.04;letter-spacing:-3px;font-weight:800;margin:0;color:var(--az-text)}
+#azil-home h1 span{color:var(--az-lime)}
+#azil-home .az-intro{font-size:17px;max-width:385px;color:var(--az-muted);margin:0 0 6px}
+#azil-home .az-intro strong{font-weight:400;color:var(--az-text)}
+#azil-home .az-section-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:22px 0 18px;border-top:1px solid var(--az-line)}
+#azil-home .az-section-head h2{font-size:18px;font-weight:500;color:var(--az-text);margin:0}
+#azil-home .az-section-head span{font-size:12px;letter-spacing:2px;color:var(--az-muted)}
+#azil-home .az-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+#azil-home .az-card{--az-accent:var(--az-lime);background:var(--az-panel);border:1px solid var(--az-line);border-radius:3px;padding:28px;display:flex;flex-direction:column;position:relative;overflow:hidden;min-width:0}
+#azil-home .az-card.amber{--az-accent:#ffca82}#azil-home .az-card.violet{--az-accent:#c7b4ff}#azil-home .az-card.blue{--az-accent:#96c9ff}
+#azil-home .az-card.az-featured{border-top:3px solid var(--az-accent);padding-top:26px;background:linear-gradient(130deg,#24272c,#191b20)}
+#azil-home .az-card-top{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:25px}
+#azil-home .az-category{font-size:12px;letter-spacing:1.5px;color:var(--az-accent);font-weight:700}
+#azil-home .az-number{font-family:monospace;font-size:16px;color:var(--az-muted)}
+#azil-home h3{color:var(--az-text);font-size:27px;line-height:1.2;letter-spacing:-.6px;margin:0 0 10px}
+#azil-home .az-featured h3{font-size:44px;letter-spacing:-1.5px}
+#azil-home .az-tagline{font-size:17px;color:var(--az-text);margin:0 0 12px}
+#azil-home .az-description{font-size:15px;line-height:1.75;color:var(--az-muted);margin:0 0 23px;max-width:460px}
+#azil-home .az-tags{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-wrap:wrap;gap:8px}
+#azil-home .az-tags li{font-size:12px;border:1px solid #454751;color:#dedee1;padding:3px 9px;border-radius:3px}
+#azil-home .az-action-row{margin-top:auto;border-top:1px solid var(--az-line);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+#azil-home .az-status{font-size:13px;color:var(--az-muted)}
+#azil-home .az-action{font-family:inherit;font-size:14px;line-height:1.4;padding:10px 15px;border:1px solid #53555f;border-radius:3px;display:inline-flex;align-items:center;gap:10px;color:#d0d1d7}
+#azil-home a.az-action{background:var(--az-accent);color:#171a12;border-color:var(--az-accent);font-weight:700}
+#azil-home a.az-action:hover{filter:brightness(1.1)}
+#azil-home .az-action[aria-disabled=true]{cursor:default}
+#azil-home .az-note{font-size:14px;color:var(--az-muted);padding:18px 0 30px;margin:0}
+#azil-home .az-about{display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:32px 0;border-top:1px solid var(--az-line)}
+#azil-home .az-about h2{font-size:23px;color:var(--az-text);margin:0;letter-spacing:-.4px}
+#azil-home .az-about p{color:var(--az-muted);font-size:15px;margin:0;max-width:640px}
+#azil-home .az-footer{border-top:1px solid var(--az-line);padding:22px 0;display:flex;justify-content:space-between;gap:20px;color:var(--az-muted);font-size:12px}
+#azil-home .az-footer span:last-child{letter-spacing:1px}
+@media(max-width:650px){#azil-home{padding:0 18px}#azil-home .az-top{padding:22px 0;gap:12px}#azil-home .az-logo small{display:none}#azil-home .az-nav{gap:18px}#azil-home .az-hero{grid-template-columns:1fr;gap:24px;padding:38px 0 30px}#azil-home h1{font-size:52px;letter-spacing:-2px}#azil-home .az-intro{font-size:16px}#azil-home .az-grid{grid-template-columns:1fr}#azil-home .az-card{padding:23px}#azil-home .az-featured h3{font-size:38px}#azil-home .az-about{grid-template-columns:1fr;gap:15px}#azil-home .az-footer{flex-wrap:wrap}}
+@media(prefers-reduced-motion:no-preference){#azil-home a{transition:color .18s,filter .18s}}
+
+#azil-home{width:100%;min-width:0;container-type:inline-size;container-name:azil;overflow-wrap:anywhere}
+#azil-home .az-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+#azil-home .az-top{flex-wrap:wrap}#azil-home .az-nav{flex-wrap:wrap;gap:20px}
+#azil-home .az-book{--az-accent:#ffca82;display:grid;grid-template-columns:170px minmax(0,1fr);gap:32px;padding:28px;background:#242226;border:1px solid #554939;margin:0 0 34px;align-items:center}
+#azil-home .az-book-cover{display:block;width:100%;height:auto;aspect-ratio:244/345;object-fit:contain;box-shadow:0 14px 24px #0006}
+#azil-home .az-book h2{font-size:34px;letter-spacing:-1px;line-height:1.15;color:var(--az-text);margin:8px 0}
+#azil-home .az-book h2 span{font-size:20px;letter-spacing:2px;display:block;margin-top:8px}
+#azil-home .az-book .az-eyebrow{color:#ffca82;margin-bottom:12px}
+#azil-home .az-book .az-description{max-width:680px;margin-bottom:18px}
+#azil-home .az-book-sub{color:var(--az-text);font-size:16px;margin:8px 0 12px}
+#azil-home .az-book a.az-action .az-status{color:inherit}
+#azil-home .az-plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-bottom:32px}
+#azil-home .az-plan{border-left:2px solid #6f7781;padding:6px 0 6px 18px}
+#azil-home .az-plan h3{font-size:20px;margin:5px 0 10px}
+#azil-home .az-plan p{font-size:15px;color:var(--az-muted);margin:0}
+#azil-home .az-plan small{font-size:12px;letter-spacing:1px;color:#c9cbd0}
+@container azil (max-width:650px){#azil-home .az-hero{grid-template-columns:1fr;gap:22px;padding:34px 0}#azil-home h1{font-size:48px;letter-spacing:-2px}#azil-home .az-about{grid-template-columns:1fr;gap:16px}#azil-home .az-logo small{display:none}#azil-home .az-book{grid-template-columns:110px minmax(0,1fr);gap:20px;padding:20px}#azil-home .az-book h2{font-size:28px}#azil-home .az-book h2 span{font-size:16px}#azil-home .az-card{padding:22px}#azil-home .az-featured h3{font-size:34px}}
+@container azil (max-width:400px){#azil-home .az-book{grid-template-columns:1fr}#azil-home .az-book-cover{width:125px}#azil-home h1{font-size:40px}#azil-home .az-nav{gap:15px}#azil-home .az-section-head{flex-wrap:wrap}}
+</style>
+
+<section id="azil-home" lang="tr" aria-label="AZiL oyun ve uygulama projeleri">
+<div class="az-wrap">
+<header class="az-top"><a class="az-logo" href="#azil-home" aria-label="AZiL ana sayfa"><span>AZ<b>i</b>L</span><small>PROJELER</small></a><nav class="az-nav" aria-label="Ana men&#252;"><a href="#azil-book">Kitap</a><a href="#azil-projects">Projeler</a><a href="#azil-about">Hakk&#305;nda</a></nav></header>
+<div class="az-hero"><div><p class="az-eyebrow">OYUNLAR &#183; UYGULAMALAR &#183; H&#304;K&#194;YELER</p><h1>Oyna. Oku.<br><span>Ke&#351;fet.</span></h1></div><p class="az-intro"><strong>AZiL'in d&#252;nyas&#305;na ho&#351; geldin.</strong> Arkada&#351;lar&#305;nla bir ma&#231;, ayn&#305; odada bir sohbet ya da bir roman&#305;n sayfalar&#305;nda yeni bir yolculuk.</p></div>
+<section class="az-book" id="azil-book" aria-labelledby="azil-book-title">
+<a href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer" aria-label="HANOK kitab&#305;n&#305; Google Play Kitaplar&#8217;da incele (yeni sekme)"><img class="az-book-cover" src="https://play.google.com/books/publisher/content/images/frontcover/sgnWEQAAQBAJ?fife=w240-h345" alt="HANOK &#8211; AZ&#304;L DOSYALARI kitap kapa&#287;&#305;" width="244" height="345" decoding="async" referrerpolicy="no-referrer"></a>
+<div><p class="az-eyebrow">ROMAN / B&#304;L&#304;MKURGU</p><h2 id="azil-book-title">HANOK<span>AZ&#304;L DOSYALARI</span></h2><p class="az-book-sub">Kalp &#304;zleri &#220;zerine Bir Roman &#183; &#350;aban &#199;if&#231;i</p><p class="az-description">Hanok ve Beyaz, babalar&#305; Azil&#8217;in ard&#305;nda b&#305;rakt&#305;&#287;&#305; izlerin pe&#351;ine d&#252;&#351;&#252;yor. Sevgi, haf&#305;za ve zaman&#305;n birbirine kar&#305;&#351;t&#305;&#287;&#305; bir bilimkurgu yolculu&#287;u.</p><a class="az-action" href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" target="_blank" rel="noopener noreferrer">Google Play&#8217;de incele <span aria-hidden="true">&#8599;</span><span class="az-status">(yeni sekme)</span></a></div>
+</section>
+<div id="azil-projects" class="az-section-head"><h2>Projeleri ke&#351;fet</h2><span>01 &#8212; 08</span></div>
+<div class="az-grid"><article class="az-card amber az-featured" data-project="tank">
+ <div class="az-card-top"><span class="az-category">OYUN / STRATEJ&#304;</span><span class="az-number" aria-hidden="true">01</span></div>
+ <h3>Tank Oyunu</h3><p class="az-tagline">Ni&#351;an al. Hamleni yap.</p><p class="az-description">Arkada&#351;lar&#305;nla s&#305;ra tabanl&#305; tank sava&#351;lar&#305;. Kaynak topla, tank&#305;n&#305; geli&#351;tir ve do&#287;ru anda ate&#351; et.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>&#199;ok oyunculu</li><li>Tank geli&#351;tirme</li><li>S&#305;ra tabanl&#305;</li></ul>
+ <div class="az-action-row"><span class="az-status">Ba&#287;lant&#305; yak&#305;nda</span><span class="az-action" aria-disabled="true" data-action="Oyuna git">Oyuna git<span aria-hidden="true">&#8599;</span></span></div>
+ </article><article class="az-card lime az-featured" data-project="ses">
+ <div class="az-card-top"><span class="az-category">UYGULAMA / &#304;LET&#304;&#350;&#304;M</span><span class="az-number" aria-hidden="true">02</span></div>
+ <h3>AZiL Ses</h3><p class="az-tagline">Ayn&#305; oyunda. Ayn&#305; sohbette.</p><p class="az-description">Oyun oynarken ya da birlikte vakit ge&#231;irirken sesli ileti&#351;im. Odan&#305; kur, arkada&#351;lar&#305;n&#305; davet et.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>v1.5</li><li>Sesli sohbet</li><li>Oda ve davet</li></ul>
+ <div class="az-action-row"><span class="az-status">Ba&#287;lant&#305; yak&#305;nda</span><span class="az-action" aria-disabled="true" data-action="Uygulamaya git">Uygulamaya git<span aria-hidden="true">&#8599;</span></span></div>
+ </article><article class="az-card violet " data-project="sis">
+ <div class="az-card-top"><span class="az-category">OYUN / SOSYAL &#199;IKARIM</span><span class="az-number" aria-hidden="true">03</span></div>
+ <h3>Sis Alt&#305;nda</h3><p class="az-tagline">K&#246;yde kimden &#351;&#252;pheleniyorsun?</p><p class="az-description">Gizli roller, gece kararlar&#305; ve g&#252;nd&#252;z oylamalar&#305;. K&#246;yl&#252;lerle k&#246;t&#252;ler aras&#305;ndaki m&#252;cadelede kime g&#252;veneceksin?</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>Gizli roller</li><li>Arkada&#351;larla</li></ul>
+ <div class="az-action-row"><span class="az-status">Ba&#287;lant&#305; yak&#305;nda</span><span class="az-action" aria-disabled="true" data-action="Oyuna git">Oyuna git<span aria-hidden="true">&#8599;</span></span></div>
+ </article><article class="az-card blue " data-project="macera">
+ <div class="az-card-top"><span class="az-category">OYUN / &#304;NTERAKT&#304;F H&#304;K&#194;YE</span><span class="az-number" aria-hidden="true">04</span></div>
+ <h3>Kay&#305;p Orman&#305;n S&#305;rr&#305;</h3><p class="az-tagline">Bir sonraki yol senin karar&#305;n.</p><p class="az-description">Orman&#305; ke&#351;fet, e&#351;yalar topla ve ejderhan&#305;n s&#305;rr&#305;n&#305; &#231;&#246;z. Se&#231;imlerin seni farkl&#305; sonlara g&#246;t&#252;rs&#252;n.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>Se&#231;imli hik&#226;ye</li><li>Birden fazla son</li></ul>
+ <div class="az-action-row"><span class="az-status">Yay&#305;nda</span><a class="az-action" href="https://sbncifci.tr.gg/Kay%26%23305%3Bp-Orman.htm" data-action="Maceraya git" aria-label="Kay&#305;p Orman&#305;n S&#305;rr&#305;: Maceraya git">Maceraya git<span aria-hidden="true">&#8599;</span></a></div>
+ </article><article class="az-card lime " data-project="seccade">
+ <div class="az-card-top"><span class="az-category">UYGULAMA / D&#304;NLEME</span><span class="az-number" aria-hidden="true">05</span></div>
+ <h3>Ak&#305;ll&#305; Seccade</h3><p class="az-tagline">Namaz ve dua kay&#305;tlar&#305;.</p><p class="az-description">Namaz, tesbihat ve dua seslerini tek bir oynat&#305;c&#305;dan dinle. Dinleme h&#305;z&#305;n&#305; kendine g&#246;re ayarla.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>Davut Kaya</li><li>Sesli i&#231;erikler</li></ul>
+ <div class="az-action-row"><span class="az-status">Yay&#305;nda</span><a class="az-action" href="https://sbncifci.tr.gg/Namaz.htm" data-action="Sayfaya git" aria-label="Ak&#305;ll&#305; Seccade: Sayfaya git">Sayfaya git<span aria-hidden="true">&#8599;</span></a></div>
+ </article><article class="az-card amber " data-project="kuran">
+ <div class="az-card-top"><span class="az-category">UYGULAMA / D&#304;NLEME</span><span class="az-number" aria-hidden="true">06</span></div>
+ <h3>Kur&#8217;an-&#305; Kerim</h3><p class="az-tagline">Bir s&#251;re se&#231;, dinlemeye ba&#351;la.</p><p class="az-description">F&#226;tiha&#8217;dan Y&#226;sin&#8217;e se&#231;ili s&#251;reler. Tek oynat&#305;c&#305;, kolay s&#251;re se&#231;imi ve ayarlanabilir dinleme h&#305;z&#305;.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>Fatih &#199;ollak</li><li>12 s&#251;re</li></ul>
+ <div class="az-action-row"><span class="az-status">Yay&#305;nda</span><a class="az-action" href="https://sbncifci.tr.gg/Sureler.htm" data-action="Sayfaya git" aria-label="Kur&#8217;an-&#305; Kerim: Sayfaya git">Sayfaya git<span aria-hidden="true">&#8599;</span></a></div>
+ </article><article class="az-card blue " data-project="wardogs">
+ <div class="az-card-top"><span class="az-category">ARA&#199; / OYUN YARDIMCISI</span><span class="az-number" aria-hidden="true">07</span></div>
+ <h3>WARDOGS Ate&#351; Kontrol</h3><p class="az-tagline">Koordinattan at&#305;&#351; plan&#305;na.</p><p class="az-description">Oyun i&#231;indeki havan ve hedef koordinatlar&#305;ndan mesafe ve y&#246;n hesapla. Hedeflerini kaydet, ilk at&#305;&#351;tan sonra d&#252;zeltme yap.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>v2</li><li>Koordinat hesab&#305;</li><li>Hedef kayd&#305;</li></ul>
+ <div class="az-action-row"><span class="az-status">Ba&#287;lant&#305; yak&#305;nda</span><span class="az-action" aria-disabled="true" data-action="Araca git">Araca git<span aria-hidden="true">&#8599;</span></span></div>
+ </article><article class="az-card violet " data-project="yayinci">
+ <div class="az-card-top"><span class="az-category">UYGULAMA / YAYINCI S&#220;R&#220;M&#220;</span><span class="az-number" aria-hidden="true">08</span></div>
+ <h3>AZiL Ses &#183; Yay&#305;nc&#305;</h3><p class="az-tagline">Yay&#305;n ekibinin sohbet odas&#305;.</p><p class="az-description">Yay&#305;nc&#305; ve konuk rolleri, ki&#351;i ba&#351;&#305;na ses kontrol&#252; ve OBS g&#246;r&#252;n&#252;m&#252;. Valkunt i&#231;in haz&#305;rlanan &#246;zel tema.</p>
+ <ul class="az-tags" aria-label="&#214;zellikler"><li>Valkunt</li><li>Sesli ileti&#351;im</li><li>OBS g&#246;r&#252;n&#252;m&#252;</li></ul>
+ <div class="az-action-row"><span class="az-status">Ba&#287;lant&#305; yak&#305;nda</span><span class="az-action" aria-disabled="true" data-action="Uygulamaya git">Uygulamaya git<span aria-hidden="true">&#8599;</span></span></div>
+ </article></div>
+<p class="az-note">Kay&#305;p Orman, Ak&#305;ll&#305; Seccade ve Kur&#8217;an-&#305; Kerim sayfalar&#305; a&#231;&#305;k. Di&#287;er projelerin ba&#287;lant&#305;lar&#305; siteye eklendik&#231;e burada yer alacak.</p>
+<div class="az-section-head"><h2>Tasarlanan projeler</h2><span>F&#304;K&#304;R A&#350;AMASI</span></div>
+<div class="az-plans"><article class="az-plan"><small>&#304;NTERAKT&#304;F ROMAN</small><h3>Asil Bir Suskunluk</h3><p>Se&#231;imlerle farkl&#305; yollara ayr&#305;lan ve yeniden birle&#351;en bir hik&#226;ye fikri.</p></article><article class="az-plan"><small>CBS / B&#304;LG&#304; Y&#214;NET&#304;M&#304;</small><h3>AZ&#304;L Havza Atlas&#305;</h3><p>Harita, proje notlar&#305; ve belgeleri ayn&#305; yerde bulu&#351;turacak bir bilgi ar&#351;ivi fikri.</p></article></div>
+<section class="az-about" id="azil-about" aria-labelledby="az-about-title"><h2 id="az-about-title">Bir fikirle ba&#351;lad&#305;.</h2><p>Ben &#350;aban &#199;if&#231;i. AZiL ad&#305;yla oyunlar, k&#252;&#231;&#252;k uygulamalar ve hik&#226;yeler geli&#351;tiriyorum. Buras&#305; denediklerimi ve birlikte keyif alabilece&#287;imiz projeleri payla&#351;t&#305;&#287;&#305;m ki&#351;isel alan&#305;m.</p></section>
+<footer class="az-footer"><span>AZiL &#183; &#350;aban &#199;if&#231;i</span><span>BA&#286;IMSIZ PROJELER</span></footer>
+</div></section>
+<script>
+
+(function () {
+  'use strict';
+  /* PROJE BAGLANTILARI
+     Projeyi sitene yukledikten sonra bos tirnaklarin arasina GERCEK
+     sayfa adresini yaz. Tam https:// adresi veya /sayfa.htm kullanabilirsin.
+     Bos biraktigin projede baglanti etkinlesmez.
+     Ornek bicim: tank: '/kendi-tank-sayfan.htm'
+  */
+  var projectLinks = {
+    tank: '',
+    ses: '',
+    sis: '',
+    macera: '', // Mevcut baglanti HTML icinde, burasi yalnizca degistirmek icin.
+    seccade: '',
+    kuran: '',
+    wardogs: '',
+    yayinci: ''
+  };
+  var root = document.getElementById('azil-home');
+  if (!root || root.dataset.initialized) return;
+  root.dataset.initialized = 'true';
+  var activeCount = 0;
+  Object.keys(projectLinks).forEach(function (key) {
+    var raw = projectLinks[key].trim();
+    if (!raw) return;
+    var url;
+    try { url = new URL(raw, document.baseURI); } catch (e) { return; }
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+    var card = root.querySelector('[data-project="' + key + '"]');
+    if (!card) return;
+    var oldAction = card.querySelector('.az-action');
+    var link = document.createElement('a');
+    link.className = 'az-action';
+    link.href = raw;
+    link.textContent = oldAction.dataset.action;
+    link.setAttribute('aria-label', card.querySelector('h3').textContent + ': ' + oldAction.dataset.action);
+    var arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '\u2197';
+    link.appendChild(arrow);
+    oldAction.replaceWith(link);
+    card.querySelector('.az-status').textContent = 'Yay\u0131nda';
+    activeCount++;
+  });
+  if (activeCount === Object.keys(projectLinks).length) root.querySelector('.az-note').hidden = true;
+})();
+</script>
+<!-- AZIL ANA SAYFA BITIS -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1086161616522856" crossorigin="anonymous"></script>
