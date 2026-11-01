@@ -1,0 +1,31 @@
+/* AZiL — Envato Arka Planlar / kaynak koduna uyarlama ŞABLONU
+   Sadece CSS'yi eklemek yeterli değildir: mevcut HTML giriş kapsayıcısına
+   class="azil-envato-hero" eklenmelidir.
+   Mevcut HANOK vitrini ve menü silinmemelidir. */
+.azil-envato-hero {
+  background-color:#051916;
+  background-image:
+    linear-gradient(90deg, rgba(3,19,19,.94) 0%, rgba(3,20,21,.76) 48%, rgba(4,19,20,.40) 100%),
+    url('YUKLEME_SONRASI_HERO_JPG_DOGRUDAN_URL');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f6faf8;
+}
+.azil-envato-projeler {
+  background-color:#06201b;
+  background-image:
+    linear-gradient(90deg, rgba(4,19,20,.89), rgba(5,29,26,.61)),
+    url('YUKLEME_SONRASI_PROJELER_JPG_DOGRUDAN_URL');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+@media (max-width:700px) {
+  .azil-envato-hero {
+    background-image:
+      linear-gradient(180deg, rgba(3,19,19,.90), rgba(3,20,21,.72)),
+      url('YUKLEME_SONRASI_MOBIL_JPG_DOGRUDAN_URL');
+    background-position:center top;
+  }
+}
