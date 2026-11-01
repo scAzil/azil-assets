@@ -1,0 +1,745 @@
+<!-- AZiL 3.8 / ANA SAYFA / 01.11.2026
+Tamamini Ana Sayfa > Kaynak Kodu alanina yapistirin.
+Bu parca ana sayfa icerigidir; ortak menu, footer ve head ayarlari ayri yonetilir.
+--> <style type="text/css">
+#az-home{
+  --bg:#111216;
+  --panel:#1b1e24;
+  --panel2:#17191e;
+  --line:#353941;
+  --text:#f4f4ef;
+  --muted:#b9bec8;
+  --lime:#d5f778;
+  --blue:#96c9ff;
+  --violet:#c7b4ff;
+  --amber:#ffca82;
+  --green:#9fd7a8;
+  box-sizing:border-box;
+  width:100%;
+  max-width:1320px;
+  margin:0 auto;
+  padding:28px clamp(18px,4vw,48px);
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.65 Arial,Helvetica,sans-serif;
+  text-align:left;
+  overflow-wrap:anywhere;
+  color-scheme:dark;
+}
+#az-home *{box-sizing:border-box}
+#az-home a{color:inherit;text-decoration:none}
+#az-home a:focus-visible{outline:3px solid var(--lime);outline-offset:5px}
+
+#az-home .ah-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--line);
+}
+#az-home .ah-logo{
+  font-size:31px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+#az-home .ah-logo span{color:var(--lime)}
+#az-home .ah-nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:14px;
+}
+#az-home .ah-nav a{padding:6px 0}
+#az-home .ah-nav a:hover{color:var(--lime)}
+
+#az-home .ah-hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:end;
+  padding:56px 0 44px;
+}
+#az-home .ah-kicker{
+  margin:0 0 12px;
+  color:var(--lime);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.8px;
+}
+#az-home h1,
+#az-home h2,
+#az-home h3{color:var(--text);line-height:1.15}
+#az-home h1{
+  margin:0;
+  font-size:clamp(42px,6vw,76px);
+  letter-spacing:-3px;
+}
+#az-home h1 span{color:var(--lime)}
+#az-home .ah-intro{
+  max-width:430px;
+  margin:0 0 5px;
+  color:var(--muted);
+  font-size:18px;
+}
+#az-home .ah-intro strong{color:var(--text);font-weight:500}
+
+
+#az-home .ah-book{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:30px;
+  align-items:center;
+  margin:0 0 38px;
+  padding:28px;
+  background:#201d1b;
+  border:1px solid #554939;
+  border-top:3px solid var(--amber);
+}
+#az-home .ah-book-cover{
+  display:block;
+  width:100%;
+  max-width:180px;
+}
+#az-home .ah-book-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid #4a4540;
+  box-shadow:0 14px 34px rgba(0,0,0,.28);
+}
+#az-home .ah-book .ah-kicker{
+  color:var(--amber);
+  margin-bottom:8px;
+}
+#az-home .ah-book h2{
+  margin:0 0 6px;
+  font-size:clamp(30px,4vw,45px);
+  letter-spacing:-1px;
+}
+#az-home .ah-book h2 span{
+  display:block;
+  margin-top:3px;
+  font-size:21px;
+  letter-spacing:.2px;
+  color:#e6ded4;
+}
+#az-home .ah-book-sub{
+  margin:0 0 14px;
+  color:#d8d2c9;
+  font-size:14px;
+}
+#az-home .ah-book-desc{
+  max-width:760px;
+  margin:0 0 18px;
+  color:var(--muted);
+}
+#az-home .ah-book-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+#az-home .ah-book-action{
+  display:inline-block;
+  padding:11px 15px;
+  background:var(--amber);
+  color:#18140e;
+  border:1px solid var(--amber);
+  border-radius:4px;
+  font-size:14px;
+  font-weight:700;
+}
+
+#az-home .ah-book-action:hover{
+  filter:brightness(1.06);
+}
+
+#az-home .ah-book-more{
+  display:inline-block;
+  margin-left:0;
+  padding:10px 13px;
+  border:1px solid #5b5d64;
+  border-radius:4px;
+  color:#f0f0ed;
+  font-size:13px;
+}
+
+#az-home .ah-book-more:hover{
+  border-color:var(--amber);
+  color:var(--amber);
+}
+
+#az-home .ah-categories{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 38px;
+}
+#az-home .ah-cat{
+  padding:15px 16px;
+  border:1px solid var(--line);
+  background:var(--panel2);
+  color:#e5e7eb;
+  font-size:13px;
+}
+#az-home .ah-cat:hover{
+  border-color:#646975;
+  background:#1d2026;
+}
+
+#az-home .ah-group{
+  margin:0 0 34px;
+  scroll-margin-top:20px;
+}
+#az-home .ah-section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding:24px 0 17px;
+  border-top:1px solid var(--line);
+}
+#az-home .ah-section-head h2{
+  margin:0;
+  font-size:27px;
+}
+#az-home .ah-section-head a{
+  color:var(--lime);
+  font-size:13px;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+#az-home .ah-group-intro{
+  max-width:760px;
+  margin:0 0 17px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+#az-home .ah-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+#az-home .ah-card{
+  --card-accent:var(--lime);
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:22px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-top:3px solid var(--card-accent);
+}
+#az-home .ah-card.blue{--card-accent:var(--blue)}
+#az-home .ah-card.violet{--card-accent:var(--violet)}
+#az-home .ah-card.amber{--card-accent:var(--amber)}
+#az-home .ah-card.green{--card-accent:var(--green)}
+#az-home .ah-card.lime{--card-accent:var(--lime)}
+
+#az-home .ah-label{
+  margin:0 0 8px;
+  color:var(--card-accent);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.4px;
+}
+#az-home .ah-card h3{
+  margin:5px 0 8px;
+  font-size:23px;
+  letter-spacing:-.35px;
+}
+#az-home .ah-tagline{
+  margin:0 0 12px;
+  color:#eef0f2;
+  font-size:15px;
+}
+#az-home .ah-desc{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+#az-home .ah-card-link{
+  display:inline-block;
+  margin-top:auto;
+  padding-top:17px;
+  color:#e7e8ec;
+  font-size:13px;
+}
+#az-home .ah-card-link span{color:var(--card-accent)}
+
+
+#az-home .ah-legacy{
+  margin-top:44px;
+  padding:28px;
+  background:#181a1f;
+  border:1px solid var(--line);
+  border-left:3px solid var(--lime);
+}
+#az-home .ah-legacy .ah-kicker{
+  margin-bottom:8px;
+}
+#az-home .ah-legacy h2{
+  margin:0 0 12px;
+  font-size:26px;
+}
+#az-home .ah-legacy p{
+  max-width:820px;
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+#az-home .ah-legacy strong{
+  color:var(--text);
+  font-weight:500;
+}
+
+#az-home .ah-about{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:35px;
+  margin-top:42px;
+  padding:30px 0;
+  border-top:1px solid var(--line);
+}
+#az-home .ah-about .ah-kicker{margin-bottom:8px}
+#az-home .ah-about h2{margin:0;font-size:27px}
+#az-home .ah-about p{
+  max-width:700px;
+  margin:0 0 15px;
+  color:var(--muted);
+}
+#az-home .ah-about-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+#az-home .ah-small-btn{
+  display:inline-block;
+  padding:9px 12px;
+  border:1px solid #4d515a;
+  border-radius:4px;
+  font-size:13px;
+}
+#az-home .ah-small-btn:hover{border-color:var(--lime);color:var(--lime)}
+
+#az-home .ah-foot{
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+#az-home .ah-foot-nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+#az-home .ah-foot a:hover{color:var(--lime)}
+
+@media(max-width:850px){
+  #az-home .ah-hero{grid-template-columns:1fr;gap:20px;padding:42px 0 34px}
+  #az-home .ah-intro{max-width:720px}
+  #az-home .ah-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #az-home .ah-categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #az-home .ah-about{grid-template-columns:1fr;gap:14px}
+}
+@media(max-width:680px){
+  #az-home .ah-book{grid-template-columns:1fr;padding:22px}
+  #az-home .ah-book-cover{width:130px}
+}
+@media(max-width:560px){
+  #az-home{padding:20px 16px}
+  #az-home h1{font-size:43px;letter-spacing:-2px}
+  #az-home .ah-grid{grid-template-columns:1fr}
+  #az-home .ah-categories{grid-template-columns:1fr 1fr}
+  #az-home .ah-card{padding:20px}
+}
+
+#az-home{overflow-wrap:break-word}
+#az-home .ah-group{scroll-margin-top:var(--az-anchor-gap,160px)}
+#az-home .ah-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+#az-home .ah-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;padding:28px;margin-bottom:18px;border:1px solid var(--line);border-top:3px solid var(--lime);background:var(--panel2)}
+#az-home .ah-studio{border-top-color:var(--violet)}
+#az-home .ah-studio .ah-kicker{color:var(--violet)}
+#az-home .ah-atlas{border-top-color:var(--green)}
+#az-home .ah-atlas .ah-kicker{color:var(--green)}
+#az-home .ah-feature h3{font-size:32px;margin:0 0 10px;letter-spacing:-1px}
+#az-home .ah-feature-lead{color:var(--text);font-size:19px;margin:0 0 12px}
+#az-home .ah-primary{display:inline-block;background:var(--lime);color:#111216;padding:12px 18px;margin-top:22px;border-radius:4px;font-size:14px;font-weight:bold}
+#az-home .ah-studio .ah-primary{background:var(--violet)}
+#az-home .ah-feature-list{list-style:none;padding:0;margin:0}
+#az-home .ah-feature-list li{padding:12px 0;border-bottom:1px solid var(--line)}
+#az-home .ah-feature-list li:last-child{border-bottom:0}
+#az-home .ah-feature-list strong,#az-home .ah-feature-list span{display:block}
+#az-home .ah-feature-list strong{font-size:15px;color:var(--text)}
+#az-home .ah-feature-list span,#az-home .ah-note,#az-home .ah-previous p{font-size:13px;color:var(--muted)}
+#az-home .ah-note{margin:0 0 22px}
+#az-home .ah-previous{padding:16px 20px;border:1px solid var(--line)}
+#az-home .ah-previous summary{cursor:pointer;font-size:14px;padding:5px 0;color:var(--muted)}
+#az-home summary:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+#az-home .ah-card-link{min-height:44px}
+@media(max-width:720px){#az-home .ah-feature{grid-template-columns:1fr;gap:18px;padding:22px}}
+@media(max-width:560px){#az-home .ah-grid-two{grid-template-columns:1fr}#az-home .ah-feature{padding:20px}#az-home .ah-feature h3{font-size:28px}}
+
+
+/* AZiL 3.6 / Son kategori duzeni ve tema duzeltmeleri */
+#az-home{--book-bg:#201d1b;--book-border:#554939;--book-title:#e6ded4;--book-sub:#d8d2c9;--book-btn:#f0f0ed;--book-btn-border:#5b5d64;--tagline:#eef0f2;--cat-fg:#e5e7eb;--cat-hover:#1d2026;--cardlink:#e7e8ec;--legacy-bg:#181a1f;--action-text:#111216}
+#az-home .ah-book{background:var(--book-bg);border-color:var(--book-border);border-top-color:var(--amber)}
+#az-home .ah-book h2 span{color:var(--book-title)}#az-home .ah-book-sub{color:var(--book-sub)}
+#az-home .ah-book-more{color:var(--book-btn);border-color:var(--book-btn-border)}
+#az-home .ah-cat{color:var(--cat-fg)}#az-home .ah-cat:hover{background:var(--cat-hover)}
+#az-home .ah-tagline{color:var(--tagline)}#az-home .ah-card-link{color:var(--cardlink)}
+#az-home .ah-legacy{background:var(--legacy-bg)}
+#az-home .ah-primary{color:var(--action-text)}#az-home .ah-book-action{color:var(--action-text)}
+#az-home .ah-cinema-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#az-home .ah-cinema-card{display:flex;flex-direction:column;gap:12px;min-width:0;padding:28px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--violet);border-radius:10px}
+#az-home .ah-cinema-music{border-top-color:var(--blue)}#az-home .ah-cinema-card .ah-label{color:var(--violet)}
+#az-home .ah-cinema-music .ah-label{color:var(--blue)}
+#az-home .ah-cinema-card h3{margin:0;font-size:clamp(23px,3vw,32px)}
+#az-home .ah-cinema-card .ah-tagline{margin:0}#az-home .ah-cinema-card .ah-desc{flex:1}
+#az-home .ah-cinema-picks{display:flex;gap:7px;flex-wrap:wrap}
+#az-home .ah-cinema-picks span{border:1px solid var(--line);padding:5px 9px;color:var(--muted);font-size:11px;border-radius:20px}
+#az-home .ah-cinema-card .ah-card-link{margin-top:12px;color:var(--text);font-weight:bold}
+#az-home .ah-studio-storage{margin:4px 0 20px;padding:13px 15px;border:1px solid var(--line);border-left:3px solid var(--violet);background:var(--panel2)}
+#az-home .ah-studio-storage a{color:var(--lime);text-decoration:underline}
+#az-home .ah-link-check{margin-top:12px;font-size:11px}
+body.az-theme-light #az-home,html.az-theme-light #az-home,body[data-theme="light"] #az-home,html[data-theme="light"] #az-home{
+ --bg:#f4f7f5;--panel:#ffffff;--panel2:#edf2ee;--line:#d1ddd5;--text:#1c3029;--muted:#53675c;
+ --lime:#236f50;--blue:#235e88;--violet:#72529f;--amber:#8b5511;--green:#347a52;
+ --book-bg:#fff7ed;--book-border:#e1b581;--book-title:#583c20;--book-sub:#735f4c;--book-btn:#293c31;--book-btn-border:#c9c6bb;
+ --tagline:#284034;--cat-fg:#294137;--cat-hover:#e2eee6;--cardlink:#294137;--legacy-bg:#eff3ee;--action-text:#ffffff;color-scheme:light;
+}
+body.az-theme-light #az-home .ah-primary,html.az-theme-light #az-home .ah-primary{color:#fff}
+
+@media(prefers-color-scheme:light){
+ html:not(.az-theme-light):not(.az-theme-dark):not([data-theme="light"]):not([data-theme="dark"]) body:not(.az-theme-light):not(.az-theme-dark):not([data-theme="light"]):not([data-theme="dark"]) #az-home{
+ --bg:#f4f7f5;--panel:#ffffff;--panel2:#edf2ee;--line:#d1ddd5;--text:#1c3029;--muted:#53675c;
+ --lime:#236f50;--blue:#235e88;--violet:#72529f;--amber:#8b5511;--green:#347a52;
+ --book-bg:#fff7ed;--book-border:#e1b581;--book-title:#583c20;--book-sub:#735f4c;--book-btn:#293c31;--book-btn-border:#c9c6bb;
+ --tagline:#284034;--cat-fg:#294137;--cat-hover:#e2eee6;--cardlink:#294137;--legacy-bg:#eff3ee;--action-text:#ffffff;color-scheme:light}
+}
+@media(max-width:750px){#az-home .ah-cinema-grid{grid-template-columns:1fr}}
+@media(max-width:490px){#az-home .ah-categories{grid-template-columns:1fr 1fr}#az-home .ah-cinema-card{padding:20px}}
+
+/* AZiL 3.7: yeni kartlar, okunabilir dugmeler ve dar ekran uyumu */
+#az-home .ah-hero>* ,#az-home .ah-feature>*{min-width:0}
+#az-home h1,#az-home h2,#az-home h3{text-align:left;text-shadow:none}
+#az-home a.ah-primary,#az-home a.ah-book-action{color:var(--action-text)!important;min-height:44px}
+#az-home .ah-cephe{border-top-color:var(--amber)}
+#az-home .ah-cephe .ah-kicker{color:var(--amber)}
+#az-home .ah-cephe .ah-primary{background:var(--amber)}
+#az-home .ah-subhead{margin:26px 0 16px}
+#az-home .ah-subhead h3{font-size:23px;margin:0 0 8px}
+#az-home .ah-subhead p{margin:0;color:var(--muted);font-size:14px}
+#az-home .ah-market-note{margin:16px 0 0}
+#az-home .ah-cube-grid{grid-template-columns:1fr;margin:20px 0}
+#az-home .ah-cube-grid .ah-desc{max-width:780px}
+#az-home .ah-small-btn{min-height:44px}
+
+/* ====================================================================
+   AZiL 3.8 / ENVATO GORSEL ENTEGRASYONU / 01.11.2026
+   GitHub Pages: scAzil/azil-assets. Bileşenler #az-home ile sınırlandırıldı.
+   Mevcut HTML, menu, HANOK vitrini ve acik/koyu tema davranisi korunur.
+   ==================================================================== */
+#az-home .ah-hero{
+  position:relative;
+  isolation:isolate;
+  min-height:318px;
+  margin:18px 0 30px;
+  padding:clamp(35px,5vw,66px) clamp(22px,4vw,50px);
+  align-items:center;
+  gap:clamp(22px,4vw,44px);
+  overflow:hidden;
+  border:1px solid #385056;
+  border-radius:14px;
+  background-color:#07171a;
+  background-image:linear-gradient(90deg,rgba(6,17,20,.96) 0%,rgba(6,18,22,.82) 51%,rgba(6,24,24,.54) 100%),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-ana-sayfa-hero.jpg");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  box-shadow:0 15px 45px rgba(0,0,0,.12);
+}
+/* Giris her temada koyu goruntulendigi icin metni her zaman acik tut. */
+#az-home .ah-hero h1,
+#az-home .ah-hero .ah-intro,
+#az-home .ah-hero .ah-intro strong{color:#f7fbf8}
+#az-home .ah-hero h1 span,
+#az-home .ah-hero .ah-kicker{color:#d5f778}
+#az-home .ah-hero .ah-intro{max-width:380px;color:#e3eeed}
+/* Projeler ve Araclar basligina ikinci Envato arka planini uygula. */
+#az-home #ah-tools .ah-section-head{
+  min-height:104px;
+  margin-bottom:18px;
+  padding:22px clamp(18px,3vw,32px);
+  align-items:center;
+  border:1px solid #345659;
+  border-radius:12px;
+  background-color:#092123;
+  background-image:linear-gradient(90deg,rgba(5,22,25,.95),rgba(5,22,25,.68)),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-projeler-banner.jpg");
+  background-size:cover;
+  background-position:center;
+}
+#az-home #ah-tools .ah-section-head h2{color:#f7fbf8}
+#az-home #ah-tools .ah-section-head a{color:#d5f778}
+/* Ikonlar semantik baslik metinlerinin yaninda dekoratif kullanilir. */
+#az-home .ah-section-head h2.ah-with-icon,
+#az-home .ah-feature h3.ah-with-icon,
+#az-home .ah-card h3.ah-with-icon{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+#az-home .ah-section-head .ah-visual-icon,
+#az-home .ah-feature .ah-visual-icon,
+#az-home .ah-card .ah-visual-icon{
+  display:block;
+  flex:none;
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  border:0;
+  background:transparent;
+}
+#az-home .ah-feature .ah-visual-icon{width:48px;height:48px}
+#az-home .ah-card .ah-visual-icon{width:38px;height:38px}
+@media(max-width:850px){
+  #az-home .ah-hero{min-height:300px;gap:16px;align-items:start}
+  #az-home .ah-hero .ah-intro{max-width:680px}
+}
+@media(max-width:600px){
+  #az-home .ah-hero{
+    min-height:0;
+    padding:35px 23px;
+    margin-top:10px;
+    margin-bottom:27px;
+    border-radius:10px;
+    background-image:linear-gradient(180deg,rgba(5,16,20,.93),rgba(5,20,23,.72)),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-ana-sayfa-mobil.jpg");
+    background-position:center;
+  }
+  #az-home .ah-hero h1{font-size:clamp(38px,10vw,52px)}
+  #az-home #ah-tools .ah-section-head{padding:19px 17px}
+  #az-home .ah-section-head .ah-visual-icon{width:30px;height:30px}
+  #az-home .ah-feature .ah-visual-icon{width:39px;height:39px}
+  #az-home .ah-card .ah-visual-icon{width:34px;height:34px}
+}
+
+</style> <section aria-label="AZiL ana sayfa" id="az-home" lang="tr">
+<div class="ah-hero">
+<div>
+<p class="ah-kicker">KİTAPLAR &middot; PROJELER &middot; FİLMLER &middot; M&Uuml;ZİKLER &middot; OYUNLAR</p>
+<h1>Oyna. Oku.<br />
+<span>Keşfet.</span></h1>
+</div>
+<p class="ah-intro"><strong>AZiL'in d&uuml;nyasına hoş geldin. </strong>Romanlar, oyunlar, saha ara&ccedil;ları, iletişim uygulamaları ve g&ouml;rsel deneyler. &Uuml;rettiklerim ve bana ilham veren film ve m&uuml;zikler burada bir araya geliyor.</p>
+</div>
+<!-- ONE CIKAN KITAP --> <section aria-labelledby="ah-book-title" class="ah-book"> <a aria-label="HANOK - AZİL DOSYALARI &ouml;zel sayfasını a&ccedil;" class="ah-book-cover" href="https://sbncifci.tr.gg/Hanok.htm"> <img alt="HANOK - AZİL DOSYALARI kitap kapağı" src="https://play.google.com/books/publisher/content/images/frontcover/sgnWEQAAQBAJ?fife=w400-h570" /> </a>
+<div>
+<p class="ah-kicker">ROMAN / BİLİMKURGU</p>
+<h2 id="ah-book-title">HANOK       <span>AZİL DOSYALARI</span></h2>
+<p class="ah-book-sub">Kalp İzleri &Uuml;zerine Bir Roman &middot; Şaban &Ccedil;if&ccedil;i</p>
+<p class="ah-book-desc">Hanok ve Beyaz, babaları Azil'in ardında bıraktığı izlerin peşine d&uuml;ş&uuml;yor.       Sevgi, hafıza ve zamanın birbirine karıştığı bir bilimkurgu yolculuğu.</p>
+<div class="ah-book-links"><a class="ah-book-action" href="https://sbncifci.tr.gg/Hanok.htm">HANOK sayfasını keşfet &rarr;</a> <a class="ah-book-more" href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play'de incele ↗</a> <a class="ah-book-more" href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">Kitaplar &amp; Hik&acirc;yeler &rarr;</a></div>
+</div>
+</section> <nav aria-label="Ana kategoriler" class="ah-categories"><a class="ah-cat" href="#ah-books">Kitaplar &amp; Hik&acirc;yeler</a><a class="ah-cat" href="#ah-faith">Dini İ&ccedil;erik</a><a class="ah-cat" href="#ah-tools">Projeler &amp; Ara&ccedil;lar</a><a class="ah-cat" href="#ah-cinema">Film ve M&uuml;zikler</a><a class="ah-cat" href="#ah-apps">Uygulamalar</a><a class="ah-cat" href="#ah-games">Oyunlar</a></nav> <!-- OYUNLAR -->  <!-- UYGULAMALAR -->  <!-- PROJELER -->  <!-- DINI ICERIK -->  <!-- MUZIKLER -->  <!-- KITAPLAR -->  <section aria-labelledby="ah-books-title" class="ah-group" id="ah-books">
+<div class="ah-section-head">
+<h2 id="ah-books-title">Kitaplar &amp; Hik&acirc;yeler</h2>
+<a href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">T&uuml;m&uuml;n&uuml; g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Yayımlanmış romanlar ve geliştirme aşamasındaki etkileşimli anlatılar.</p>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">YAYIMLANMIŞ ROMAN</p>
+<h3>HANOK &ndash; AZİL DOSYALARI</h3>
+<p class="ah-tagline">Kalp İzleri &Uuml;zerine Bir Roman</p>
+<p class="ah-desc">Hafıza, sevgi, zaman ve insanın geride bıraktığı izler &uuml;zerine bilimkurgu.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Hanok.htm">HANOK sayfasını a&ccedil; <span>&rarr;</span></a> </article> <article class="ah-card violet">
+<p class="ah-label">İNTERAKTİF ROMAN / GELİŞTİRİLİYOR</p>
+<h3>Asil Bir Suskunluk</h3>
+<p class="ah-tagline">Se&ccedil;imlerin hik&acirc;yeyi değiştirir.</p>
+<p class="ah-desc">Farklı yollara ayrılan ve yeniden birleşen bir anlatı &uuml;zerinde &ccedil;alışıyorum. Hen&uuml;z oynanabilir s&uuml;r&uuml;m yayımlanmadı.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">Kitaplar ve hik&acirc;yelere git <span>&rarr;</span></a> </article></div>
+</section><section aria-labelledby="ah-faith-title" class="ah-group" id="ah-faith">
+<div class="ah-section-head">
+<h2 id="ah-faith-title">Dini İ&ccedil;erik</h2>
+<a href="https://sbncifci.tr.gg/Dini-icerikler.htm">Dini i&ccedil;erikleri g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Dinle. Takip et. Hatırla.</p>
+<div class="ah-grid"><article class="ah-card green">
+<p class="ah-label">NAMAZ / DUA / TESBİHAT</p>
+<h3>Akıllı Seccade</h3>
+<p class="ah-tagline">Namaz ve dua kayıtları.</p>
+<p class="ah-desc">Namaz, tesbihat ve dua sesleri i&ccedil;in sade dinleme alanı.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Namaz.htm">Dinlemeye git <span>&rarr;</span></a> </article> <article class="ah-card amber">
+<p class="ah-label">KUR&rsquo;AN / S&Ucirc;RELER</p>
+<h3>Kur&rsquo;an-ı Kerim</h3>
+<p class="ah-tagline">Oku, dinle, takip et.</p>
+<p class="ah-desc">Kur&rsquo;an-ı Kerim i&ccedil;eriğine ve dinleme bağlantılarına ulaş.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Sureler.htm">S&ucirc;releri a&ccedil; <span>&rarr;</span></a> </article></div>
+</section><section aria-labelledby="ah-tools-title" class="ah-group" id="ah-tools">
+<div class="ah-section-head">
+<h2 class="ah-with-icon" id="ah-tools-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-projeler.png" />Projeler &amp; Ara&ccedil;lar</h2>
+<a href="https://sbncifci.tr.gg/Projeler-ve-Araclar.htm">T&uuml;m projeleri g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Sahadan haritaya, g&ouml;zlemden arşive. Su, CBS, piyasa takibi ve g&ouml;rsel deneyler i&ccedil;in geliştirdiğim ara&ccedil;lar.</p>
+<article class="ah-feature ah-atlas">
+<div>
+<p class="ah-kicker">HATAY &middot; ASİ HAVZASI &middot; CBS</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-projeler.png" />Arazi Atlası</h3>
+<p class="ah-feature-lead">Sahayı kaydet. B&uuml;t&uuml;n&uuml; g&ouml;r.</p>
+<p class="ah-desc">Konumlarını, fotoğraflarını ve teknik notlarını projelerle d&uuml;zenle. Saha haritası, CBS Ara&ccedil; Kutusu ve Havza Atlası aynı &ccedil;alışma alanında.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Arazi-Atlasi.htm">Arazi Atlası&rsquo;nı a&ccedil; &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>Katmanlı havza g&ouml;r&uuml;n&uuml;m&uuml;</strong><span>Asi&rsquo;nin T&uuml;rkiye b&ouml;l&uuml;m&uuml;, akarsular ve baraj/g&ouml;let katmanlarını se&ccedil;erek g&ouml;ster.</span></li>
+    <li><strong>Kendi verilerin</strong><span>KML ve GeoJSON katmanlarını saha kayıtlarınla birlikte incele.</span></li>
+    <li><strong>Sahadan arşive</strong><span>Fotoğraflı kayıtlar, dışa aktarma ve cihazlar arasında eşitleme ara&ccedil;ları.</span></li>
+</ul>
+</article>
+<p class="ah-note">Kayıtlar tarayıcıda tutulur; bulut yedeği yoktur. D&uuml;zenli yedek al. Hazır katmanlar canlı debi veya doluluk verisi değildir.</p>
+<div class="ah-grid"><article class="ah-card green">
+<p class="ah-label">SAHA / KAYIT</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-web.png" />Dijital Saha Defteri</h3>
+<p class="ah-tagline">G&ouml;zlemini kaybetme.</p>
+<p class="ah-desc">Konum, fotoğraf ve teknik g&ouml;zlemlerini proje bazında kaydet; yedekle ve dışa aktar.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Dijital-Saha-Defteri.htm">Defteri a&ccedil; <span>&rarr;</span></a></article><article class="ah-card blue">
+<p class="ah-label">OYUN YARDIMCISI / WARDOGS</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-performans.png" />Ateş Kontrol</h3>
+<p class="ah-tagline">Koordinattan oyun i&ccedil;i atış planına.</p>
+<p class="ah-desc">WARDOGS i&ccedil;in mesafe ve y&ouml;n hesabı, hedef kaydı ve atış desteği.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/WARDOGS-Ates-Kontrol-Paneli.htm">Aracı a&ccedil; <span>&rarr;</span></a></article><article class="ah-card amber">
+<p class="ah-label">AGE OF EMPIRES IV</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />AoE4 Savaş Odası</h3>
+<p class="ah-tagline">Planla. Takip et. Geliştir.</p>
+<p class="ah-desc">A&ccedil;ılış planları, ma&ccedil; kronometresi ve ma&ccedil; sonu değerlendirmesi.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/AoE4-Savas-Odasi.htm">Savaş odasını a&ccedil; <span>&rarr;</span></a></article></div>
+<div class="ah-subhead">
+<h3>Piyasa ve g&ouml;rsel deneyler</h3>
+<p>Verileri incele, hareketin ritmini keşfet.</p>
+</div>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">DENEYSEL / VERİ G&Ouml;RSELLEŞTİRME</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-bitcoin.png" />Bitcoin Organizma</h3>
+<p class="ah-tagline">Piyasanın hareketini hisset.</p>
+<p class="ah-desc">Bitcoin verilerini canlı bir organizmayı andıran g&ouml;rselle izle. 5 dakika, 1 saat, 4 saat ve 1 g&uuml;n pencerelerinde farklı ritimleri keşfet.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Bitcoin.htm">Organizmayı keşfet <span aria-hidden="true">&rarr;</span></a></article><article class="ah-card blue">
+<p class="ah-label">PİYASA / İZLEME VE ANALİZ</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-grafik.png" />Piyasa Laboratuvarı</h3>
+<p class="ah-tagline">İzle. Karşılaştır. İncele.</p>
+<p class="ah-desc">Kripto, ETF, endeks ve diğer piyasa ara&ccedil;larını incele; favori izleme listeni oluştur, grafik ve hesaplama ara&ccedil;larını kullan.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Piyasa-Laboratuvari.htm">Laboratuvarı a&ccedil; <span aria-hidden="true">&rarr;</span></a></article></div>
+<p class="ah-note ah-market-note">Bu ara&ccedil;lar inceleme ve g&ouml;rselleştirme ama&ccedil;lıdır; fiyat tahmini veya yatırım tavsiyesi sunmaz. Veri kaynağı ve g&uuml;ncellik bilgilerini uygulama i&ccedil;inde kontrol et.</p>
+</section><section aria-labelledby="ah-cinema-title" class="ah-group" id="ah-cinema">
+<div class="ah-section-head">
+<h2 id="ah-cinema-title">Film ve M&uuml;zikler</h2>
+<a href="https://sbncifci.tr.gg/Film-ve-Muzikler.htm">Film ve M&uuml;zikler sayfasını a&ccedil; &rarr;</a></div>
+<p class="ah-group-intro">Zihnimde kalan hik&acirc;yeler ve onlara eşlik eden melodiler. İki kişisel arşiv, tek ana kategori.</p>
+<div class="ah-cinema-grid"><article class="ah-cinema-card ah-cinema-film">
+<p class="ah-label">FİLMLER VE DİZİLER / KİŞİSEL SE&Ccedil;Kİ</p>
+<h3>İzlediğim hik&acirc;yeler.</h3>
+<p class="ah-tagline">Zihnimde kalan d&uuml;nyalar.</p>
+<p class="ah-desc">The Fountain, Cloud Atlas, Interstellar ve Lion ile başlayan vitrin; beş tematik b&ouml;l&uuml;mde bilimkurgu, dram, diziler ve karakterler.</p>
+<div class="ah-cinema-picks"><span>The Fountain</span><span>Cloud Atlas</span><span>Interstellar</span><span>Lion</span></div>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Filmler.htm">Film ve dizi se&ccedil;kisine git <span>&rarr;</span></a></article> <article class="ah-cinema-card ah-cinema-music">
+<p class="ah-label">M&Uuml;ZİKLER / KİŞİSEL ARŞİV</p>
+<h3>Dinle. Hisset.</h3>
+<p class="ah-tagline">Y&uuml;kselişi bekle.</p>
+<p class="ah-desc">Gen&ccedil;lik yıllarından bug&uuml;ne melankolik, epik, elektronik ve oyun/film m&uuml;zikleri. &Ouml;zel se&ccedil;ki ve aramalı, kategori filtreli kompakt m&uuml;zik hafızası.</p>
+<div class="ah-cinema-picks"><span>Experience</span><span>Outro</span><span>Ballad of the Mer</span><span>Andor</span></div>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Muzikler.htm">M&uuml;zik arşivini keşfet <span>&rarr;</span></a></article></div>
+</section><section aria-labelledby="ah-apps-title" class="ah-group" id="ah-apps">
+<div class="ah-section-head">
+<h2 class="ah-with-icon" id="ah-apps-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-uygulamalar.png" />Uygulamalar</h2>
+<a href="https://sbncifci.tr.gg/Uygulamalar.htm">T&uuml;m uygulamaları g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Sesli buluşma, yazışma, yayın iletişimi ve adım adım &ouml;ğrenme ara&ccedil;ları.</p>
+<article class="ah-feature ah-studio">
+<div>
+<p class="ah-kicker">SES &middot; SOHBET &middot; REJİ</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-azil-studyo.png" />AZiL St&uuml;dyo</h3>
+<p class="ah-feature-lead">Ses, sohbet ve yayın ara&ccedil;ları aynı &ccedil;alışma alanında.</p>
+<p class="ah-desc">Sesdaş, Laf Arası ve St&uuml;dyo Reji ara&ccedil;larını aynı deneyimde birleştiren &ccedil;alışma alanı. Oda oluşturabilir, davet bağlantısıyla katılımcı &ccedil;ağırabilir ve yayın hazırlığını y&ouml;netebilirsin.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Studyo.htm">St&uuml;dyoyu a&ccedil; &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>Sesdaş</strong><span>Sesli g&ouml;r&uuml;şme, bas-konuş ve kişi başına ses ayarı.</span></li>
+    <li><strong>Laf Arası</strong><span>Mesajlaşma, dosya paylaşımı ve sohbeti indirme.</span></li>
+    <li><strong>St&uuml;dyo Reji</strong><span>Yayın kontrol listesi, konuk mikrofonları ve OBS ses bağlantısı.</span></li>
+</ul>
+</article>
+<p class="ah-note ah-studio-storage">Gizlilik notu: AZiL St&uuml;dyo yardımında mesaj ve dosyaların sunucuda saklandığı belirtilir. Bağımsız Sesdaş, Laf Arası ve St&uuml;dyo Reji ile aynı depolama modelinde olduğunu varsaymayın. <a href="https://sbncifci.tr.gg/Gizlilik.htm">Gizlilik a&ccedil;ıklaması &rarr;</a></p>
+<div class="ah-grid ah-cube-grid"><article class="ah-card amber">
+<p class="ah-label">&Ouml;ĞRENME / 3&times;3 RUBİK K&Uuml;P</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-yazilim.png" />K&uuml;p At&ouml;lyesi</h3>
+<p class="ah-tagline">Renkleri tanıt. Hamleleri izle.</p>
+<p class="ah-desc">K&uuml;p&uuml;n&uuml;n renklerini elle veya kamerayla tanıt; &uuml;&ccedil; boyutlu hamle g&ouml;sterimiyle &ccedil;&ouml;z&uuml;m&uuml; adım adım takip et.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kup-Atolyesi.htm">K&uuml;p At&ouml;lyesi&rsquo;ni a&ccedil; <span aria-hidden="true">&rarr;</span></a></article></div>
+<details class="ah-previous"><summary>Bağımsız iletişim uygulamaları</summary>
+<p>Bu bağlantılar ayrı uygulamaları a&ccedil;ar. Birleşik deneyim i&ccedil;in AZiL St&uuml;dyo&rsquo;yu kullanabilirsin.</p>
+<div class="ah-about-links"><a class="ah-small-btn" href="https://sbncifci.tr.gg/Sesdas.htm">Sesdaş</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Laf-Arasi.htm">Laf Arası</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Studyo-Reji.htm">St&uuml;dyo Reji</a></div>
+</details> </section><section aria-labelledby="ah-games-title" class="ah-group" id="ah-games">
+<div class="ah-section-head">
+<h2 class="ah-with-icon" id="ah-games-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />Oyunlar</h2>
+<a href="https://sbncifci.tr.gg/Oyunlar.htm">T&uuml;m oyunları g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Ger&ccedil;ek zamanlı cephe y&ouml;netiminden sıra tabanlı savaşlara, gizli rollerden se&ccedil;imli hik&acirc;yelere.</p>
+<article class="ah-feature ah-cephe">
+<div>
+<p class="ah-kicker">GER&Ccedil;EK ZAMANLI STRATEJİ / &Ccedil;OK OYUNCULU BETA</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />AZiL Cephe</h3>
+<p class="ah-feature-lead">&Uuml;ss&uuml;n&uuml; kur. İkmali s&uuml;rd&uuml;r. Cepheyi y&ouml;net.</p>
+<p class="ah-desc">Birliklerini ve ara&ccedil;larını y&ouml;net, kaynak noktaları i&ccedil;in m&uuml;cadele et ve arkadaşlarınla aynı savaş alanında stratejini dene.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Cephe.htm">Cephe&rsquo;ye katıl &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>&Uuml;s ve ekonomi</strong><span>Yapılarını geliştir; kaynaklarını ve birlik &uuml;retimini planla.</span></li>
+    <li><strong>Birlikler ve ara&ccedil;lar</strong><span>Piyade, tank ve helikopterlerle farklı g&ouml;revleri &uuml;stlen.</span></li>
+    <li><strong>İkmal ve takım oyunu</strong><span>Lojistiği takip et; &ccedil;ok oyunculu beta deneyimini arkadaşlarınla dene.</span></li>
+</ul>
+</article>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">STRATEJİ</p>
+<h3>Tank Oyunu</h3>
+<p class="ah-tagline">Nişan al. Hamleni yap.</p>
+<p class="ah-desc">Sıra tabanlı tank savaşları, kaynak toplama ve geliştirme.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Tank-Oyunu.htm">Oyuna git <span>&rarr;</span></a> </article> <article class="ah-card violet">
+<p class="ah-label">SOSYAL &Ccedil;IKARIM</p>
+<h3>Sis Altında</h3>
+<p class="ah-tagline">Kime g&uuml;veneceksin?</p>
+<p class="ah-desc">Gizli roller, gece kararları ve g&uuml;nd&uuml;z oylamaları.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Sis-Altinda.htm">Oyuna git <span>&rarr;</span></a> </article> <article class="ah-card blue">
+<p class="ah-label">İNTERAKTİF HİK&Acirc;YE</p>
+<h3>Kayıp Ormanın Sırrı</h3>
+<p class="ah-tagline">Bir sonraki yol senin kararın.</p>
+<p class="ah-desc">Keşif, se&ccedil;imler ve farklı sonu&ccedil;lara ulaşan tek kişilik macera.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kayip-Orman.htm">Maceraya git <span>&rarr;</span></a> </article><article class="ah-card green">
+<p class="ah-label">SU Y&Ouml;NETİMİ / STRATEJİ</p>
+<h3>Havza Y&ouml;neticisi</h3>
+<p class="ah-tagline">Bir havzanın geleceği, senin kararların.</p>
+<p class="ah-desc">Asi Havzası&rsquo;ndan ilham alan oyunda tarım, şehir ve doğanın su ihtiyacını 20 mevsim boyunca dengele.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Havza-Yoneticisi.htm">Havzayı y&ouml;net <span>&rarr;</span></a></article></div>
+</section><section aria-labelledby="ah-legacy-title" class="ah-legacy">
+<p class="ah-kicker">BU SİTE NEDEN VAR?</p>
+<h2 id="ah-legacy-title">K&uuml;&ccedil;&uuml;k izler bırakmak i&ccedil;in.</h2>
+<p>Burada yazdığım, yaptığım, dinlediğim ve merak ettiğim şeylerden     k&uuml;&ccedil;&uuml;k izler bırakıyorum. Oyunlar, hik&acirc;yeler, m&uuml;zikler, projeler ve     zaman i&ccedil;inde biriktirdiğim başka şeyler...     <strong>Belki yıllar sonra birileri &mdash; belki de &ccedil;ocuklarım &mdash; buraya gelir     ve beni biraz daha yakından tanır.</strong></p>
+</section> <section aria-labelledby="ah-about-title" class="ah-about">
+<div>
+<p class="ah-kicker">ŞABAN &Ccedil;İF&Ccedil;İ &middot; AZiL</p>
+<h2 id="ah-about-title">Bir fikirle başladı.</h2>
+</div>
+<div>
+<p>M&uuml;hendislik, haritalar, web uygulamaları, oyunlar ve hik&acirc;yeler &uuml;zerine       geliştirdiğim &ccedil;alışmaların kişisel merkezi.</p>
+<div class="ah-about-links"><a class="ah-small-btn" href="https://sbncifci.tr.gg/Hakkimda.htm">Hakkımda &rarr;</a> <a class="ah-small-btn" href="https://sbncifci.tr.gg/iletisim.htm">İletişim &rarr;</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Site-Haritasi.htm">Site haritasında ara &rarr;</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Ziyaretci-defteri.htm">Ziyaret&ccedil;i Defteri &rarr;</a></div>
+</div>
+</section> </section> <!-- AZIL / ANA SAYFA BITIS --> <script>
+(function(){
+  var root=document.getElementById('az-home');if(!root)return;
+  var header=document.getElementById('forFixedElement');
+  function measure(){root.style.setProperty('--az-anchor-gap',((header?header.getBoundingClientRect().height:116)+24)+'px');}
+  function align(){var id;try{id=decodeURIComponent(location.hash.slice(1));}catch(e){return;}
+    if(!/^ah-/.test(id))return;var el=document.getElementById(id);if(!el||!root.contains(el))return;
+    requestAnimationFrame(function(){measure();el.scrollIntoView({block:'start'});});}
+  measure();window.addEventListener('resize',measure,{passive:true});
+  if(header&&window.ResizeObserver)new ResizeObserver(measure).observe(header);
+  window.addEventListener('hashchange',align);window.addEventListener('load',align);align();
+})();
+</script>
