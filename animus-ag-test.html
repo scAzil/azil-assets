@@ -1,0 +1,47 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>AZiL 4.0 · Canlı Ağ Testi</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#091115;color:#f0faf8;font:16px/1.6 Arial,system-ui,sans-serif}main{max-width:1180px;margin:auto;padding:22px clamp(15px,4vw,42px)}
+p{color:#c5d8d8}.tag{letter-spacing:.15em;color:#9ff5df;font-weight:bold;font-size:12px}
+h1{font-size:clamp(26px,5vw,46px);line-height:1.1;margin:10px 0}a{color:#98e2d1}
+#az-home .ah-hero{isolation:isolate;position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:350px;padding:clamp(25px,5vw,56px);gap:25px;border-radius:15px;border:1px solid #4d6969;margin:23px 0;background:linear-gradient(90deg,rgba(6,17,20,.9),rgba(6,25,28,.43)),url('assets/backgrounds/azil-ana-sayfa-hero.jpg') center/cover}
+.ah-hero> :not(canvas){position:relative;z-index:1}.ah-hero h2{font-size:clamp(42px,6vw,76px);line-height:1.08;letter-spacing:-.06em;margin:10px 0}.ah-hero h2 span{color:#d5f778}.ah-hero p{color:#edf6f5}
+.ah-network-canvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+.note{padding:13px 17px;border:1px solid #294b4e;border-radius:9px;color:#a6cbc7;font-size:14px}
+@media(max-width:620px){.ah-hero{grid-template-columns:1fr!important;gap:12px;min-height:370px!important;background-image:linear-gradient(180deg,rgba(6,17,20,.93),rgba(6,25,28,.51)),url('assets/backgrounds/azil-ana-sayfa-mobil.jpg')!important}}
+</style></head><body><main id="az-home"><div class="tag">AZiL 4.0 · ETKİLEŞİMLİ TASARIM TESTİ</div><h1>Animus tarzı canlı ağ</h1><p>Fareyi aşağıdaki görselin üzerinde gezdir. Ağdaki beyaz noktalar hareketine tepki verecek; bağlantılar yeniden şekillenecek.</p>
+<section class="ah-hero" aria-label="Fareye duyarlı canlı ağ"><canvas class="ah-network-canvas" aria-hidden="true"></canvas><div><div class="tag">KİTAPLAR · PROJELER · OYUNLAR</div><h2>Oyna. Oku.<br><span>Keşfet.</span></h2></div><p>Dijital ağ zamanla yavaşça hareket eder; fareye yaklaştığında esner ve yeniden birleşir.</p></section>
+<div class="note">Bu yalnızca deney sayfasıdır. <a href="https://sbncifci.tr.gg/">AZiL ana sitesi</a> henüz değiştirilmedi.</div></main>
+<script>
+(function(){
+'use strict';
+var root=document.querySelector('.ah-hero'),c=root&&root.querySelector('canvas'),ctx=c&&c.getContext('2d');
+if(!ctx)return;
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var w=0,h=0,nodes=[],mouse={x:0,y:0,on:false},visible=true,last=0,dpr=1;
+function size(){
+ var r=root.getBoundingClientRect();if(r.width<2||r.height<2)return;
+ w=r.width;h=r.height;dpr=Math.min(window.devicePixelRatio||1,2);
+ c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+ nodes=[];var cols=Math.max(6,Math.floor(w/113)),rows=w<600?5:4;
+ for(var y=0;y<rows;y++)for(var x=0;x<cols;x++){var i=x+y*cols;var px=(x+.5+(Math.sin(i*3)*.15))/cols*w,py=(y+.5+(Math.sin(i*9)*.16))/rows*h;
+ nodes.push({x:px,y:py,px:px,py:py,phase:i*1.53,speed:.3+(i%7)*.1,r:1.3+(i%4)*.22});}
+ if(reduced)draw(0);
+}
+root.addEventListener('pointermove',function(e){if(e.pointerType==='touch'||reduced)return;var r=root.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;mouse.on=true;},{passive:true});
+root.addEventListener('pointerleave',function(){mouse.on=false;},{passive:true});
+function draw(t){
+ ctx.clearRect(0,0,w,h);var radius=175,link=w<600?145:190;
+ for(var i=0;i<nodes.length;i++){var a=nodes[i],x=a.x+Math.sin(t*.00028*a.speed+a.phase)*13,y=a.y+Math.cos(t*.00028*a.speed+a.phase)*10;
+ if(mouse.on&&!reduced){var dx=x-mouse.x,dy=y-mouse.y,d=Math.hypot(dx,dy)||1;if(d<radius){var force=52*(1-d/radius)*(1-d/radius);x+=dx/d*force;y+=dy/d*force;}}
+ a.px+=(x-a.px)*(reduced?1:.18);a.py+=(y-a.py)*(reduced?1:.18);}
+ for(var a=0;a<nodes.length;a++)for(var b=a+1;b<nodes.length;b++){var p=nodes[a],q=nodes[b],dist=Math.hypot(p.px-q.px,p.py-q.py);if(dist>=link)continue;ctx.beginPath();ctx.moveTo(p.px,p.py);ctx.lineTo(q.px,q.py);ctx.strokeStyle='rgba(218,253,255,'+(0.05+(1-dist/link)*.39)+')';ctx.lineWidth=.85;ctx.stroke();}
+ for(var j=0;j<nodes.length;j++){var z=nodes[j];ctx.beginPath();ctx.arc(z.px,z.py,z.r,0,Math.PI*2);ctx.fillStyle='rgba(230,255,255,.89)';ctx.fill();}
+ if(mouse.on&&!reduced){var g=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,radius);g.addColorStop(0,'rgba(138,245,255,.16)');g.addColorStop(1,'rgba(138,245,255,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(mouse.x,mouse.y,radius,0,Math.PI*2);ctx.fill();
+ for(var k=0;k<nodes.length;k++){var p=nodes[k],d=Math.hypot(p.px-mouse.x,p.py-mouse.y);if(d>120)continue;ctx.beginPath();ctx.moveTo(mouse.x,mouse.y);ctx.lineTo(p.px,p.py);ctx.strokeStyle='rgba(234,255,255,'+(.5*(1-d/120))+')';ctx.stroke();}}}
+function tick(t){if(document.hidden||!visible||reduced)return;if(t-last>30){draw(t);last=t;}requestAnimationFrame(tick);}
+size();if(window.ResizeObserver)new ResizeObserver(size).observe(root);else window.addEventListener('resize',size,{passive:true});
+if(window.IntersectionObserver)new IntersectionObserver(function(e){var was=visible;visible=e[0].isIntersecting;if(!was&&visible&&!reduced)requestAnimationFrame(tick);}).observe(root);
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&!reduced)requestAnimationFrame(tick);});
+if(!reduced)requestAnimationFrame(tick);
+})();
+</script></body></html>
