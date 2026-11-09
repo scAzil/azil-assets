@@ -1,15 +1,15 @@
 # AZiL Sürüm Müzesi
 
-Gerçek kaynak dosyaları kullanılarak kaydedilmiş tarihi AZiL ana sayfa tasarımları.
+AZiL web sitesinin geçmiş tasarımlarının ve önemli görsel değişikliklerinin arşivi.
 
-| Arşiv | Kaynak durumu |
+| Arşiv | Açıklama |
 |---|---|
-| Erken vitrin | Kullanıcı tarafından sağlandı; kesin sürüm numarası ve tarih dosyada belirtilmiyor. AZiL Ses ve ilk projeler var. |
-| Sabit kategoriler | Kullanıcı tarafından sağlandı; kesin sürüm numarası ve tarih dosyada belirtilmiyor. |
-| 3.7 | Kaynak başlığında 25.10.2026 tarihi var. |
-| 3.8 | 1 Kasım 2026 Envato entegrasyonu. |
-| 3.9 | 1 Kasım 2026 HANOK maketi. |
-| 4.0 | 1 Kasım 2026 Canvas Animus benzeri hareketli ağ. |
-| HANOK 3.0 | Özel sayfa kaynak başlığında 3.0 bilgisi yer alıyor; ana sayfa 3.0 değildir. |
+| Erken vitrin | İlk içerik düzeni ve erken proje vitrini. Kesin sürüm numarası ve tarih bilinmiyor. |
+| Sabit kategoriler | Kategorilerin belirginleştiği erken tasarım. Kesin sürüm numarası ve tarih bilinmiyor. |
+| 3.7 | Kaynak başlığında 25.10.2026 tarihi yer alır. |
+| 3.8 | 1 Kasım 2026: görsel varlık ve tasarım düzenlemeleri. |
+| 3.9 | 1 Kasım 2026: HANOK kitap vitrini geliştirmeleri. |
+| 4.0 | 1 Kasım 2026: hareketli ağ görselleştirmesi. |
+| HANOK 3.0 | HANOK özel sayfa tasarımıdır; ana sayfa 3.0 sürümü değildir. |
 
-Her tasarım klasöründe kaynak.txt kaynak metnini; index.html üstüne arşiv navigasyonu eklenen gösterim sürümünü barındırır. En eski vitrin önizlemesinden üçüncü taraf reklam betiği çıkarılmıştır; kaynak metni ayrı korunmuştur. Eski sayfaların haricî bağlantıları güncel tr.gg hedefine gidiyor olabilir. Bedava-Sitem ortak temasının ekran görüntüsü veya tam yedeği değildir.
+Arşiv klasörlerindeki `kaynak.txt` orijinal sayfa kodunu, `index.html` ise ön izlenebilir sürümü içerir. Arşiv tarihsel bir kayıttır; bağlantılar güncel sayfalara yönlendirebilir veya zamanla değişmiş olabilir.
