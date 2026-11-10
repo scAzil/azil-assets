@@ -1,0 +1,1213 @@
+<!-- AZiL 5.0 / ANA SAYFA / 10.11.2026
+4.1 kaynak yedegi: github.com/scAzil/azil-assets/tree/main/arsiv/ana-sayfa/4.1
+Tamamini Ana Sayfa > Kaynak Kodu alanina yapistirin.
+Bu parca ana sayfa icerigidir; ortak menu, footer ve head ayarlari ayri yonetilir.
+--> <style type="text/css">
+#az-home{
+  --bg:#111216;
+  --panel:#1b1e24;
+  --panel2:#17191e;
+  --line:#353941;
+  --text:#f4f4ef;
+  --muted:#b9bec8;
+  --lime:#d5f778;
+  --blue:#96c9ff;
+  --violet:#c7b4ff;
+  --amber:#ffca82;
+  --green:#9fd7a8;
+  box-sizing:border-box;
+  width:100%;
+  max-width:1320px;
+  margin:0 auto;
+  padding:28px clamp(18px,4vw,48px);
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.65 Arial,Helvetica,sans-serif;
+  text-align:left;
+  overflow-wrap:anywhere;
+  color-scheme:dark;
+}
+#az-home *{box-sizing:border-box}
+#az-home a{color:inherit;text-decoration:none}
+#az-home a:focus-visible{outline:3px solid var(--lime);outline-offset:5px}
+
+#az-home .ah-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--line);
+}
+#az-home .ah-logo{
+  font-size:31px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+#az-home .ah-logo span{color:var(--lime)}
+#az-home .ah-nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:14px;
+}
+#az-home .ah-nav a{padding:6px 0}
+#az-home .ah-nav a:hover{color:var(--lime)}
+
+#az-home .ah-hero{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:end;
+  padding:56px 0 44px;
+}
+#az-home .ah-kicker{
+  margin:0 0 12px;
+  color:var(--lime);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.8px;
+}
+#az-home h1,
+#az-home h2,
+#az-home h3{color:var(--text);line-height:1.15}
+#az-home h1{
+  margin:0;
+  font-size:clamp(42px,6vw,76px);
+  letter-spacing:-3px;
+}
+#az-home h1 span{color:var(--lime)}
+#az-home .ah-intro{
+  max-width:430px;
+  margin:0 0 5px;
+  color:var(--muted);
+  font-size:18px;
+}
+#az-home .ah-intro strong{color:var(--text);font-weight:500}
+
+
+#az-home .ah-book{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:30px;
+  align-items:center;
+  margin:0 0 38px;
+  padding:28px;
+  background:#201d1b;
+  border:1px solid #554939;
+  border-top:3px solid var(--amber);
+}
+#az-home .ah-book-cover{
+  display:block;
+  width:100%;
+  max-width:180px;
+}
+#az-home .ah-book-cover img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid #4a4540;
+  box-shadow:0 14px 34px rgba(0,0,0,.28);
+}
+#az-home .ah-book .ah-kicker{
+  color:var(--amber);
+  margin-bottom:8px;
+}
+#az-home .ah-book h2{
+  margin:0 0 6px;
+  font-size:clamp(30px,4vw,45px);
+  letter-spacing:-1px;
+}
+#az-home .ah-book h2 span{
+  display:block;
+  margin-top:3px;
+  font-size:21px;
+  letter-spacing:.2px;
+  color:#e6ded4;
+}
+#az-home .ah-book-sub{
+  margin:0 0 14px;
+  color:#d8d2c9;
+  font-size:14px;
+}
+#az-home .ah-book-desc{
+  max-width:760px;
+  margin:0 0 18px;
+  color:var(--muted);
+}
+#az-home .ah-book-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+#az-home .ah-book-action{
+  display:inline-block;
+  padding:11px 15px;
+  background:var(--amber);
+  color:#18140e;
+  border:1px solid var(--amber);
+  border-radius:4px;
+  font-size:14px;
+  font-weight:700;
+}
+
+#az-home .ah-book-action:hover{
+  filter:brightness(1.06);
+}
+
+#az-home .ah-book-more{
+  display:inline-block;
+  margin-left:0;
+  padding:10px 13px;
+  border:1px solid #5b5d64;
+  border-radius:4px;
+  color:#f0f0ed;
+  font-size:13px;
+}
+
+#az-home .ah-book-more:hover{
+  border-color:var(--amber);
+  color:var(--amber);
+}
+
+#az-home .ah-categories{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 38px;
+}
+#az-home .ah-cat{
+  padding:15px 16px;
+  border:1px solid var(--line);
+  background:var(--panel2);
+  color:#e5e7eb;
+  font-size:13px;
+}
+#az-home .ah-cat:hover{
+  border-color:#646975;
+  background:#1d2026;
+}
+
+#az-home .ah-group{
+  margin:0 0 34px;
+  scroll-margin-top:20px;
+}
+#az-home .ah-section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  padding:24px 0 17px;
+  border-top:1px solid var(--line);
+}
+#az-home .ah-section-head h2{
+  margin:0;
+  font-size:27px;
+}
+#az-home .ah-section-head a{
+  color:var(--lime);
+  font-size:13px;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+#az-home .ah-group-intro{
+  max-width:760px;
+  margin:0 0 17px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+#az-home .ah-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+#az-home .ah-card{
+  --card-accent:var(--lime);
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  padding:22px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-top:3px solid var(--card-accent);
+}
+#az-home .ah-card.blue{--card-accent:var(--blue)}
+#az-home .ah-card.violet{--card-accent:var(--violet)}
+#az-home .ah-card.amber{--card-accent:var(--amber)}
+#az-home .ah-card.green{--card-accent:var(--green)}
+#az-home .ah-card.lime{--card-accent:var(--lime)}
+
+#az-home .ah-label{
+  margin:0 0 8px;
+  color:var(--card-accent);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.4px;
+}
+#az-home .ah-card h3{
+  margin:5px 0 8px;
+  font-size:23px;
+  letter-spacing:-.35px;
+}
+#az-home .ah-tagline{
+  margin:0 0 12px;
+  color:#eef0f2;
+  font-size:15px;
+}
+#az-home .ah-desc{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+}
+#az-home .ah-card-link{
+  display:inline-block;
+  margin-top:auto;
+  padding-top:17px;
+  color:#e7e8ec;
+  font-size:13px;
+}
+#az-home .ah-card-link span{color:var(--card-accent)}
+
+
+#az-home .ah-legacy{
+  margin-top:44px;
+  padding:28px;
+  background:#181a1f;
+  border:1px solid var(--line);
+  border-left:3px solid var(--lime);
+}
+#az-home .ah-legacy .ah-kicker{
+  margin-bottom:8px;
+}
+#az-home .ah-legacy h2{
+  margin:0 0 12px;
+  font-size:26px;
+}
+#az-home .ah-legacy p{
+  max-width:820px;
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+#az-home .ah-legacy strong{
+  color:var(--text);
+  font-weight:500;
+}
+
+#az-home .ah-about{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:35px;
+  margin-top:42px;
+  padding:30px 0;
+  border-top:1px solid var(--line);
+}
+#az-home .ah-about .ah-kicker{margin-bottom:8px}
+#az-home .ah-about h2{margin:0;font-size:27px}
+#az-home .ah-about p{
+  max-width:700px;
+  margin:0 0 15px;
+  color:var(--muted);
+}
+#az-home .ah-about-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+#az-home .ah-small-btn{
+  display:inline-block;
+  padding:9px 12px;
+  border:1px solid #4d515a;
+  border-radius:4px;
+  font-size:13px;
+}
+#az-home .ah-small-btn:hover{border-color:var(--lime);color:var(--lime)}
+
+#az-home .ah-foot{
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+#az-home .ah-foot-nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+#az-home .ah-foot a:hover{color:var(--lime)}
+
+@media(max-width:850px){
+  #az-home .ah-hero{grid-template-columns:1fr;gap:20px;padding:42px 0 34px}
+  #az-home .ah-intro{max-width:720px}
+  #az-home .ah-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #az-home .ah-categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #az-home .ah-about{grid-template-columns:1fr;gap:14px}
+}
+@media(max-width:680px){
+  #az-home .ah-book{grid-template-columns:1fr;padding:22px}
+  #az-home .ah-book-cover{width:130px}
+}
+@media(max-width:560px){
+  #az-home{padding:20px 16px}
+  #az-home h1{font-size:43px;letter-spacing:-2px}
+  #az-home .ah-grid{grid-template-columns:1fr}
+  #az-home .ah-categories{grid-template-columns:1fr 1fr}
+  #az-home .ah-card{padding:20px}
+}
+
+#az-home{overflow-wrap:break-word}
+#az-home .ah-group{scroll-margin-top:var(--az-anchor-gap,160px)}
+#az-home .ah-grid-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+#az-home .ah-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;padding:28px;margin-bottom:18px;border:1px solid var(--line);border-top:3px solid var(--lime);background:var(--panel2)}
+#az-home .ah-studio{border-top-color:var(--violet)}
+#az-home .ah-studio .ah-kicker{color:var(--violet)}
+#az-home .ah-atlas{border-top-color:var(--green)}
+#az-home .ah-atlas .ah-kicker{color:var(--green)}
+#az-home .ah-feature h3{font-size:32px;margin:0 0 10px;letter-spacing:-1px}
+#az-home .ah-feature-lead{color:var(--text);font-size:19px;margin:0 0 12px}
+#az-home .ah-primary{display:inline-block;background:var(--lime);color:#111216;padding:12px 18px;margin-top:22px;border-radius:4px;font-size:14px;font-weight:bold}
+#az-home .ah-studio .ah-primary{background:var(--violet)}
+#az-home .ah-feature-list{list-style:none;padding:0;margin:0}
+#az-home .ah-feature-list li{padding:12px 0;border-bottom:1px solid var(--line)}
+#az-home .ah-feature-list li:last-child{border-bottom:0}
+#az-home .ah-feature-list strong,#az-home .ah-feature-list span{display:block}
+#az-home .ah-feature-list strong{font-size:15px;color:var(--text)}
+#az-home .ah-feature-list span,#az-home .ah-note,#az-home .ah-previous p{font-size:13px;color:var(--muted)}
+#az-home .ah-note{margin:0 0 22px}
+#az-home .ah-previous{padding:16px 20px;border:1px solid var(--line)}
+#az-home .ah-previous summary{cursor:pointer;font-size:14px;padding:5px 0;color:var(--muted)}
+#az-home summary:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+#az-home .ah-card-link{min-height:44px}
+@media(max-width:720px){#az-home .ah-feature{grid-template-columns:1fr;gap:18px;padding:22px}}
+@media(max-width:560px){#az-home .ah-grid-two{grid-template-columns:1fr}#az-home .ah-feature{padding:20px}#az-home .ah-feature h3{font-size:28px}}
+
+
+/* AZiL 3.6 / Son kategori duzeni ve tema duzeltmeleri */
+#az-home{--book-bg:#201d1b;--book-border:#554939;--book-title:#e6ded4;--book-sub:#d8d2c9;--book-btn:#f0f0ed;--book-btn-border:#5b5d64;--tagline:#eef0f2;--cat-fg:#e5e7eb;--cat-hover:#1d2026;--cardlink:#e7e8ec;--legacy-bg:#181a1f;--action-text:#111216}
+#az-home .ah-book{background:var(--book-bg);border-color:var(--book-border);border-top-color:var(--amber)}
+#az-home .ah-book h2 span{color:var(--book-title)}#az-home .ah-book-sub{color:var(--book-sub)}
+#az-home .ah-book-more{color:var(--book-btn);border-color:var(--book-btn-border)}
+#az-home .ah-cat{color:var(--cat-fg)}#az-home .ah-cat:hover{background:var(--cat-hover)}
+#az-home .ah-tagline{color:var(--tagline)}#az-home .ah-card-link{color:var(--cardlink)}
+#az-home .ah-legacy{background:var(--legacy-bg)}
+#az-home .ah-primary{color:var(--action-text)}#az-home .ah-book-action{color:var(--action-text)}
+#az-home .ah-cinema-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#az-home .ah-cinema-card{display:flex;flex-direction:column;gap:12px;min-width:0;padding:28px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--violet);border-radius:10px}
+#az-home .ah-cinema-music{border-top-color:var(--blue)}#az-home .ah-cinema-card .ah-label{color:var(--violet)}
+#az-home .ah-cinema-music .ah-label{color:var(--blue)}
+#az-home .ah-cinema-card h3{margin:0;font-size:clamp(23px,3vw,32px)}
+#az-home .ah-cinema-card .ah-tagline{margin:0}#az-home .ah-cinema-card .ah-desc{flex:1}
+#az-home .ah-cinema-picks{display:flex;gap:7px;flex-wrap:wrap}
+#az-home .ah-cinema-picks span{border:1px solid var(--line);padding:5px 9px;color:var(--muted);font-size:11px;border-radius:20px}
+#az-home .ah-cinema-card .ah-card-link{margin-top:12px;color:var(--text);font-weight:bold}
+#az-home .ah-studio-storage{margin:4px 0 20px;padding:13px 15px;border:1px solid var(--line);border-left:3px solid var(--violet);background:var(--panel2)}
+#az-home .ah-studio-storage a{color:var(--lime);text-decoration:underline}
+#az-home .ah-link-check{margin-top:12px;font-size:11px}
+body.az-theme-light #az-home,html.az-theme-light #az-home,body[data-theme="light"] #az-home,html[data-theme="light"] #az-home{
+ --bg:#f4f7f5;--panel:#ffffff;--panel2:#edf2ee;--line:#d1ddd5;--text:#1c3029;--muted:#53675c;
+ --lime:#236f50;--blue:#235e88;--violet:#72529f;--amber:#8b5511;--green:#347a52;
+ --book-bg:#fff7ed;--book-border:#e1b581;--book-title:#583c20;--book-sub:#735f4c;--book-btn:#293c31;--book-btn-border:#c9c6bb;
+ --tagline:#284034;--cat-fg:#294137;--cat-hover:#e2eee6;--cardlink:#294137;--legacy-bg:#eff3ee;--action-text:#ffffff;color-scheme:light;
+}
+body.az-theme-light #az-home .ah-primary,html.az-theme-light #az-home .ah-primary{color:#fff}
+
+@media(prefers-color-scheme:light){
+ html:not(.az-theme-light):not(.az-theme-dark):not([data-theme="light"]):not([data-theme="dark"]) body:not(.az-theme-light):not(.az-theme-dark):not([data-theme="light"]):not([data-theme="dark"]) #az-home{
+ --bg:#f4f7f5;--panel:#ffffff;--panel2:#edf2ee;--line:#d1ddd5;--text:#1c3029;--muted:#53675c;
+ --lime:#236f50;--blue:#235e88;--violet:#72529f;--amber:#8b5511;--green:#347a52;
+ --book-bg:#fff7ed;--book-border:#e1b581;--book-title:#583c20;--book-sub:#735f4c;--book-btn:#293c31;--book-btn-border:#c9c6bb;
+ --tagline:#284034;--cat-fg:#294137;--cat-hover:#e2eee6;--cardlink:#294137;--legacy-bg:#eff3ee;--action-text:#ffffff;color-scheme:light}
+}
+@media(max-width:750px){#az-home .ah-cinema-grid{grid-template-columns:1fr}}
+@media(max-width:490px){#az-home .ah-categories{grid-template-columns:1fr 1fr}#az-home .ah-cinema-card{padding:20px}}
+
+/* AZiL 3.7: yeni kartlar, okunabilir dugmeler ve dar ekran uyumu */
+#az-home .ah-hero>* ,#az-home .ah-feature>*{min-width:0}
+#az-home h1,#az-home h2,#az-home h3{text-align:left;text-shadow:none}
+#az-home a.ah-primary,#az-home a.ah-book-action{color:var(--action-text)!important;min-height:44px}
+#az-home .ah-cephe{border-top-color:var(--amber)}
+#az-home .ah-cephe .ah-kicker{color:var(--amber)}
+#az-home .ah-cephe .ah-primary{background:var(--amber)}
+#az-home .ah-subhead{margin:26px 0 16px}
+#az-home .ah-subhead h3{font-size:23px;margin:0 0 8px}
+#az-home .ah-subhead p{margin:0;color:var(--muted);font-size:14px}
+#az-home .ah-market-note{margin:16px 0 0}
+#az-home .ah-cube-grid{grid-template-columns:1fr;margin:20px 0}
+#az-home .ah-cube-grid .ah-desc{max-width:780px}
+#az-home .ah-small-btn{min-height:44px}
+
+/* ====================================================================
+   AZiL 3.8 / ENVATO GORSEL ENTEGRASYONU / 01.11.2026
+   GitHub Pages: scAzil/azil-assets. Bileşenler #az-home ile sınırlandırıldı.
+   Mevcut HTML, menu, HANOK vitrini ve acik/koyu tema davranisi korunur.
+   ==================================================================== */
+#az-home .ah-hero{
+  position:relative;
+  isolation:isolate;
+  min-height:318px;
+  margin:18px 0 30px;
+  padding:clamp(35px,5vw,66px) clamp(22px,4vw,50px);
+  align-items:center;
+  gap:clamp(22px,4vw,44px);
+  overflow:hidden;
+  border:1px solid #385056;
+  border-radius:14px;
+  background-color:#07171a;
+  background-image:linear-gradient(90deg,rgba(6,17,20,.96) 0%,rgba(6,18,22,.82) 51%,rgba(6,24,24,.54) 100%),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-ana-sayfa-hero.jpg");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  box-shadow:0 15px 45px rgba(0,0,0,.12);
+}
+/* Giris her temada koyu goruntulendigi icin metni her zaman acik tut. */
+#az-home .ah-hero h1,
+#az-home .ah-hero .ah-intro,
+#az-home .ah-hero .ah-intro strong{color:#f7fbf8}
+#az-home .ah-hero h1 span,
+#az-home .ah-hero .ah-kicker{color:#d5f778}
+#az-home .ah-hero .ah-intro{max-width:380px;color:#e3eeed}
+/* Projeler ve Araclar basligina ikinci Envato arka planini uygula. */
+#az-home #ah-tools .ah-section-head{
+  min-height:104px;
+  margin-bottom:18px;
+  padding:22px clamp(18px,3vw,32px);
+  align-items:center;
+  border:1px solid #345659;
+  border-radius:12px;
+  background-color:#092123;
+  background-image:linear-gradient(90deg,rgba(5,22,25,.95),rgba(5,22,25,.68)),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-projeler-banner.jpg");
+  background-size:cover;
+  background-position:center;
+}
+#az-home #ah-tools .ah-section-head h2{color:#f7fbf8}
+#az-home #ah-tools .ah-section-head a{color:#d5f778}
+/* Ikonlar semantik baslik metinlerinin yaninda dekoratif kullanilir. */
+#az-home .ah-section-head h2.ah-with-icon,
+#az-home .ah-feature h3.ah-with-icon,
+#az-home .ah-card h3.ah-with-icon{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+#az-home .ah-section-head .ah-visual-icon,
+#az-home .ah-feature .ah-visual-icon,
+#az-home .ah-card .ah-visual-icon{
+  display:block;
+  flex:none;
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  border:0;
+  background:transparent;
+}
+#az-home .ah-feature .ah-visual-icon{width:48px;height:48px}
+#az-home .ah-card .ah-visual-icon{width:38px;height:38px}
+@media(max-width:850px){
+  #az-home .ah-hero{min-height:300px;gap:16px;align-items:start}
+  #az-home .ah-hero .ah-intro{max-width:680px}
+}
+@media(max-width:600px){
+  #az-home .ah-hero{
+    min-height:0;
+    padding:35px 23px;
+    margin-top:10px;
+    margin-bottom:27px;
+    border-radius:10px;
+    background-image:linear-gradient(180deg,rgba(5,16,20,.93),rgba(5,20,23,.72)),url("https://scazil.github.io/azil-assets/assets/backgrounds/azil-ana-sayfa-mobil.jpg");
+    background-position:center;
+  }
+  #az-home .ah-hero h1{font-size:clamp(38px,10vw,52px)}
+  #az-home #ah-tools .ah-section-head{padding:19px 17px}
+  #az-home .ah-section-head .ah-visual-icon{width:30px;height:30px}
+  #az-home .ah-feature .ah-visual-icon{width:39px;height:39px}
+  #az-home .ah-card .ah-visual-icon{width:34px;height:34px}
+}
+
+
+/* AZiL 4.1 / Google Play orijinal kitap kapağı. */
+#az-home .ah-book-visual{width:190px;max-width:100%;min-width:0}
+#az-home .ah-book-cover{width:190px;max-width:100%}
+#az-home .ah-book-cover img{aspect-ratio:190/271}
+#az-home .ah-book>div{min-width:0}
+#az-home .ah-cat{min-height:44px}
+#az-home .ah-section-head a{padding:10px 0;min-height:44px}
+#az-home .ah-categories{gap:12px}
+@media(max-width:360px){#az-home .ah-categories{grid-template-columns:1fr}}
+
+/* ===============================================================
+   AZiL 4.0 / ANIMUS TARZI ETKILESIMLI AG - CANVAS
+   Hafif HANOK kapağı ve mevcut yıldızlı etkileşim.
+   =============================================================== */
+#az-home .ah-hero,
+#az-home #ah-tools .ah-section-head {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+#az-home .ah-network-canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  display:block;
+  pointer-events:none;
+  opacity:.96;
+}
+#az-home .ah-hero > :not(.ah-network-canvas),
+#az-home #ah-tools .ah-section-head > :not(.ah-network-canvas){
+  position:relative;
+  z-index:1;
+}
+#az-home .ah-hero{
+  /* Statik Envato resmi zemin olur; animasyon uste eklenir. */
+  background-blend-mode:normal;
+}
+@media (prefers-reduced-motion:reduce){
+  #az-home .ah-network-canvas{opacity:.45}
+}
+
+/* Bitcoin: harici dosya gerektirmeyen yerel simge. */
+#az-home .ah-bitcoin-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:#f7931a;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:29px;font-weight:700;line-height:1}
+#az-home .ah-bitcoin-icon>span{display:block;transform:rotate(14deg)}
+@media(max-width:600px){#az-home .ah-bitcoin-icon{flex-basis:34px;width:34px;height:34px;font-size:26px}}
+
+
+/* =======================================================================
+   AZiL ANA SAYFA 5.0 / Bütünleşik keşif vitrini / 10.11.2026
+   Yalnız #az-home içinde; küresel menü, footer ve diğer sayfalar etkilenmez.
+   ======================================================================= */
+#az-home{--v5-ink:#ebf5f0;--v5-soft:#92a9a5;--v5-glow:rgba(91,220,194,.17);--v5-accent:#8de2d2;--v5-stroke:rgba(140,208,193,.26);--v5-surface:rgba(24,38,41,.74);--v5-shadow:0 16px 44px rgba(0,0,0,.18);position:relative;isolation:isolate;max-width:1350px;background:radial-gradient(ellipse 63% 17% at 84% 0%,rgba(45,139,135,.14),transparent 90%),radial-gradient(ellipse 40% 17% at 0% 40%,rgba(87,73,154,.07),transparent),var(--bg)}
+#az-home h1,#az-home h2,#az-home h3{overflow-wrap:normal;word-break:normal}
+#az-home .ah-hero{grid-template-columns:minmax(0,1.13fr) minmax(290px,.87fr);align-items:center;min-height:420px;margin:10px 0 30px;padding:clamp(32px,5vw,64px) clamp(24px,4.3vw,56px) 88px;border-color:#42676d;border-radius:20px;box-shadow:0 24px 75px rgba(0,0,0,.28),inset 0 1px 0 rgba(210,250,247,.12)}
+#az-home .ah-hero::before{content:"";position:absolute;pointer-events:none;z-index:0;width:330px;height:330px;left:-200px;bottom:-224px;border:1px solid rgba(173,239,230,.22);border-radius:50%;box-shadow:0 0 0 42px rgba(173,239,230,.035),0 0 0 84px rgba(173,239,230,.025)}
+#az-home .ah-hero>*:not(.ah-network-canvas){position:relative;z-index:1}
+#az-home .ah-hero .ah-hero-copy,#az-home .ah-hero .ah-hero-aside{min-width:0}
+#az-home .ah-signal{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:800;letter-spacing:.17em;color:#d0eee6;border:1px solid rgba(147,223,212,.32);background:rgba(12,39,39,.54);border-radius:999px;padding:7px 12px;margin:0 0 20px}
+#az-home .ah-signal-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#9ff3db;box-shadow:0 0 14px #9ff3db}
+#az-home .ah-hero h1{font-size:clamp(52px,6.4vw,88px)!important;line-height:.99;letter-spacing:-.065em!important;margin:12px 0 15px}
+#az-home .ah-hero h1 span{color:#b8f6c9;text-shadow:0 0 42px rgba(131,251,208,.15)}
+#az-home .ah-hero .ah-kicker{font-size:11px;color:#95d4cd;letter-spacing:.15em}
+#az-home .ah-hero-caption{max-width:470px;color:#c3dcd8;font-size:15px;line-height:1.7;margin:0}
+#az-home .ah-hero-aside{padding:26px 26px 24px;background:linear-gradient(145deg,rgba(16,43,47,.72),rgba(11,25,31,.6));border:1px solid rgba(156,225,219,.2);border-radius:13px;backdrop-filter:blur(5px)}
+#az-home .ah-hero .ah-intro{font-size:16px;line-height:1.8;max-width:none;color:#d7e8e4}
+#az-home .ah-overline{font-size:10px;letter-spacing:.18em;color:#89c6bf;font-weight:800;margin:0 0 13px}
+#az-home .ah-hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin:19px 0}
+#az-home .ah-hero-chips span{font-size:10px;color:#c0e5dc;border:1px solid rgba(174,232,221,.23);border-radius:999px;padding:5px 8px}
+#az-home .ah-hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+#az-home .ah-hero-cta,#az-home .ah-hero-quiet{display:inline-flex;gap:12px;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;font-size:12px;font-weight:800;border-radius:7px}
+#az-home .ah-hero-cta{background:#c8f7b5;color:#113021!important}
+#az-home .ah-hero-quiet{background:rgba(18,46,52,.65);color:#e2f9f5!important;border:1px solid rgba(183,233,222,.25)}
+#az-home .ah-hero-cta:hover,#az-home .ah-hero-quiet:hover{filter:brightness(1.08)}
+#az-home .ah-ambient-controls{display:flex;align-items:center;gap:8px;position:absolute!important;z-index:5!important;bottom:23px;right:clamp(24px,4.3vw,56px);flex-wrap:wrap;justify-content:flex-end}
+#az-home .ah-ambient-btn{border:1px solid rgba(168,227,220,.33);background:rgba(7,30,32,.77);color:#d7f4ea;padding:6px 11px;min-height:36px;border-radius:7px;font:700 11px/1.5 Arial,Helvetica,sans-serif;cursor:pointer}
+#az-home .ah-ambient-btn:hover{border-color:#b9f8d5}
+#az-home .ah-ambient-btn[aria-pressed="false"]{color:#b3c6c2;border-color:rgba(168,227,220,.18)}
+#az-home .ah-book{grid-template-columns:230px minmax(0,1fr);gap:34px;padding:clamp(22px,3vw,34px);border-radius:17px;background:linear-gradient(120deg,rgba(155,91,38,.12),transparent 43%),var(--book-bg);box-shadow:var(--v5-shadow);position:relative}
+#az-home .ah-book::after{content:"";position:absolute;right:0;top:0;width:120px;height:120px;pointer-events:none;background:radial-gradient(circle at 100% 0%,rgba(255,207,124,.13),transparent 68%)}
+#az-home .ah-book-visual,#az-home .ah-book-cover{width:210px;max-width:100%;position:relative}
+#az-home .ah-book-cover img{width:100%;border-radius:4px;box-shadow:0 22px 48px rgba(0,0,0,.3);transition:transform .3s ease}
+#az-home .ah-book-cover:hover img{transform:translateY(-4px) rotate(-1deg)}
+#az-home .ah-book h2{font-size:clamp(35px,4vw,52px);line-height:1.06}
+#az-home .ah-book-links a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+#az-home .ah-categories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 42px}
+#az-home .ah-cat{position:relative;min-height:125px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-width:0;padding:17px;border:1px solid var(--line);border-top:2px solid var(--cat-color);border-radius:10px;background:linear-gradient(160deg,rgba(130,200,187,.065),transparent 55%),var(--panel2);color:var(--text);transition:transform .22s ease,border-color .2s,box-shadow .2s}
+#az-home .ah-cat:hover{transform:translateY(-3px);border-color:var(--cat-color);box-shadow:0 14px 28px rgba(0,0,0,.1);background:var(--panel2)}
+#az-home .ah-cat-no{font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--muted)}
+#az-home .ah-cat-name{font-size:clamp(14px,1.5vw,17px);font-weight:800;line-height:1.3;color:var(--text)}
+#az-home .ah-cat-name>span{color:var(--cat-color);font-size:19px;display:inline-block;margin-right:6px}
+#az-home .ah-cat-foot{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px}
+#az-home .ah-cat-foot span{color:var(--cat-color);font-size:17px}
+#az-home .ah-discover{scroll-margin-top:var(--az-anchor-gap,160px);margin:0 0 42px}
+#az-home .ah-discover-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 17px}
+#az-home .ah-discover-head h2{margin:5px 0 0;font-size:clamp(27px,3.6vw,37px)}
+#az-home .ah-discover-head>p{max-width:355px;color:var(--muted);font-size:13px;margin:0}
+#az-home .ah-discover-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#az-home .ah-discover-card{--sd:#b1e1ff;position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;min-height:220px;overflow:hidden;padding:22px;border-radius:12px;border:1px solid var(--line);border-top:3px solid var(--sd);background:var(--panel);transition:transform .2s ease,border-color .2s}
+#az-home .ah-discover-card:hover{transform:translateY(-4px);border-color:var(--sd)}
+#az-home .ah-discover-game{--sd:var(--blue)}#az-home .ah-discover-faith{--sd:var(--green)}#az-home .ah-discover-story{--sd:var(--violet)}
+#az-home .ah-discover-no{color:var(--sd);letter-spacing:.09em;font-weight:800;font-size:10px;position:relative;z-index:1}
+#az-home .ah-discover-mark{position:absolute;top:12px;right:20px;font-size:90px;line-height:1;opacity:.08;color:var(--sd);pointer-events:none}
+#az-home .ah-discover-card strong{font-size:24px;line-height:1.17;color:var(--text);max-width:90%;position:relative;z-index:1}
+#az-home .ah-discover-desc{font-size:13px;line-height:1.7;color:var(--muted);max-width:310px}
+#az-home .ah-discover-go{margin-top:auto;font-size:13px;font-weight:800;color:var(--sd)}
+#az-home .ah-group{margin-bottom:46px}
+#az-home .ah-section-head{padding-top:25px}
+#az-home .ah-section-head h2{font-size:clamp(24px,3.2vw,31px)}
+#az-home .ah-card{border-radius:10px;transition:transform .23s ease,border-color .22s ease,box-shadow .22s ease}
+#az-home .ah-card:hover{transform:translateY(-3px);border-color:var(--card-accent);box-shadow:var(--v5-shadow)}
+#az-home .ah-card-link{font-weight:750}
+#az-home .ah-feature{border-radius:13px}
+#az-home .ah-v5-section-line{margin-top:27px}
+#az-home .ah-v5-app-grid{margin:0 0 18px}
+#az-home .ah-flight{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,.55fr);gap:20px;align-items:center;margin:0 0 20px;padding:26px;border-radius:13px;border:1px solid #35556a;border-top:3px solid var(--blue);background:linear-gradient(125deg,rgba(24,66,85,.46),rgba(13,26,37,.3)),var(--panel2);overflow:hidden}
+#az-home .ah-flight .ah-kicker{color:var(--blue)}#az-home .ah-flight h3{font-size:clamp(30px,4vw,42px);margin:0 0 10px}
+#az-home .ah-flight p:not(.ah-kicker){max-width:670px;font-size:14px;color:var(--muted);margin:0 0 17px}
+#az-home .ah-flight-link{display:inline-flex;align-items:center;gap:12px;color:var(--blue)!important;font-size:13px;font-weight:800;min-height:44px}
+#az-home .ah-flight-visual{min-height:178px;position:relative;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+#az-home .ah-flight-ring{position:absolute;display:block;width:155px;height:155px;border:1px solid rgba(154,211,245,.35);border-radius:50%;box-shadow:0 0 0 29px rgba(115,189,225,.035),0 0 0 60px rgba(115,189,225,.025)}
+#az-home .ah-flight-ring::before,#az-home .ah-flight-ring::after{content:"";position:absolute;top:50%;left:-80px;right:-80px;border-top:1px dashed rgba(160,216,245,.3)}
+#az-home .ah-flight-ring::after{transform:rotate(90deg)}
+#az-home .ah-flight-plane{font-size:73px;color:var(--blue);filter:drop-shadow(0 0 18px rgba(114,198,242,.24));transform:rotate(-34deg)}
+#az-home .ah-flight-cross{position:absolute;right:17px;top:6px;font-size:20px;color:rgba(159,221,255,.64)}
+#az-home .ah-timecapsule{scroll-margin-top:var(--az-anchor-gap,160px);margin:10px 0 38px;border:1px solid #53604f;border-top:3px solid #d6bf8c;border-radius:17px;overflow:hidden;background:radial-gradient(circle at 81% 45%,rgba(175,137,82,.13),transparent 34%),var(--panel2)}
+#az-home .ah-time-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(200px,.9fr);gap:20px;align-items:center;padding:clamp(22px,4vw,38px)}
+#az-home .ah-time-copy .ah-kicker{color:var(--amber)}
+#az-home .ah-time-copy h2{font-size:clamp(31px,4.2vw,49px);line-height:1.08;margin:0 0 17px;letter-spacing:-.04em}
+#az-home .ah-time-copy h2 span{color:var(--amber)}
+#az-home .ah-time-copy>p:not(.ah-kicker){color:var(--muted);max-width:640px;font-size:15px;line-height:1.8;margin:0 0 20px}
+#az-home .ah-time-action{display:inline-flex;align-items:center;gap:14px;padding:12px 15px;border-radius:7px;background:var(--amber);color:#18170e!important;font-weight:800;font-size:13px;min-height:44px}
+#az-home .ah-time-orbit{height:280px;min-width:0;position:relative;display:grid;place-items:center;isolation:isolate}
+#az-home .ah-orbit{display:block;position:absolute;border:1px solid rgba(211,183,124,.28);border-radius:50%;pointer-events:none}
+#az-home .ah-orbit-1{width:145px;height:145px}#az-home .ah-orbit-2{width:210px;height:210px;border-style:dashed}#az-home .ah-orbit-3{width:272px;height:272px}
+#az-home .ah-orbit-core{width:98px;height:98px;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(232,194,130,.18),rgba(24,35,35,.96));border:1px solid rgba(234,202,151,.56);display:grid;place-content:center;text-align:center;color:var(--text);font-size:22px;font-weight:900;line-height:1.25;box-shadow:0 0 45px rgba(203,167,93,.12)}
+#az-home .ah-orbit-core small{font-size:10px;color:var(--amber);letter-spacing:.1em}
+#az-home .ah-orbit-label{position:absolute;color:var(--amber);font-size:9px;font-weight:900;letter-spacing:.12em;background:var(--panel2);padding:3px 8px;border:1px solid var(--line);border-radius:10px}
+#az-home .ah-orbit-label-a{top:20px;left:30%}#az-home .ah-orbit-label-b{right:6px;top:43%}#az-home .ah-orbit-label-c{bottom:22px;left:18%}
+#az-home .ah-time-milestones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+#az-home .ah-time-milestones span{padding:13px 20px;text-align:center;font-size:11px;color:var(--muted)}
+#az-home .ah-time-milestones span+span{border-left:1px solid var(--line)}
+#az-home .ah-time-milestones b{color:var(--text)}
+#az-home .ah-legacy,#az-home .ah-about{border-radius:10px}
+#az-home .ah-about{scroll-margin-top:var(--az-anchor-gap,160px)}
+#az-home .ah-legacy{border-left-color:var(--amber)}
+#az-home .ah-legacy .ah-kicker{color:var(--amber)}
+#az-home .ah-about-links .ah-small-btn:hover{border-color:var(--lime)}
+#az-home .ah-v5-cursor{display:none;pointer-events:none;position:fixed;left:-100px;top:-100px;width:29px;height:29px;z-index:99999;border:1px solid rgba(140,244,222,.8);box-shadow:0 0 18px rgba(124,243,224,.26);border-radius:50%;transform:translate(-50%,-50%);transition:width .13s,height .13s,opacity .1s;opacity:0}
+#az-home .ah-v5-cursor:before,#az-home .ah-v5-cursor:after{content:"";position:absolute;background:rgba(175,248,234,.85)}
+#az-home .ah-v5-cursor:before{width:9px;height:1px;left:50%;top:50%;transform:translate(-50%,-50%)}
+#az-home .ah-v5-cursor:after{width:1px;height:9px;left:50%;top:50%;transform:translate(-50%,-50%)}
+@media(hover:hover) and (pointer:fine){#az-home[data-cursor="on"],#az-home[data-cursor="on"] a,#az-home[data-cursor="on"] button{cursor:none!important}#az-home[data-cursor="on"] .ah-v5-cursor{display:block}#az-home[data-cursor="on"] .ah-v5-cursor.is-visible{opacity:1}#az-home .ah-v5-cursor.is-interactive{width:45px;height:45px;border-color:var(--amber)}}
+#az-home[data-stars="off"] .ah-network-canvas{opacity:0!important}
+body.az-theme-light #az-home,html.az-theme-light #az-home,body[data-theme="light"] #az-home,html[data-theme="light"] #az-home{--v5-soft:#556e64;--v5-accent:#236e5b;--v5-glow:rgba(47,106,95,.11);--v5-stroke:rgba(53,114,95,.18);--v5-surface:rgba(245,250,246,.93);--v5-shadow:0 12px 30px rgba(18,62,44,.08);background:radial-gradient(ellipse 60% 16% at 100% 0%,rgba(73,159,129,.09),transparent 87%),var(--bg)}
+body.az-theme-light #az-home .ah-cat,html.az-theme-light #az-home .ah-cat,body[data-theme="light"] #az-home .ah-cat,html[data-theme="light"] #az-home .ah-cat{background:linear-gradient(140deg,rgba(81,143,112,.05),transparent 58%),var(--panel2)}
+body.az-theme-light #az-home .ah-flight,html.az-theme-light #az-home .ah-flight,body[data-theme="light"] #az-home .ah-flight,html[data-theme="light"] #az-home .ah-flight{background:linear-gradient(125deg,rgba(107,169,206,.1),rgba(161,194,224,.05)),var(--panel2);border-color:#b6ccdd}
+body.az-theme-light #az-home .ah-orbit-core,html.az-theme-light #az-home .ah-orbit-core,body[data-theme="light"] #az-home .ah-orbit-core,html[data-theme="light"] #az-home .ah-orbit-core{background:#faf2e4;border-color:#c7ae84;color:#38422d}
+body.az-theme-light #az-home .ah-timecapsule,html.az-theme-light #az-home .ah-timecapsule,body[data-theme="light"] #az-home .ah-timecapsule,html[data-theme="light"] #az-home .ah-timecapsule{border-color:#d3b88d}
+body.az-theme-light #az-home .ah-time-action,html.az-theme-light #az-home .ah-time-action,body[data-theme="light"] #az-home .ah-time-action,html[data-theme="light"] #az-home .ah-time-action{color:#fff!important}
+body.az-theme-light #az-home .ah-discover-card,html.az-theme-light #az-home .ah-discover-card{background:var(--panel)}
+@media(prefers-color-scheme:light){html:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) body:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) #az-home{--v5-soft:#556e64;--v5-accent:#236e5b;--v5-glow:rgba(47,106,95,.11);--v5-stroke:rgba(53,114,95,.18);--v5-surface:rgba(245,250,246,.93);--v5-shadow:0 12px 30px rgba(18,62,44,.08)}
+html:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) body:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) #az-home .ah-flight{background:#edf4f7;border-color:#b6ccdd}
+html:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) body:not(.az-theme-light):not(.az-theme-dark):not([data-theme]) #az-home .ah-orbit-core{background:#faf2e4;color:#38422d}}
+@media(max-width:1100px){#az-home .ah-categories{grid-template-columns:repeat(3,minmax(0,1fr))}#az-home .ah-hero{grid-template-columns:minmax(0,1fr) minmax(250px,.85fr);gap:24px}}
+@media(max-width:850px){#az-home .ah-hero{grid-template-columns:1fr;min-height:0;padding-bottom:83px}#az-home .ah-hero-aside{max-width:750px}#az-home .ah-discover-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#az-home .ah-time-inner{grid-template-columns:1fr minmax(190px,.65fr)}}
+@media(max-width:690px){#az-home .ah-categories{grid-template-columns:repeat(2,minmax(0,1fr))}#az-home .ah-discover-head{display:block}#az-home .ah-discover-head>p{margin-top:8px}#az-home .ah-discover-grid{grid-template-columns:1fr}#az-home .ah-discover-card{min-height:185px}#az-home .ah-time-inner{grid-template-columns:1fr}#az-home .ah-time-orbit{height:240px}#az-home .ah-orbit-3{width:230px;height:230px}#az-home .ah-orbit-2{width:184px;height:184px}#az-home .ah-flight{grid-template-columns:1fr}#az-home .ah-flight-visual{min-height:140px}#az-home .ah-book{grid-template-columns:1fr}#az-home .ah-book-visual,#az-home .ah-book-cover{width:190px}}
+@media(max-width:560px){#az-home .ah-hero{padding:30px 19px 87px;margin-top:5px}#az-home .ah-hero h1{font-size:clamp(45px,13vw,60px)!important}#az-home .ah-hero-aside{padding:20px}#az-home .ah-ambient-controls{right:17px;bottom:16px;left:17px;justify-content:flex-start}#az-home .ah-ambient-btn{font-size:10px;padding:5px 8px}#az-home .ah-categories{gap:9px}#az-home .ah-cat{padding:13px 12px;min-height:125px}#az-home .ah-cat-name{font-size:13px}#az-home .ah-cat-name>span{font-size:16px;margin-right:3px}#az-home .ah-cat-foot{font-size:10px}#az-home .ah-time-milestones span{padding:12px 6px;font-size:10px}#az-home .ah-book h2{font-size:36px}#az-home .ah-book h2 span{font-size:20px}#az-home .ah-discover-head h2{font-size:28px}}
+@media(max-width:360px){#az-home .ah-categories{grid-template-columns:1fr}#az-home .ah-cat{min-height:95px}#az-home .ah-hero-chips{gap:5px}#az-home .ah-hero-chips span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){#az-home .ah-cat,#az-home .ah-card,#az-home .ah-discover-card,#az-home .ah-book-cover img{transition:none!important;transform:none!important}#az-home .ah-hero{scroll-behavior:auto!important}}
+
+#az-home .ah-book-cover{display:block;aspect-ratio:190/271;border-radius:4px;overflow:hidden;isolation:isolate;border:1px solid var(--line);background:linear-gradient(160deg,#182526,#372728 65%,#201c1b)}
+#az-home .ah-book-cover .ah-cover-fallback{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#f3e3c9;background:radial-gradient(circle at 50% 35%,rgba(216,172,105,.15),transparent 58%),linear-gradient(150deg,#23363b,#332629 65%,#191d20);padding:20px;text-align:center}
+#az-home .ah-cover-fallback::after{content:"";position:absolute;inset:13px;border:1px solid rgba(230,204,157,.25);pointer-events:none}
+#az-home .ah-cover-fallback small{font-size:10px;color:#dfba7d;font-weight:800;letter-spacing:.13em}
+#az-home .ah-cover-fallback strong{font-size:33px;color:#f0e2d1;line-height:1.15;letter-spacing:-.02em}
+#az-home .ah-cover-fallback em{font-style:normal;font-size:15px;letter-spacing:.1em;color:#d6bd9c;font-weight:800}
+#az-home .ah-cover-fallback span{font-size:11px;color:#c5bdab;line-height:1.5}
+#az-home .ah-book-cover img{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;object-fit:cover;border:0;aspect-ratio:190/271}
+#az-home .ah-personal-note{margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.65}</style> <section aria-label="AZiL ana sayfa" id="az-home" lang="tr">
+<div class="ah-hero" aria-label="AZiL dünyasına giriş">
+<canvas class="ah-network-canvas" data-network="hero" aria-hidden="true"></canvas>
+<div class="ah-hero-copy">
+  <div class="ah-signal"><span class="ah-signal-dot" aria-hidden="true"></span> AZiL / DİJİTAL KEŞİF EVRENİ</div>
+  <p class="ah-kicker">ROMANLAR · OYUNLAR · UYGULAMALAR · KEŞİFLER</p>
+  <h1>Oyna. Oku.<br><span>Keşfet.</span></h1>
+  <p class="ah-hero-caption">Bir fikirden doğan, her yeni çalışmayla genişleyen kişisel dijital dünya.</p>
+</div>
+<div class="ah-hero-aside">
+  <p class="ah-overline">BİR ARŞİVDEN FAZLASI</p>
+  <p class="ah-intro"><strong>AZiL'in dünyasına hoş geldin.</strong> Romanlar, oyunlar, saha araçları, iletişim uygulamaları, görsel deneyler ve ilham veren eserler burada bir araya geliyor.</p>
+  <div class="ah-hero-chips" aria-label="AZiL keşif alanları"><span>7 ana bölüm</span><span>Gelişen projeler</span><span>Yaşayan arşiv</span></div>
+  <div class="ah-hero-actions"><a class="ah-hero-cta" href="#ah-discover">Keşfe başla <span aria-hidden="true">↘</span></a><a class="ah-hero-quiet" href="/AZiL-Gunlugu.htm">Zaman Kapsülü <span aria-hidden="true">↗</span></a></div>
+</div>
+<div class="ah-ambient-controls" role="group" aria-label="Ana sayfa görsel efektleri">
+<button class="ah-ambient-btn" id="ah-stars-toggle" type="button" aria-pressed="true">✦ Yıldızlar: Açık</button>
+<button class="ah-ambient-btn" id="ah-cursor-toggle" type="button" aria-pressed="false">◎ İmleç: Kapalı</button>
+</div>
+</div>
+<!-- ONE CIKAN KITAP --> <section aria-labelledby="ah-book-title" class="ah-book">
+<div class="ah-book-visual"><a aria-label="HANOK - AZİL DOSYALARI &ouml;zel sayfasını a&ccedil;" class="ah-book-cover" href="https://sbncifci.tr.gg/Hanok.htm"><span class="ah-cover-fallback" aria-hidden="true"><small>AZiL / ROMAN</small><strong>HANOK</strong><em>AZİL DOSYALARI</em><span>Kalp İzleri Üzerine Bir Roman</span><span>Şaban Çifçi (Azil)</span></span><img src="https://play.google.com/books/publisher/content/images/frontcover/sgnWEQAAQBAJ?fife=w400-h570" width="190" height="271" loading="lazy" decoding="async" alt="HANOK - AZİL DOSYALARI romanının orijinal kapağı" /></a></div>
+<div>
+<p class="ah-kicker">ROMAN / BİLİMKURGU</p>
+<h2 id="ah-book-title">HANOK       <span>AZİL DOSYALARI</span></h2>
+<p class="ah-book-sub">Kalp İzleri &Uuml;zerine Bir Roman &middot; Şaban &Ccedil;if&ccedil;i</p>
+<p class="ah-book-desc">Hanok ve Beyaz, babaları Azil'in ardında bıraktığı izlerin peşine d&uuml;ş&uuml;yor.       Sevgi, hafıza ve zamanın birbirine karıştığı bir bilimkurgu yolculuğu.</p>
+<div class="ah-book-links"><a class="ah-book-action" href="https://sbncifci.tr.gg/Hanok.htm">HANOK sayfasını keşfet &rarr;</a> <a class="ah-book-more" href="https://play.google.com/store/books/details?id=sgnWEQAAQBAJ" rel="noopener noreferrer" target="_blank">Google Play'de incele ↗</a> <a class="ah-book-more" href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">Kitaplar &amp; Hik&acirc;yeler &rarr;</a></div>
+</div>
+</section> <nav aria-label="AZiL ana kategoriler" class="ah-categories">
+<a class="ah-cat" href="#ah-books" style="--cat-color:var(--amber)"><span class="ah-cat-no">01 / YAZI</span><span class="ah-cat-name"><span aria-hidden="true">✧</span> Kitaplar &amp; Hikâyeler</span><span class="ah-cat-foot">Roman ve anlatılar <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat" href="#ah-faith" style="--cat-color:var(--green)"><span class="ah-cat-no">02 / KEŞİF</span><span class="ah-cat-name"><span aria-hidden="true">✳</span> Dini İçerikler</span><span class="ah-cat-foot">Dinleme ve araştırma <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat" href="#ah-tools" style="--cat-color:var(--blue)"><span class="ah-cat-no">03 / MÜHENDİSLİK</span><span class="ah-cat-name"><span aria-hidden="true">⌁</span> Projeler &amp; Araçlar</span><span class="ah-cat-foot">CBS, su ve veri <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat" href="#ah-cinema" style="--cat-color:var(--violet)"><span class="ah-cat-no">04 / KÜLTÜR</span><span class="ah-cat-name"><span aria-hidden="true">♫</span> Film ve Müzikler</span><span class="ah-cat-foot">İz bırakan eserler <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat" href="#ah-apps" style="--cat-color:var(--blue)"><span class="ah-cat-no">05 / YAZILIM</span><span class="ah-cat-name"><span aria-hidden="true">◈</span> Uygulamalar</span><span class="ah-cat-foot">Üret ve paylaş <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat" href="#ah-games" style="--cat-color:var(--amber)"><span class="ah-cat-no">06 / DENEYİM</span><span class="ah-cat-name"><span aria-hidden="true">✦</span> Oyunlar</span><span class="ah-cat-foot">Strateji ve macera <span aria-hidden="true">↗</span></span></a>
+<a class="ah-cat ah-cat-about" href="#ah-about" style="--cat-color:var(--lime)"><span class="ah-cat-no">07 / YOLCULUK</span><span class="ah-cat-name"><span aria-hidden="true">◎</span> Hakkımda</span><span class="ah-cat-foot">Hikâyenin ardındaki kişi <span aria-hidden="true">↗</span></span></a>
+</nav> 
+<section class="ah-discover" id="ah-discover" aria-labelledby="ah-discover-title">
+<div class="ah-discover-head"><div><p class="ah-kicker">AZiL / KEŞFE DEVAM</p><h2 id="ah-discover-title">Yeni kapılar, yeni dünyalar.</h2></div><p>Yazılımın, hayal gücünün ve araştırmanın buluştuğu üç ayrı deneyime göz at.</p></div>
+<div class="ah-discover-grid">
+<a class="ah-discover-card ah-discover-game" href="/Goklerde.htm"><span class="ah-discover-no">01 / ÜÇ BOYUTLU OYUN</span><span class="ah-discover-mark" aria-hidden="true">✈</span><strong>Göklerde</strong><span class="ah-discover-desc">Uçuş, görevler ve keşif üzerine geliştirilen üç boyutlu oyun dünyası.</span><span class="ah-discover-go">Oyuna göz at <span aria-hidden="true">↗</span></span></a>
+<a class="ah-discover-card ah-discover-faith" href="/Kuranin-Sayisal-Atlasi.htm"><span class="ah-discover-no">02 / METİN ARAŞTIRMASI</span><span class="ah-discover-mark" aria-hidden="true">✳</span><strong>Kur’an’ın Sayısal Atlası</strong><span class="ah-discover-desc">Ayetleri ve kelimeleri farklı sayım yaklaşımlarıyla araştır.</span><span class="ah-discover-go">Atlası keşfet <span aria-hidden="true">↗</span></span></a>
+<a class="ah-discover-card ah-discover-story" href="/Hikaye-Atolyesi.htm"><span class="ah-discover-no">03 / İNTERAKTİF HİKÂYE</span><span class="ah-discover-mark" aria-hidden="true">✎</span><strong>Hikâye Atölyesi</strong><span class="ah-discover-desc">Karakterlerini ve seçimlerle dallanan anlatılarını tasarla.</span><span class="ah-discover-go">Atölyeye git <span aria-hidden="true">↗</span></span></a>
+</div>
+</section>
+  <section aria-labelledby="ah-books-title" class="ah-group" id="ah-books">
+<div class="ah-section-head">
+<h2 id="ah-books-title">Kitaplar &amp; Hik&acirc;yeler</h2>
+<a href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">T&uuml;m&uuml;n&uuml; g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Yayımlanmış romanlar ve geliştirme aşamasındaki etkileşimli anlatılar.</p>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">YAYIMLANMIŞ ROMAN</p>
+<h3>HANOK &ndash; AZİL DOSYALARI</h3>
+<p class="ah-tagline">Kalp İzleri &Uuml;zerine Bir Roman</p>
+<p class="ah-desc">Hafıza, sevgi, zaman ve insanın geride bıraktığı izler &uuml;zerine bilimkurgu.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Hanok.htm">HANOK sayfasını a&ccedil; <span>&rarr;</span></a> </article> <article class="ah-card violet">
+<p class="ah-label">İNTERAKTİF ROMAN / GELİŞTİRİLİYOR</p>
+<h3>Asil Bir Suskunluk</h3>
+<p class="ah-tagline">Se&ccedil;imlerin hik&acirc;yeyi değiştirir.</p>
+<p class="ah-desc">Farklı yollara ayrılan ve yeniden birleşen bir anlatı &uuml;zerinde &ccedil;alışıyorum. Hen&uuml;z oynanabilir s&uuml;r&uuml;m yayımlanmadı.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kitaplar-ve-Hikayeler.htm">Kitaplar ve hik&acirc;yelere git <span>&rarr;</span></a> </article></div>
+</section><section aria-labelledby="ah-faith-title" class="ah-group" id="ah-faith">
+<div class="ah-section-head">
+<h2 id="ah-faith-title">Dini İ&ccedil;erik</h2>
+<a href="https://sbncifci.tr.gg/Dini-icerikler.htm">Dini i&ccedil;erikleri g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Dinle. Takip et. Hatırla.</p>
+<div class="ah-grid"><article class="ah-card green">
+<p class="ah-label">NAMAZ / DUA / TESBİHAT</p>
+<h3>Akıllı Seccade</h3>
+<p class="ah-tagline">Namaz ve dua kayıtları.</p>
+<p class="ah-desc">Namaz, tesbihat ve dua sesleri i&ccedil;in sade dinleme alanı.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Namaz.htm">Dinlemeye git <span>&rarr;</span></a> </article> <article class="ah-card amber">
+<p class="ah-label">KUR&rsquo;AN / S&Ucirc;RELER</p>
+<h3>Kur&rsquo;an-ı Kerim</h3>
+<p class="ah-tagline">Oku, dinle, takip et.</p>
+<p class="ah-desc">Kur&rsquo;an-ı Kerim i&ccedil;eriğine ve dinleme bağlantılarına ulaş.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Sureler.htm">S&ucirc;releri a&ccedil; <span>&rarr;</span></a> </article><article class="ah-card green ah-card-atlas">
+<p class="ah-label">KUR’AN / ARAŞTIRMA / SAYISAL İNCELEME</p>
+<h3>Kur’an’ın Sayısal Atlası</h3>
+<p class="ah-tagline">Oku. Araştır. Karşılaştır.</p>
+<p class="ah-desc">Kelime ve ayet incelemeleri, farklı sayım yöntemleri ve kendi keşiflerini değerlendirebileceğin araştırma alanı. Sayısal sonuçlar kullanılan metne ve yönteme bağlıdır.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kuranin-Sayisal-Atlasi.htm">Sayısal Atlas’ı aç <span aria-hidden="true">→</span></a></article></div>
+</section><section aria-labelledby="ah-tools-title" class="ah-group" id="ah-tools">
+<div class="ah-section-head"><canvas class="ah-network-canvas" data-network="projects" aria-hidden="true"></canvas>
+<h2 class="ah-with-icon" id="ah-tools-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-projeler.png" />Projeler &amp; Ara&ccedil;lar</h2>
+<a href="https://sbncifci.tr.gg/Projeler-ve-Araclar.htm">T&uuml;m projeleri g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Sahadan haritaya, g&ouml;zlemden arşive. Su, CBS, piyasa takibi ve g&ouml;rsel deneyler i&ccedil;in geliştirdiğim ara&ccedil;lar.</p>
+<article class="ah-feature ah-atlas">
+<div>
+<p class="ah-kicker">HATAY &middot; ASİ HAVZASI &middot; CBS</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-projeler.png" />Arazi Atlası</h3>
+<p class="ah-feature-lead">Sahayı kaydet. B&uuml;t&uuml;n&uuml; g&ouml;r.</p>
+<p class="ah-desc">Konumlarını, fotoğraflarını ve teknik notlarını projelerle d&uuml;zenle. Saha haritası, CBS Ara&ccedil; Kutusu ve Havza Atlası aynı &ccedil;alışma alanında.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Arazi-Atlasi.htm">Arazi Atlası&rsquo;nı a&ccedil; &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>Katmanlı havza g&ouml;r&uuml;n&uuml;m&uuml;</strong><span>Asi&rsquo;nin T&uuml;rkiye b&ouml;l&uuml;m&uuml;, akarsular ve baraj/g&ouml;let katmanlarını se&ccedil;erek g&ouml;ster.</span></li>
+    <li><strong>Kendi verilerin</strong><span>KML ve GeoJSON katmanlarını saha kayıtlarınla birlikte incele.</span></li>
+    <li><strong>Sahadan arşive</strong><span>Fotoğraflı kayıtlar, dışa aktarma ve cihazlar arasında eşitleme ara&ccedil;ları.</span></li>
+</ul>
+</article>
+<p class="ah-note">Kayıtlar tarayıcıda tutulur; bulut yedeği yoktur. D&uuml;zenli yedek al. Hazır katmanlar canlı debi veya doluluk verisi değildir.</p>
+<div class="ah-grid"><article class="ah-card green">
+<p class="ah-label">SAHA / KAYIT</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-web.png" />Dijital Saha Defteri</h3>
+<p class="ah-tagline">G&ouml;zlemini kaybetme.</p>
+<p class="ah-desc">Konum, fotoğraf ve teknik g&ouml;zlemlerini proje bazında kaydet; yedekle ve dışa aktar.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Dijital-Saha-Defteri.htm">Defteri a&ccedil; <span>&rarr;</span></a></article><article class="ah-card blue">
+<p class="ah-label">OYUN YARDIMCISI / WARDOGS</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-performans.png" />Ateş Kontrol</h3>
+<p class="ah-tagline">Koordinattan oyun i&ccedil;i atış planına.</p>
+<p class="ah-desc">WARDOGS i&ccedil;in mesafe ve y&ouml;n hesabı, hedef kaydı ve atış desteği.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/WARDOGS-Ates-Kontrol-Paneli.htm">Aracı a&ccedil; <span>&rarr;</span></a></article><article class="ah-card amber">
+<p class="ah-label">AGE OF EMPIRES IV</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />AoE4 Savaş Odası</h3>
+<p class="ah-tagline">Planla. Takip et. Geliştir.</p>
+<p class="ah-desc">A&ccedil;ılış planları, ma&ccedil; kronometresi ve ma&ccedil; sonu değerlendirmesi.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/AoE4-Savas-Odasi.htm">Savaş odasını a&ccedil; <span>&rarr;</span></a></article></div>
+<div class="ah-subhead">
+<h3>Piyasa ve g&ouml;rsel deneyler</h3>
+<p>Verileri incele, hareketin ritmini keşfet.</p>
+</div>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">DENEYSEL / VERİ G&Ouml;RSELLEŞTİRME</p>
+<h3 class="ah-with-icon"><span class="ah-bitcoin-icon" aria-hidden="true"><span>₿</span></span>Bitcoin Organizma</h3>
+<p class="ah-tagline">Piyasanın hareketini hisset.</p>
+<p class="ah-desc">Bitcoin verilerini canlı bir organizmayı andıran g&ouml;rselle izle. 5 dakika, 1 saat, 4 saat ve 1 g&uuml;n pencerelerinde farklı ritimleri keşfet.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Bitcoin.htm">Organizmayı keşfet <span aria-hidden="true">&rarr;</span></a></article><article class="ah-card blue">
+<p class="ah-label">PİYASA / İZLEME VE ANALİZ</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-grafik.png" />Piyasa Laboratuvarı</h3>
+<p class="ah-tagline">İzle. Karşılaştır. İncele.</p>
+<p class="ah-desc">Kripto, ETF, endeks ve diğer piyasa ara&ccedil;larını incele; favori izleme listeni oluştur, grafik ve hesaplama ara&ccedil;larını kullan.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Piyasa-Laboratuvari.htm">Laboratuvarı a&ccedil; <span aria-hidden="true">&rarr;</span></a></article></div>
+<p class="ah-note ah-market-note">Bu ara&ccedil;lar inceleme ve g&ouml;rselleştirme ama&ccedil;lıdır; fiyat tahmini veya yatırım tavsiyesi sunmaz. Veri kaynağı ve g&uuml;ncellik bilgilerini uygulama i&ccedil;inde kontrol et.</p>
+</section><section aria-labelledby="ah-cinema-title" class="ah-group" id="ah-cinema">
+<div class="ah-section-head">
+<h2 id="ah-cinema-title">Film ve M&uuml;zikler</h2>
+<a href="https://sbncifci.tr.gg/Film-ve-Muzikler.htm">Film ve M&uuml;zikler sayfasını a&ccedil; &rarr;</a></div>
+<p class="ah-group-intro">Zihnimde kalan hik&acirc;yeler ve onlara eşlik eden melodiler. İki kişisel arşiv, tek ana kategori.</p>
+<div class="ah-cinema-grid"><article class="ah-cinema-card ah-cinema-film">
+<p class="ah-label">FİLMLER VE DİZİLER / KİŞİSEL SE&Ccedil;Kİ</p>
+<h3>İzlediğim hik&acirc;yeler.</h3>
+<p class="ah-tagline">Zihnimde kalan d&uuml;nyalar.</p>
+<p class="ah-desc">The Fountain, Cloud Atlas, Interstellar ve Lion ile başlayan vitrin; beş tematik b&ouml;l&uuml;mde bilimkurgu, dram, diziler ve karakterler.</p>
+<div class="ah-cinema-picks"><span>The Fountain</span><span>Cloud Atlas</span><span>Interstellar</span><span>Lion</span></div>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Filmler.htm">Film ve dizi se&ccedil;kisine git <span>&rarr;</span></a></article> <article class="ah-cinema-card ah-cinema-music">
+<p class="ah-label">M&Uuml;ZİKLER / KİŞİSEL ARŞİV</p>
+<h3>Dinle. Hisset.</h3>
+<p class="ah-tagline">Y&uuml;kselişi bekle.</p>
+<p class="ah-desc">Gen&ccedil;lik yıllarından bug&uuml;ne melankolik, epik, elektronik ve oyun/film m&uuml;zikleri. &Ouml;zel se&ccedil;ki ve aramalı, kategori filtreli kompakt m&uuml;zik hafızası.</p>
+<div class="ah-cinema-picks"><span>Experience</span><span>Outro</span><span>Ballad of the Mer</span><span>Andor</span></div>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Muzikler.htm">M&uuml;zik arşivini keşfet <span>&rarr;</span></a></article></div>
+</section><section aria-labelledby="ah-apps-title" class="ah-group" id="ah-apps">
+<div class="ah-section-head">
+<h2 class="ah-with-icon" id="ah-apps-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-uygulamalar.png" />Uygulamalar</h2>
+<a href="https://sbncifci.tr.gg/Uygulamalar.htm">T&uuml;m uygulamaları g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Sesli buluşma, yazışma, yayın iletişimi ve adım adım &ouml;ğrenme ara&ccedil;ları.</p>
+<article class="ah-feature ah-studio">
+<div>
+<p class="ah-kicker">SES &middot; SOHBET &middot; REJİ</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-azil-studyo.png" />AZiL St&uuml;dyo</h3>
+<p class="ah-feature-lead">Ses, sohbet ve yayın ara&ccedil;ları aynı &ccedil;alışma alanında.</p>
+<p class="ah-desc">Sesdaş, Laf Arası ve St&uuml;dyo Reji ara&ccedil;larını aynı deneyimde birleştiren &ccedil;alışma alanı. Oda oluşturabilir, davet bağlantısıyla katılımcı &ccedil;ağırabilir ve yayın hazırlığını y&ouml;netebilirsin.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Studyo.htm">St&uuml;dyoyu a&ccedil; &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>Sesdaş</strong><span>Sesli g&ouml;r&uuml;şme, bas-konuş ve kişi başına ses ayarı.</span></li>
+    <li><strong>Laf Arası</strong><span>Mesajlaşma, dosya paylaşımı ve sohbeti indirme.</span></li>
+    <li><strong>St&uuml;dyo Reji</strong><span>Yayın kontrol listesi, konuk mikrofonları ve OBS ses bağlantısı.</span></li>
+</ul>
+</article>
+<p class="ah-note ah-studio-storage">Gizlilik notu: AZiL St&uuml;dyo yardımında mesaj ve dosyaların sunucuda saklandığı belirtilir. Bağımsız Sesdaş, Laf Arası ve St&uuml;dyo Reji ile aynı depolama modelinde olduğunu varsaymayın. <a href="https://sbncifci.tr.gg/Gizlilik.htm">Gizlilik a&ccedil;ıklaması &rarr;</a></p>
+<div class="ah-grid ah-cube-grid"><article class="ah-card amber">
+<p class="ah-label">&Ouml;ĞRENME / 3&times;3 RUBİK K&Uuml;P</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-yazilim.png" />K&uuml;p At&ouml;lyesi</h3>
+<p class="ah-tagline">Renkleri tanıt. Hamleleri izle.</p>
+<p class="ah-desc">K&uuml;p&uuml;n&uuml;n renklerini elle veya kamerayla tanıt; &uuml;&ccedil; boyutlu hamle g&ouml;sterimiyle &ccedil;&ouml;z&uuml;m&uuml; adım adım takip et.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kup-Atolyesi.htm">K&uuml;p At&ouml;lyesi&rsquo;ni a&ccedil; <span aria-hidden="true">&rarr;</span></a></article></div>
+<div class="ah-subhead ah-v5-section-line"><h3>Yeni üretim alanları</h3><p>Hikâye oluşturma ve Windows için hazırladığımız masaüstü araçları.</p></div>
+<div class="ah-grid ah-grid-two ah-v5-app-grid">
+<article class="ah-card violet"><p class="ah-label">YARATICI YAZARLIK / HİKÂYE EDİTÖRÜ</p><h3>Hikâye Atölyesi</h3><p class="ah-tagline">Bir karar, bambaşka bir hikâye.</p><p class="ah-desc">Karakterleri, konuşmaları, sahneleri ve alternatif sonları düzenleyerek etkileşimli anlatılar oluştur.</p><a class="ah-card-link" href="/Hikaye-Atolyesi.htm">Hikâye Atölyesi’ni aç <span aria-hidden="true">→</span></a></article>
+<article class="ah-card blue"><p class="ah-label">WINDOWS / ARAÇ KOLEKSİYONU</p><h3>Programlar</h3><p class="ah-tagline">Dijital araçlar, tek katalog.</p><p class="ah-desc">Video İndirici ve Arazi Atlası masaüstü yazılımlarıyla küçük Windows yardımcı araçlarına, sürüm ve indirme bağlantılarına ulaş.</p><a class="ah-card-link" href="/Programlar.htm">Programları incele <span aria-hidden="true">→</span></a></article>
+</div>
+<details class="ah-previous"><summary>Bağımsız iletişim uygulamaları</summary>
+<p>Bu bağlantılar ayrı uygulamaları a&ccedil;ar. Birleşik deneyim i&ccedil;in AZiL St&uuml;dyo&rsquo;yu kullanabilirsin.</p>
+<div class="ah-about-links"><a class="ah-small-btn" href="https://sbncifci.tr.gg/Sesdas.htm">Sesdaş</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Laf-Arasi.htm">Laf Arası</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Studyo-Reji.htm">St&uuml;dyo Reji</a></div>
+</details> </section><section aria-labelledby="ah-games-title" class="ah-group" id="ah-games">
+<div class="ah-section-head">
+<h2 class="ah-with-icon" id="ah-games-title"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />Oyunlar</h2>
+<a href="https://sbncifci.tr.gg/Oyunlar.htm">T&uuml;m oyunları g&ouml;r &rarr;</a></div>
+<p class="ah-group-intro">Ger&ccedil;ek zamanlı cephe y&ouml;netiminden sıra tabanlı savaşlara, gizli rollerden se&ccedil;imli hik&acirc;yelere.</p>
+<article class="ah-feature ah-cephe">
+<div>
+<p class="ah-kicker">GER&Ccedil;EK ZAMANLI STRATEJİ / &Ccedil;OK OYUNCULU BETA</p>
+<h3 class="ah-with-icon"><img class="ah-visual-icon" alt="" aria-hidden="true" loading="lazy" decoding="async" width="48" height="48" src="https://scazil.github.io/azil-assets/assets/icons/azil-ikon-oyunlar.png" />AZiL Cephe</h3>
+<p class="ah-feature-lead">&Uuml;ss&uuml;n&uuml; kur. İkmali s&uuml;rd&uuml;r. Cepheyi y&ouml;net.</p>
+<p class="ah-desc">Birliklerini ve ara&ccedil;larını y&ouml;net, kaynak noktaları i&ccedil;in m&uuml;cadele et ve arkadaşlarınla aynı savaş alanında stratejini dene.</p>
+<a class="ah-primary" href="https://sbncifci.tr.gg/Cephe.htm">Cephe&rsquo;ye katıl &rarr;</a></div>
+<ul class="ah-feature-list">
+    <li><strong>&Uuml;s ve ekonomi</strong><span>Yapılarını geliştir; kaynaklarını ve birlik &uuml;retimini planla.</span></li>
+    <li><strong>Birlikler ve ara&ccedil;lar</strong><span>Piyade, tank ve helikopterlerle farklı g&ouml;revleri &uuml;stlen.</span></li>
+    <li><strong>İkmal ve takım oyunu</strong><span>Lojistiği takip et; &ccedil;ok oyunculu beta deneyimini arkadaşlarınla dene.</span></li>
+</ul>
+</article>
+<article class="ah-flight" aria-labelledby="ah-flight-title">
+<div class="ah-flight-copy"><p class="ah-kicker">3B UÇUŞ / GÖREVLER / KEŞİF</p><h3 id="ah-flight-title">Göklerde</h3><p>Geniş bir uçuş alanında görevler, hedefler ve keşif üzerine geliştirilen üç boyutlu oyun deneyimi. Geliştirme sürecinde yenilenen uçuş mekaniğini keşfet.</p><a class="ah-flight-link" href="/Goklerde.htm">Göklerde sayfasına git <span aria-hidden="true">↗</span></a></div>
+<div class="ah-flight-visual" aria-hidden="true"><span class="ah-flight-ring"></span><span class="ah-flight-plane">✈</span><span class="ah-flight-cross">+</span></div>
+</article>
+<div class="ah-grid ah-grid-two"><article class="ah-card amber">
+<p class="ah-label">STRATEJİ</p>
+<h3>Tank Oyunu</h3>
+<p class="ah-tagline">Nişan al. Hamleni yap.</p>
+<p class="ah-desc">Sıra tabanlı tank savaşları, kaynak toplama ve geliştirme.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Tank-Oyunu.htm">Oyuna git <span>&rarr;</span></a> </article> <article class="ah-card violet">
+<p class="ah-label">SOSYAL &Ccedil;IKARIM</p>
+<h3>Sis Altında</h3>
+<p class="ah-tagline">Kime g&uuml;veneceksin?</p>
+<p class="ah-desc">Gizli roller, gece kararları ve g&uuml;nd&uuml;z oylamaları.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Sis-Altinda.htm">Oyuna git <span>&rarr;</span></a> </article> <article class="ah-card blue">
+<p class="ah-label">İNTERAKTİF HİK&Acirc;YE</p>
+<h3>Kayıp Ormanın Sırrı</h3>
+<p class="ah-tagline">Bir sonraki yol senin kararın.</p>
+<p class="ah-desc">Keşif, se&ccedil;imler ve farklı sonu&ccedil;lara ulaşan tek kişilik macera.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Kayip-Orman.htm">Maceraya git <span>&rarr;</span></a> </article><article class="ah-card green">
+<p class="ah-label">SU Y&Ouml;NETİMİ / STRATEJİ</p>
+<h3>Havza Y&ouml;neticisi</h3>
+<p class="ah-tagline">Bir havzanın geleceği, senin kararların.</p>
+<p class="ah-desc">Asi Havzası&rsquo;ndan ilham alan oyunda tarım, şehir ve doğanın su ihtiyacını 20 mevsim boyunca dengele.</p>
+<a class="ah-card-link" href="https://sbncifci.tr.gg/Havza-Yoneticisi.htm">Havzayı y&ouml;net <span>&rarr;</span></a></article></div>
+</section><section class="ah-timecapsule" id="ah-time" aria-labelledby="ah-time-title">
+<div class="ah-time-inner"><div class="ah-time-copy"><p class="ah-kicker">AZiL / ZAMAN ARŞİVİ</p><h2 id="ah-time-title">Bugünün izleri.<br><span>Yarının hatıraları.</span></h2><p>HANOK’un yayımlanmasından oyunlara, uygulamalardan ilk sürümlere… Dijital Zaman Kapsülü, AZiL Günlüğü’nün geçmiş kayıtlarını geleceğe taşıyor.</p><a class="ah-time-action" href="/AZiL-Gunlugu.htm">Dijital Zaman Kapsülü’nü aç <span aria-hidden="true">↗</span></a></div>
+<div class="ah-time-orbit" aria-hidden="true"><span class="ah-orbit ah-orbit-1"></span><span class="ah-orbit ah-orbit-2"></span><span class="ah-orbit ah-orbit-3"></span><span class="ah-orbit-core">AZiL<br><small>2026 → ∞</small></span><span class="ah-orbit-label ah-orbit-label-a">YAZI</span><span class="ah-orbit-label ah-orbit-label-b">ÜRETİM</span><span class="ah-orbit-label ah-orbit-label-c">ARŞİV</span></div></div>
+<div class="ah-time-milestones"><span><b>YAZ</b> · İlk izler</span><span><b>ÜRET</b> · Yeni dünyalar</span><span><b>SAKLA</b> · Geleceğe bırak</span></div>
+</section>
+<section aria-labelledby="ah-legacy-title" class="ah-legacy">
+<p class="ah-kicker">BU SİTE NEDEN VAR?</p>
+<h2 id="ah-legacy-title">K&uuml;&ccedil;&uuml;k izler bırakmak i&ccedil;in.</h2>
+<p>Burada yazdığım, yaptığım, dinlediğim ve merak ettiğim şeylerden     k&uuml;&ccedil;&uuml;k izler bırakıyorum. Oyunlar, hik&acirc;yeler, m&uuml;zikler, projeler ve     zaman i&ccedil;inde biriktirdiğim başka şeyler...     <strong>Belki yıllar sonra birileri &mdash; belki de &ccedil;ocuklarım &mdash; buraya gelir     ve beni biraz daha yakından tanır.</strong></p>
+</section> <section aria-labelledby="ah-about-title" class="ah-about" id="ah-about">
+<div>
+<p class="ah-kicker">ŞABAN &Ccedil;İF&Ccedil;İ &middot; AZiL</p>
+<h2 id="ah-about-title">Bir fikirle başladı.</h2>
+</div>
+<div>
+<p>M&uuml;hendislik, haritalar, web uygulamaları, oyunlar ve hik&acirc;yeler &uuml;zerine       geliştirdiğim &ccedil;alışmaların kişisel merkezi.</p>
+<div class="ah-about-links"><a class="ah-small-btn" href="https://sbncifci.tr.gg/Hakkimda.htm">Hakkımda &rarr;</a><a class="ah-small-btn" href="/AZiL-Gunlugu.htm">Dijital Zaman Kapsülü &rarr;</a> <a class="ah-small-btn" href="https://sbncifci.tr.gg/iletisim.htm">İletişim &rarr;</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Site-Haritasi.htm">Site haritasında ara &rarr;</a><a class="ah-small-btn" href="https://sbncifci.tr.gg/Ziyaretci-defteri.htm">Ziyaret&ccedil;i Defteri &rarr;</a></div>
+<p class="ah-personal-note">Buradaki projeler ve değerlendirmeler kişisel çalışmalardır; herhangi bir kurumun resmî açıklamasını temsil etmez.</p>
+</div>
+</section> </section> <!-- AZIL / ANA SAYFA BITIS --> <script>
+(function(){
+  var root=document.getElementById('az-home');if(!root)return;
+  var header=document.getElementById('forFixedElement');
+  function measure(){root.style.setProperty('--az-anchor-gap',((header?header.getBoundingClientRect().height:116)+24)+'px');}
+  function align(){var id;try{id=decodeURIComponent(location.hash.slice(1));}catch(e){return;}
+    if(!/^ah-/.test(id))return;var el=document.getElementById(id);if(!el||!root.contains(el))return;
+    requestAnimationFrame(function(){measure();el.scrollIntoView({block:'start'});});}
+  measure();window.addEventListener('resize',measure,{passive:true});
+  if(header&&window.ResizeObserver)new ResizeObserver(measure).observe(header);
+  window.addEventListener('hashchange',align);align();
+})();
+</script> <script>
+/* AZiL 4.0 / Etkilesimli ag - Canvas 2D, harici kutuphane yok. */
+(function(){
+  'use strict';
+  var root=document.getElementById('az-home');
+  if(!root||!window.requestAnimationFrame)return;
+  var canvases=root.querySelectorAll('.ah-network-canvas');
+  if(!canvases.length)return;
+  var motion=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;
+  var connection=navigator.connection;
+  var reduce=!!((motion&&motion.matches)||(connection&&connection.saveData));
+  var scenes=[],frameId=0,lastFrame=0,starsOn=true;
+  var isPageVisible=!document.hidden;
+  function rand(seed){return (Math.sin(seed*127.1+seed*seed*.141)*43758.5453)%1;}
+  function rnd(seed){var v=rand(seed);return v<0?v+1:v;}
+  function buildNodes(s){
+    var w=s.w,h=s.h,isSmall=w<600,cols=s.type==='projects'?Math.max(5,Math.floor(w/118)):Math.max(6,Math.floor(w/113));
+    var rows=s.type==='projects'?3:(isSmall?5:4);
+    var result=[],index=0;
+    for(var y=0;y<rows;y++){
+      for(var x=0;x<cols;x++){
+        var k=++index+s.seed;
+        var px=((x+.25+.5*rnd(k*2))/(cols+.5))*w;
+        var py=((y+.22+.58*rnd(k*3))/(rows+.45))*h;
+        result.push({
+          x:px,y:py,px:px,py:py,
+          speed:.25+.55*rnd(k*4),phase:6.283*rnd(k*5),
+          dx:5+9*rnd(k*6),dy:5+7*rnd(k*7),r:1.1+1.1*rnd(k*8)
+        });
+      }
+    }
+    s.nodes=result;
+  }
+  function sizeScene(s){
+    var rect=s.el.getBoundingClientRect();
+    var w=Math.round(rect.width),h=Math.round(rect.height);
+    if(w<2||h<2)return;
+    if(w===s.w&&h===s.h)return;
+    s.w=w;s.h=h;
+    var pixelRatio=Math.min(window.devicePixelRatio||1,1.5,Math.sqrt(2500000/(w*h)));
+    s.canvas.width=Math.round(w*pixelRatio);
+    s.canvas.height=Math.round(h*pixelRatio);
+    s.ctx.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+    s.mouse.x=w/2;s.mouse.y=h/2;s.mouse.on=false;
+    buildNodes(s);
+    if(reduce)draw(s,0);
+  }
+  function draw(s,t){
+    var ctx=s.ctx,w=s.w,h=s.h;
+    if(!w||!h)return;
+    ctx.clearRect(0,0,w,h);
+    var m=s.mouse;
+    var range=s.type==='projects'?115:175;
+    var connect=s.type==='projects'?160:(w<600?142:188);
+    var particles=s.nodes;
+    var slow=reduce?0:t*.00044;
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      var x=p.x+Math.sin(slow*p.speed+p.phase)*p.dx;
+      var y=p.y+Math.cos(slow*p.speed*1.19+p.phase)*p.dy;
+      if(m.on&&!reduce){
+        var vx=x-m.x,vy=y-m.y,dist=Math.sqrt(vx*vx+vy*vy)||1;
+        if(dist<range){
+          var strength=Math.pow(1-dist/range,2)*53;
+          x+=vx/dist*strength;
+          y+=vy/dist*strength;
+        }
+        x+=(m.x-w/2)*.008;
+        y+=(m.y-h/2)*.008;
+      }
+      p.px+=(x-p.px)*(reduce?1:.17);
+      p.py+=(y-p.py)*(reduce?1:.17);
+    }
+    ctx.lineWidth=.8;
+    for(var a=0;a<particles.length;a++){
+      for(var b=a+1;b<particles.length;b++){
+        var p1=particles[a],p2=particles[b];
+        var ox=p1.px-p2.px,oy=p1.py-p2.py;
+        var d2=ox*ox+oy*oy;
+        if(d2>connect*connect)continue;
+        var falloff=1-Math.sqrt(d2)/connect;
+        var alpha=Math.min(.52,falloff*.38+.045);
+        ctx.strokeStyle='rgba(195,245,252,'+alpha.toFixed(3)+')';
+        ctx.beginPath();ctx.moveTo(p1.px,p1.py);ctx.lineTo(p2.px,p2.py);ctx.stroke();
+      }
+    }
+    for(var c=0;c<particles.length;c++){
+      var q=particles[c];
+      ctx.beginPath();ctx.arc(q.px,q.py,q.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(221,252,255,.82)';ctx.fill();
+    }
+    if(m.on&&!reduce){
+      var g=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,range);
+      g.addColorStop(0,'rgba(144,244,255,.14)');
+      g.addColorStop(1,'rgba(144,244,255,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(m.x,m.y,range,0,Math.PI*2);ctx.fill();
+      for(var n=0;n<particles.length;n++){
+        var p3=particles[n];
+        var distance=Math.hypot(p3.px-m.x,p3.py-m.y);
+        if(distance<range*.74){
+          ctx.beginPath();ctx.moveTo(m.x,m.y);ctx.lineTo(p3.px,p3.py);
+          ctx.lineWidth=1.25;
+          ctx.strokeStyle='rgba(219,253,255,'+(1-distance/(range*.74))*.49+')';
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();ctx.arc(m.x,m.y,4,0,Math.PI*2);
+      ctx.fillStyle='rgba(228,255,255,.7)';ctx.fill();
+      ctx.beginPath();ctx.arc(m.x,m.y,11,0,Math.PI*2);
+      ctx.lineWidth=.9;ctx.strokeStyle='rgba(220,255,255,.3)';ctx.stroke();
+    }
+  }
+  function tick(now){
+    frameId=0;
+    if(!isPageVisible||reduce||!starsOn)return;
+    var fps=window.innerWidth<640?24:30;
+    if(now-lastFrame>=1000/fps){
+      lastFrame=now;
+      for(var i=0;i<scenes.length;i++)if(scenes[i].visible)draw(scenes[i],now);
+    }
+    schedule();
+  }
+  function schedule(){
+    if(frameId||reduce||!isPageVisible||!starsOn)return;
+    for(var i=0;i<scenes.length;i++)if(scenes[i].visible){frameId=requestAnimationFrame(tick);break;}
+  }
+  for(var i=0;i<canvases.length;i++){
+    var c=canvases[i],el=c.parentNode,ctx=c.getContext&&c.getContext('2d',{alpha:true});
+    if(!ctx)continue;
+    var s={el:el,canvas:c,ctx:ctx,type:c.getAttribute('data-network'),seed:i*73+11,w:0,h:0,visible:false,mouse:{x:0,y:0,on:false},nodes:[]};
+    scenes.push(s);sizeScene(s);
+    (function(scene){
+      scene.el.addEventListener('pointermove',function(ev){
+        if(ev.pointerType==='touch'||reduce)return;
+        var box=scene.el.getBoundingClientRect();
+        scene.mouse.x=ev.clientX-box.left;
+        scene.mouse.y=ev.clientY-box.top;
+        scene.mouse.on=true;
+      },{passive:true});
+      scene.el.addEventListener('pointerleave',function(){scene.mouse.on=false;},{passive:true});
+      if(window.ResizeObserver){new ResizeObserver(function(){sizeScene(scene);}).observe(scene.el);}
+      else window.addEventListener('resize',function(){sizeScene(scene);},{passive:true});
+    })(s);
+  }
+  if(window.IntersectionObserver){
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        for(var j=0;j<scenes.length;j++)if(scenes[j].el===e.target)scenes[j].visible=e.isIntersecting;
+      });schedule();
+      if(!scenes.some(function(scene){return scene.visible;})&&frameId){cancelAnimationFrame(frameId);frameId=0;}
+    },{threshold:0});
+    for(var k=0;k<scenes.length;k++)observer.observe(scenes[k].el);
+  }else{
+    for(var n=0;n<scenes.length;n++)scenes[n].visible=true;
+    schedule();
+  }
+  function updateMotion(){
+    reduce=!!((motion&&motion.matches)||(connection&&connection.saveData));
+    if(frameId){cancelAnimationFrame(frameId);frameId=0;}
+    for(var i=0;i<scenes.length;i++){scenes[i].mouse.on=false;draw(scenes[i],0);}
+    schedule();
+  }
+  if(motion){if(motion.addEventListener)motion.addEventListener('change',updateMotion);else if(motion.addListener)motion.addListener(updateMotion);}
+  if(connection&&connection.addEventListener)connection.addEventListener('change',updateMotion);
+  document.addEventListener('visibilitychange',function(){
+    isPageVisible=!document.hidden;
+    if(!isPageVisible&&frameId){cancelAnimationFrame(frameId);frameId=0;}
+    if(isPageVisible)schedule();
+  },{passive:true});
+  root.addEventListener('azil:stars',function(){
+    starsOn=root.getAttribute('data-stars')!=='off';
+    if(!starsOn){
+      if(frameId){cancelAnimationFrame(frameId);frameId=0;}
+      for(var q=0;q<scenes.length;q++){var item=scenes[q];item.ctx.clearRect(0,0,item.w,item.h);}
+    }else{
+      for(var k2=0;k2<scenes.length;k2++)draw(scenes[k2],0);
+      schedule();
+    }
+  });
+})();
+</script>
+<script>
+/* AZiL 5.0 / Ana sayfaya ozel efekt kontrolleri - JS metinleri Unicode kacisi ile. */
+(function(){
+  'use strict';
+  var root=document.getElementById('az-home');
+  if(!root||root.getAttribute('data-v5-ready')==='yes')return;
+  root.setAttribute('data-v5-ready','yes');
+  var stars=root.querySelector('#ah-stars-toggle');
+  var cursorButton=root.querySelector('#ah-cursor-toggle');
+  var media=window.matchMedia?window.matchMedia('(hover:hover) and (pointer:fine)'):null;
+  var reduced=window.matchMedia?window.matchMedia('(prefers-reduced-motion: reduce)'):null;
+  var fine=!!(media&&media.matches);
+  var defaultCursor=fine&&!(reduced&&reduced.matches);
+  root.setAttribute('data-stars',(reduced&&reduced.matches)?'off':'on');
+  root.setAttribute('data-cursor',defaultCursor?'on':'off');
+  var dot=document.createElement('span');dot.className='ah-v5-cursor';dot.setAttribute('aria-hidden','true');root.appendChild(dot);
+  function labelButtons(){
+    var starOn=root.getAttribute('data-stars')==='on';
+    var cursorOn=root.getAttribute('data-cursor')==='on';
+    stars.textContent='\u2726 Y\u0131ld\u0131zlar: '+(starOn?'A\u00e7\u0131k':'Kapal\u0131');
+    cursorButton.textContent='\u25ce \u0130mle\u00e7: '+(cursorOn?'A\u00e7\u0131k':'Kapal\u0131');
+    stars.setAttribute('aria-pressed',starOn?'true':'false');
+    cursorButton.setAttribute('aria-pressed',cursorOn?'true':'false');
+    if(!fine)cursorButton.hidden=true;
+  }
+  stars.addEventListener('click',function(){
+    root.setAttribute('data-stars',root.getAttribute('data-stars')==='on'?'off':'on');
+    root.dispatchEvent(new Event('azil:stars'));
+    labelButtons();
+  });
+  cursorButton.addEventListener('click',function(){
+    root.setAttribute('data-cursor',root.getAttribute('data-cursor')==='on'?'off':'on');
+    dot.classList.remove('is-visible');labelButtons();
+  });
+  root.addEventListener('pointermove',function(event){
+    if(!fine||event.pointerType==='touch'||root.getAttribute('data-cursor')!=='on')return;
+    dot.style.left=event.clientX+'px';dot.style.top=event.clientY+'px';
+    dot.classList.add('is-visible');
+    var target=event.target;
+    dot.classList.toggle('is-interactive',!!(target&&target.closest&&target.closest('a,button,summary')));
+  },{passive:true});
+  root.addEventListener('pointerleave',function(){dot.classList.remove('is-visible');});
+  if(reduced){var onReduce=function(){
+    if(reduced.matches){root.setAttribute('data-stars','off');root.setAttribute('data-cursor','off');root.dispatchEvent(new Event('azil:stars'));dot.classList.remove('is-visible');}
+    labelButtons();
+  };if(reduced.addEventListener)reduced.addEventListener('change',onReduce);}
+  var coverImg=root.querySelector('.ah-book-cover img');
+  if(coverImg){
+    var showBackup=function(){coverImg.style.display='none';};
+    coverImg.addEventListener('error',showBackup);
+    if(coverImg.complete&&!coverImg.naturalWidth)showBackup();
+  }
+  labelButtons();
+  if(root.getAttribute('data-stars')==='off')root.dispatchEvent(new Event('azil:stars'));
+})();
+</script>
+<!-- AZiL ANA SAYFA 5.0 BITIS -->
